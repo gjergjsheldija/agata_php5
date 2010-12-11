@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<project>
+    <host>localhost</host>
+    <name>exemplos</name>
+    <user>postgres</user>
+    <pass></pass>
+    <type>native-pgsql</type>
+    <dict>Exemplos</dict>
+</project>
+

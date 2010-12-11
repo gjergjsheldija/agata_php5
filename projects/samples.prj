@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<project>
+    <desc></desc>
+    <author></author>
+    <date></date>
+    <host>localhost</host>
+    <name>samples</name>
+    <user>postgres</user>
+    <pass></pass>
+    <type>native-pgsql</type>
+    <dict>Samples</dict>
+</project>
+

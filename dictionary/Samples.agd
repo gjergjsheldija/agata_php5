@@ -1,0 +1,205 @@
+<?xml version="1.0"?>
+<tables xmlns:dic='http://www.agata.org.br'>
+    <dic:city>
+        <dic:groups>
+            <dic:name>basic</dic:name>
+        </dic:groups>
+
+        <dic:label>List of Cities</dic:label>
+        <dic:fields>
+            <dic:code>
+                <dic:label>City Code</dic:label>
+            </dic:code>
+
+            <dic:description>
+                <dic:label>City Description</dic:label>
+            </dic:description>
+
+            <dic:postal_code>
+                <dic:label>Postal Code</dic:label>
+            </dic:postal_code>
+
+            <dic:ref_state>
+                <dic:label>State Code</dic:label>
+                <dic:link>state.code</dic:link>
+            </dic:ref_state>
+
+        </dic:fields>
+
+    </dic:city>
+
+    <dic:state>
+        <dic:groups>
+            <dic:name>basic</dic:name>
+        </dic:groups>
+
+        <dic:label>States Table</dic:label>
+        <dic:fields>
+            <dic:code>
+                <dic:label>State Code</dic:label>
+            </dic:code>
+
+            <dic:description>
+                <dic:label>State Description</dic:label>
+            </dic:description>
+
+        </dic:fields>
+
+    </dic:state>
+
+    <dic:customer>
+        <dic:groups>
+            <dic:name>business</dic:name>
+        </dic:groups>
+
+        <dic:label>Customer Table</dic:label>
+        <dic:fields>
+            <dic:address>
+                <dic:label>Customer Address</dic:label>
+            </dic:address>
+
+            <dic:age>
+                <dic:label>Customer Age</dic:label>
+            </dic:age>
+
+            <dic:code>
+                <dic:label>Customer Code</dic:label>
+            </dic:code>
+
+            <dic:document>
+                <dic:label>Document</dic:label>
+            </dic:document>
+
+            <dic:name>
+                <dic:label>Customer Name</dic:label>
+            </dic:name>
+
+            <dic:phone>
+                <dic:label>Customer Phone</dic:label>
+            </dic:phone>
+
+            <dic:photo>
+                <dic:label>Customer Photo</dic:label>
+            </dic:photo>
+
+            <dic:ref_city>
+                <dic:label>Customer City Code</dic:label>
+                <dic:link>city.code</dic:link>
+            </dic:ref_city>
+
+            <dic:register>
+                <dic:label>Register</dic:label>
+            </dic:register>
+
+        </dic:fields>
+
+    </dic:customer>
+
+    <dic:product>
+        <dic:groups>
+            <dic:name>business</dic:name>
+        </dic:groups>
+
+        <dic:label>Products Table</dic:label>
+        <dic:fields>
+            <dic:amount>
+                <dic:label>Amount</dic:label>
+            </dic:amount>
+
+            <dic:code>
+                <dic:label>Product Code</dic:label>
+            </dic:code>
+
+            <dic:description>
+                <dic:label>Product Description</dic:label>
+            </dic:description>
+
+            <dic:unit>
+                <dic:label>Product Unit</dic:label>
+            </dic:unit>
+
+        </dic:fields>
+
+    </dic:product>
+
+    <dic:sales>
+        <dic:groups>
+            <dic:name>business</dic:name>
+        </dic:groups>
+
+        <dic:label>Sales Table</dic:label>
+        <dic:fields>
+            <dic:amount>
+                <dic:label>Amount</dic:label>
+            </dic:amount>
+
+            <dic:date>
+                <dic:label>Date</dic:label>
+            </dic:date>
+
+            <dic:price>
+                <dic:label>Price</dic:label>
+            </dic:price>
+
+            <dic:ref_customer>
+                <dic:label>Custome Code</dic:label>
+                <dic:link>customer.code</dic:link>
+            </dic:ref_customer>
+
+            <dic:ref_product>
+                <dic:label>Product Code</dic:label>
+                <dic:link>product.code</dic:link>
+            </dic:ref_product>
+
+        </dic:fields>
+
+    </dic:sales>
+
+    <dic:budget_items>
+        <dic:label>Budget Items</dic:label>
+        <dic:fields>
+            <dic:budget_number>
+                <dic:link>budget.number</dic:link>
+            </dic:budget_number>
+
+        </dic:fields>
+
+    </dic:budget_items>
+
+    <dic:budget>
+        <dic:label>Budget</dic:label>
+    </dic:budget>
+
+    <dic:billing>
+        <dic:label>Billing</dic:label>
+        <dic:fields>
+            <dic:document_no>
+                <dic:label>Document</dic:label>
+            </dic:document_no>
+
+            <dic:id>
+                <dic:label>Bill ID</dic:label>
+            </dic:id>
+
+            <dic:maturity_date>
+                <dic:label>Maturity Date</dic:label>
+            </dic:maturity_date>
+
+            <dic:ref_customer>
+                <dic:label>Customer Code</dic:label>
+                <dic:link>customer.code</dic:link>
+            </dic:ref_customer>
+
+            <dic:value>
+                <dic:label>Bill Value</dic:label>
+            </dic:value>
+
+        </dic:fields>
+
+    </dic:billing>
+
+    <dic:users.x>
+        <dic:label>usuários</dic:label>
+    </dic:users.x>
+
+</tables>

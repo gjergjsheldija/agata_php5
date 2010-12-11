@@ -1,0 +1,75 @@
+# Edit these colors and fonts however you like.
+module_path "./themes/engines"
+style "default"
+{
+  bg[ACTIVE]		= "#a0a0a0"
+  fg[ACTIVE]		= "#000000"
+  bg[NORMAL]		= "#b3b2b0"
+  fg[NORMAL]		= "#000000"
+  bg[INSENSITIVE]	= "#a3a2a0"
+  fg[INSENSITIVE]	= "#555555"
+  bg[PRELIGHT]		= "#b3b2b0"
+  fg[PRELIGHT]		= "#000000"
+  bg[SELECTED]		= "#685977"
+  fg[SELECTED]		= "#ffffff"
+  base[NORMAL]		= "#e8e8e8"
+  base[ACTIVE]		= "#e8e8e8"
+#  base[NORMAL]		= "#dddddd"
+#  base[ACTIVE]		= "#dddddd"
+  base[SELECTED]	= "#696472"
+  base[INSENSITIVE]	= "#b0b0b0"
+  base[PRELIGHT]	= "#ededed"
+  engine "engradient"
+  {
+    use_gradient = TRUE
+    handlebox_marks = TRUE
+    scrollbar_marks = TRUE
+  }
+}
+
+
+style "list" {
+#    base[ACTIVE]	="#e8e8e8"
+#    base[NORMAL]        ="#e8e8e8"    
+}
+
+style "tooltips" {
+    bg[NORMAL]		= "#e5d7b3"
+    fg[NORMAL]		= "#000000"
+}
+
+style "button" {
+    bg[NORMAL]		= "#bdbcbb"
+    bg[PRELIGHT]	= "#cdcccb"
+    bg[INSENSITIVE]	= "#adadad"
+}
+
+style "menu" {
+    bg[PRELIGHT]	= "#cdcccb"
+}
+
+style "range" = "button" {
+    bg[ACTIVE]		= "#808080"
+}
+
+style "infobar" {
+    bg[PRELIGHT]  = "#685977"
+    bg[NORMAL]    = "#909090"
+}
+
+
+#widget "*" style "default"
+
+class "GtkWidget"		style "default"
+class "GtkList"			style "list"
+class "GtkTree"			style "list"
+class "GtkCList"		style "list"
+class "GtkCTree"		style "list"
+class "GtkButton"		style "button"
+class "GtkSpinButton"		style "button"
+class "GtkRange"		style "range"
+class "GtkProgress"		style "infobar"
+class "GtkStatusbar"		style "infobar"
+class "GtkMenuItem"		style "menu"
+class "GtkMenu"			style "menu"
+widget "gtk-tooltips*"		style "tooltips"

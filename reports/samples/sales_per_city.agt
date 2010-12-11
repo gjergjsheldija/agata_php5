@@ -1,0 +1,109 @@
+<?xml version="1.0"?>
+<report>
+    <description></description>
+    <datasource>
+        <name>Samples</name>
+    </datasource>
+
+    <header>
+        <body></body>
+        <align>center</align>
+    </header>
+
+    <footer>
+        <body></body>
+        <align>center</align>
+    </footer>
+
+    <preferences>
+        <showgroup></showgroup>
+        <showdetail>1</showdetail>
+        <showlabel></showlabel>
+        <shownumber>1</shownumber>
+        <showindent>1</showindent>
+        <distinct></distinct>
+    </preferences>
+
+    <query>
+        <select>city.code as "City Code", city.description as "City Description", count(sales.ref_customer)</select>
+        <from>sales,customer,city</from>
+        <where>customer.ref_city = city.code and sales.ref_customer = customer.code</where>
+        <groupby>1, 2</groupby>
+        <orderby></orderby>
+    </query>
+
+    <adjustments>
+        <column1>
+            <chars>30</chars>
+            <points>100</points>
+            <align>left</align>
+            <function></function>
+            <cross></cross>
+        </column1>
+
+        <column2>
+            <chars>30</chars>
+            <points>100</points>
+            <align>left</align>
+            <function></function>
+            <cross></cross>
+        </column2>
+
+        <column3>
+            <chars>30</chars>
+            <points>100</points>
+            <align>left</align>
+            <function></function>
+            <cross></cross>
+        </column3>
+
+    </adjustments>
+
+    <graph>
+        <title></title>
+        <titlex></titlex>
+        <titley></titley>
+        <width>480</width>
+        <height>268</height>
+        <description></description>
+        <showdata></showdata>
+        <showvalues></showvalues>
+        <orientation>columns</orientation>
+    </graph>
+
+    <merge>
+        <header></header>
+        <groupheader></groupheader>
+        <detail></detail>
+        <groupfooter></groupfooter>
+        <footer></footer>
+        <adjustments></adjustments>
+        <pagesetup></pagesetup>
+        <query>
+            <select></select>
+            <from></from>
+            <where></where>
+            <groupby></groupby>
+            <orderby></orderby>
+        </query>
+
+    </merge>
+
+    <label>
+        <body></body>
+        <config>
+            <horizontal_spacing></horizontal_spacing>
+            <vertical_spacing></vertical_spacing>
+            <label_width></label_width>
+            <label_height></label_height>
+            <left_margin></left_margin>
+            <top_margin></top_margin>
+            <label_cols></label_cols>
+            <label_rows></label_rows>
+            <page_format></page_format>
+            <line_spacing></line_spacing>
+        </config>
+
+    </label>
+
+</report>

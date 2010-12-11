@@ -1,0 +1,165 @@
+<?xml version="1.0"?>
+<Report>
+    <Version>7.4</Version>
+    <Properties>
+        <Title>Sales</Title>
+        <Author>Pablo</Author>
+        <Keywords>sales</Keywords>
+        <Date>2005-07-09</Date>
+        <Layout>default-HTML</Layout>
+        <Format>html</Format>
+    </Properties>
+
+    <Header>
+        <Body>#image images/agata.jpg
+$page/$totalPages
+qtde min: $amount</Body>
+
+        <Align>center</Align>
+    </Header>
+
+    <Footer>
+        <Body>$page/$totalPages
+qtde min: $amount</Body>
+
+        <Align>center</Align>
+    </Footer>
+
+    <Parameters>
+        <meta>
+            <value>40</value>
+        </meta>
+
+    </Parameters>
+
+    <DataSet>
+        <DataSource>
+            <Name>sqlite</Name>
+        </DataSource>
+
+        <Query>
+            <Select>city.description as "City Description", customer.name as "Customer Name", product.description as "Product Description", sales.amount as "Amount", sales.date as "Date", sales.price as "Price"</Select>
+            <From>sales,product,customer,city</From>
+            <Where>sales.ref_product = product.code and customer.ref_city = city.code and sales.ref_customer = customer.code</Where>
+            <OrderBy>1,2</OrderBy>
+            <Config>
+                <Distinct>1</Distinct>
+                <OffSet>0</OffSet>
+                <Limit>0</Limit>
+            </Config>
+
+            <AgataWeb>
+                <Select>city.description as "City Description",customer.name as "Customer Name",product.description as "Product Description",sales.amount as "Amount",sales.date as "Date",sales.price as "Price"</Select>
+                <Where></Where>
+            </AgataWeb>
+
+        </Query>
+
+        <Groups>
+            <Config>
+                <ShowDetail>1</ShowDetail>
+                <ShowNumber>1</ShowNumber>
+                <ShowIndent>1</ShowIndent>
+            </Config>
+
+            <Formulas>
+                <Group1>gavg(6) as 'Média p/ Cliente'</Group1>
+                <Group2>(count(6)*100 /$meta) * 2 as 'perc. ' mask '#  (9.999,9)s %', sum(6), sum(4)</Group2>
+                <Group0>gavg(6) as 'Média geral'</Group0>
+            </Formulas>
+
+        </Groups>
+
+        <Fields>
+            <Column1>
+                <Chars>40</Chars>
+                <Points>100</Points>
+                <Align>left</Align>
+            </Column1>
+
+            <Column2>
+                <Chars>24</Chars>
+                <Points>48</Points>
+                <Align>left</Align>
+            </Column2>
+
+            <Column3>
+                <Chars>24</Chars>
+                <Points>48</Points>
+                <Align>left</Align>
+            </Column3>
+
+            <Column4>
+                <Chars>10</Chars>
+                <Points>30</Points>
+                <Align>right</Align>
+            </Column4>
+
+            <Column5>
+                <Chars>16</Chars>
+                <Points>40</Points>
+                <Align>center</Align>
+                <Mask>@9999/99/99</Mask>
+            </Column5>
+
+            <Column6>
+                <Chars>30</Chars>
+                <Points>60</Points>
+                <Align>right</Align>
+                <Mask>#R$(9.999,99)</Mask>
+                <Conditional>if "/contrib/a_price_negative.fun"  = "1" then fontface="Arial-B-22", fontcolor="#bf0200", bgcolor="#FFFFFF";</Conditional>
+            </Column6>
+
+        </Fields>
+
+    </DataSet>
+
+    <Graph>
+        <Title>Graph Title</Title>
+        <TitleX>X Title</TitleX>
+        <TitleY>Y Title</TitleY>
+        <Width>480</Width>
+        <Height>268</Height>
+        <Description>Little sample of Graph generation</Description>
+        <ShowData>1</ShowData>
+        <ShowValues>1</ShowValues>
+        <Orientation>lines</Orientation>
+    </Graph>
+
+    <Merge>
+        <Details>
+            <Detail1>
+                <DataSet>
+                    <Query>
+                        <Config>
+                            <OffSet>0</OffSet>
+                            <Limit>0</Limit>
+                        </Config>
+
+                    </Query>
+
+                </DataSet>
+
+            </Detail1>
+
+        </Details>
+
+    </Merge>
+
+    <Label>
+        <Config>
+            <HorizontalSpacing>15</HorizontalSpacing>
+            <VerticalSpacing>0</VerticalSpacing>
+            <LabelWidth>288</LabelWidth>
+            <LabelHeight>72</LabelHeight>
+            <LeftMargin>11</LeftMargin>
+            <TopMargin>36</TopMargin>
+            <Columns>2</Columns>
+            <Rows>10</Rows>
+            <PageFormat>A3</PageFormat>
+            <LineSpacing>14</LineSpacing>
+        </Config>
+
+    </Label>
+
+</Report>

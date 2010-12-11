@@ -1,0 +1,3 @@
+<?
+include 'browse.php';
+?>

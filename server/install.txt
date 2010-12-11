@@ -1,0 +1,14 @@
+Etapas necessárias para instalar o agataserver:
+
+1. Copiar os arquivos agata-server.php e agata-server.conf.php para uma pasta acessível no apache, apache que deve ter suporte a php.
+
+2. Criar a base agataserver utilizando um servidor com suporte a postgres. (execute o arquivo server.sql)
+
+3. configurar o agata-server.conf.php com as definições de sua nova base.
+
+4. No agata client, é importante lembrar de no agata.ini apontar para o seu servidor onde esta o arquivo agata-server.php ([general]   AuthenticateServer  = )
+
+Atenção:
+
+O sistema utiliza bloqueio total, ao fazer estes passos e logar no sistema, nenhuma tela irá aparecer, é necessário que as tabelas sejam adicionadas para o seu usuário e projeto uma a uma utilizando a interface de administração de usuários, somente disponível para administradores do agataserver.
+

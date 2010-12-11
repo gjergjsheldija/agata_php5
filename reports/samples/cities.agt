@@ -1,0 +1,144 @@
+<?xml version="1.0"?>
+<Report>
+    <Version>7.4</Version>
+    <Properties>
+        <Description>Cities List</Description>
+        <Layout>default-HTML</Layout>
+        <Format>html</Format>
+    </Properties>
+
+    <Header>
+        <Align>center</Align>
+    </Header>
+
+    <Footer>
+        <Align>center</Align>
+    </Footer>
+
+    <Parameters>
+        <code1>
+            <value>1</value>
+        </code1>
+
+        <code2>
+            <value>4</value>
+        </code2>
+
+    </Parameters>
+
+    <DataSet>
+        <DataSource>
+            <Name>sqlite</Name>
+        </DataSource>
+
+        <Query>
+            <Select>city.code as "City Code", city.description as "City Description", city.ref_state as "State Code", state.description</Select>
+            <From>city,state</From>
+            <Where>city.ref_state = state.code</Where>
+            <Config>
+                <OffSet>0</OffSet>
+                <Limit>0</Limit>
+            </Config>
+
+            <AgataWeb>
+                <Select>city.code as "City Code",city.description as "City Description",city.ref_state as "State Code",state.description</Select>
+                <OrderBy>city.code</OrderBy>
+                <Where></Where>
+            </AgataWeb>
+
+        </Query>
+
+        <Groups>
+            <Config>
+                <ShowDetail>1</ShowDetail>
+                <ShowNumber>1</ShowNumber>
+                <ShowIndent>1</ShowIndent>
+            </Config>
+
+        </Groups>
+
+        <Fields>
+            <Column1>
+                <Chars>10</Chars>
+                <Points>20</Points>
+                <Align>left</Align>
+            </Column1>
+
+            <Column2>
+                <Chars>40</Chars>
+                <Points>100</Points>
+                <Align>left</Align>
+                <Function>/strings/a_upper.fun</Function>
+            </Column2>
+
+            <Column3>
+                <Chars>10</Chars>
+                <Points>22</Points>
+                <Align>center</Align>
+            </Column3>
+
+            <Column4>
+                <Chars>40</Chars>
+                <Points>100</Points>
+                <Align>left</Align>
+            </Column4>
+
+        </Fields>
+
+    </DataSet>
+
+    <PageSetup>
+        <Format>A4</Format>
+        <Orientation>landscape</Orientation>
+        <LeftMargin>20</LeftMargin>
+        <RightMargin>20</RightMargin>
+        <TopMargin>40</TopMargin>
+        <BottomMargin>0</BottomMargin>
+        <LineSpace>14</LineSpace>
+    </PageSetup>
+
+    <Graph>
+        <Width>480</Width>
+        <Height>268</Height>
+        <ShowData>1</ShowData>
+        <ShowValues>1</ShowValues>
+        <Orientation>columns</Orientation>
+    </Graph>
+
+    <Merge>
+        <Details>
+            <Detail1>
+                <DataSet>
+                    <Query>
+                        <Config>
+                            <OffSet>0</OffSet>
+                            <Limit>0</Limit>
+                        </Config>
+
+                    </Query>
+
+                </DataSet>
+
+            </Detail1>
+
+        </Details>
+
+    </Merge>
+
+    <Label>
+        <Config>
+            <HorizontalSpacing>15</HorizontalSpacing>
+            <VerticalSpacing>0</VerticalSpacing>
+            <LabelWidth>288</LabelWidth>
+            <LabelHeight>72</LabelHeight>
+            <LeftMargin>11</LeftMargin>
+            <TopMargin>36</TopMargin>
+            <Columns>2</Columns>
+            <Rows>10</Rows>
+            <PageFormat>A3</PageFormat>
+            <LineSpacing>14</LineSpacing>
+        </Config>
+
+    </Label>
+
+</Report>

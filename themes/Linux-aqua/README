@@ -1,0 +1,20 @@
+Hi all,
+
+This is my first gtk theme.  It's a poor way to emulate Mac OSX UI.
+This theme probably can be improved with rounded buttons, if someone
+makes a better pixmap engine with anti-aliases, alpha binding, and static
+positioning of smaller pixmap.  If no one write it, you can hope I
+will find the time to do it.   I hope someone would do it before I
+figure out gtk.
+
+Since some of the pictures are captured from Apple Mac OSX screenshot,
+I am not qualify to say that all data goes under GPL License.  Ask
+lawyers near you.
+
+Special thanks to frantzdb, who created original gtk-x theme.  He did a
+good job copy Mac OSX's scroller, and I copied his scroller.
+
+Apple, please don't sue me.
+
+regards,
+AADA (eric@simweb.com)

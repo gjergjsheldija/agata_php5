@@ -1,0 +1,25 @@
+style "default"
+{
+  font = "-adobe-helvetica-medium-r-normal-*-10-*-*-*-p-*-iso8859-1"
+
+  fg[NORMAL]        = "#000000" 
+  fg[PRELIGHT]      = "#000000" 
+  fg[ACTIVE]        = "#000000" 
+  fg[SELECTED]      = "#000000" 
+  fg[INSENSITIVE]   = "#e6e6e6"
+ 
+  bg[NORMAL]        = "#e6e6e6" 
+  bg[PRELIGHT]      = "#b4c6de"
+  bg[ACTIVE]        = "#bdbebd"
+  bg[SELECTED]      = "#e6e6e6"
+  bg[INSENSITIVE]   = "#e6e6e6"
+
+  base[NORMAL]      = "#bdbebd"
+  base[PRELIGHT]    = "#bdbebd"
+  base[ACTIVE]      = "#bdbebd"
+  base[SELECTED]    = "#bdbebd"
+  base[INSENSITIVE] = "#e6e6e6"
+}
+
+class "GtkWidget" style "default"
+

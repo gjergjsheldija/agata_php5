@@ -1,0 +1,484 @@
+<?xml version="1.0"?>
+<report>
+    <description></description>
+    <datasource>
+        <name>Samples</name>
+    </datasource>
+
+    <header>
+        <body></body>
+        <align>center</align>
+    </header>
+
+    <footer>
+        <body></body>
+        <align>center</align>
+    </footer>
+
+    <preferences>
+        <showgroup></showgroup>
+        <showdetail>1</showdetail>
+        <showlabel>1</showlabel>
+        <shownumber>1</shownumber>
+        <showindent></showindent>
+        <distinct>1</distinct>
+        <pagesetup></pagesetup>
+    </preferences>
+
+    <parameters>
+        <numero_orcamento>
+            <value>000356</value>
+        </numero_orcamento>
+
+    </parameters>
+
+    <query>
+        <select>number, creation_date, maturity_date, delivery, limit_date, seller, document, store, payment, name, customer_address, customer_number, customer_state, customer_district, customer_postal, customer_ddd, customer_phone, customer_fax, customer_store, seller_ddd, seller_phone, seller_name, seller_code, payment_descr, contact, fatura, delivery_value, expiration_date</select>
+        <from>budget</from>
+        <where></where>
+        <groupby></groupby>
+        <orderby></orderby>
+    </query>
+
+    <adjustments>
+        <column1>
+            <chars>30</chars>
+            <points>100</points>
+            <align>left</align>
+            <mask></mask>
+            <function></function>
+            <cross></cross>
+        </column1>
+
+        <column2>
+            <chars>30</chars>
+            <points>100</points>
+            <align>left</align>
+            <mask></mask>
+            <function></function>
+            <cross></cross>
+        </column2>
+
+        <column3>
+            <chars>30</chars>
+            <points>100</points>
+            <align>left</align>
+            <mask></mask>
+            <function></function>
+            <cross></cross>
+        </column3>
+
+        <column4>
+            <chars>30</chars>
+            <points>100</points>
+            <align>left</align>
+            <mask></mask>
+            <function></function>
+            <cross></cross>
+        </column4>
+
+        <column5>
+            <chars>30</chars>
+            <points>100</points>
+            <align>left</align>
+            <mask></mask>
+            <function></function>
+            <cross></cross>
+        </column5>
+
+        <column6>
+            <chars>30</chars>
+            <points>100</points>
+            <align>left</align>
+            <mask></mask>
+            <function></function>
+            <cross></cross>
+        </column6>
+
+        <column7>
+            <chars>30</chars>
+            <points>100</points>
+            <align>left</align>
+            <mask></mask>
+            <function></function>
+            <cross></cross>
+        </column7>
+
+        <column8>
+            <chars>30</chars>
+            <points>100</points>
+            <align>left</align>
+            <mask></mask>
+            <function></function>
+            <cross></cross>
+        </column8>
+
+        <column9>
+            <chars>30</chars>
+            <points>100</points>
+            <align>left</align>
+            <mask></mask>
+            <function></function>
+            <cross></cross>
+        </column9>
+
+        <column10>
+            <chars>30</chars>
+            <points>100</points>
+            <align>left</align>
+            <mask></mask>
+            <function></function>
+            <cross></cross>
+        </column10>
+
+        <column11>
+            <chars>30</chars>
+            <points>100</points>
+            <align>left</align>
+            <mask></mask>
+            <function></function>
+            <cross></cross>
+        </column11>
+
+        <column12>
+            <chars>30</chars>
+            <points>100</points>
+            <align>left</align>
+            <mask></mask>
+            <function></function>
+            <cross></cross>
+        </column12>
+
+        <column13>
+            <chars>30</chars>
+            <points>100</points>
+            <align>left</align>
+            <mask></mask>
+            <function></function>
+            <cross></cross>
+        </column13>
+
+        <column14>
+            <chars>30</chars>
+            <points>100</points>
+            <align>left</align>
+            <mask></mask>
+            <function></function>
+            <cross></cross>
+        </column14>
+
+        <column15>
+            <chars>30</chars>
+            <points>100</points>
+            <align>left</align>
+            <mask></mask>
+            <function></function>
+            <cross></cross>
+        </column15>
+
+        <column16>
+            <chars>30</chars>
+            <points>100</points>
+            <align>left</align>
+            <mask></mask>
+            <function></function>
+            <cross></cross>
+        </column16>
+
+        <column17>
+            <chars>30</chars>
+            <points>100</points>
+            <align>left</align>
+            <mask></mask>
+            <function></function>
+            <cross></cross>
+        </column17>
+
+        <column18>
+            <chars>30</chars>
+            <points>100</points>
+            <align>left</align>
+            <mask></mask>
+            <function></function>
+            <cross></cross>
+        </column18>
+
+        <column19>
+            <chars>30</chars>
+            <points>100</points>
+            <align>left</align>
+            <mask></mask>
+            <function></function>
+            <cross></cross>
+        </column19>
+
+        <column20>
+            <chars>30</chars>
+            <points>100</points>
+            <align>left</align>
+            <mask></mask>
+            <function></function>
+            <cross></cross>
+        </column20>
+
+        <column21>
+            <chars>30</chars>
+            <points>100</points>
+            <align>left</align>
+            <mask></mask>
+            <function></function>
+            <cross></cross>
+        </column21>
+
+        <column22>
+            <chars>30</chars>
+            <points>100</points>
+            <align>left</align>
+            <mask></mask>
+            <function></function>
+            <cross></cross>
+        </column22>
+
+        <column23>
+            <chars>30</chars>
+            <points>100</points>
+            <align>left</align>
+            <mask></mask>
+            <function></function>
+            <cross></cross>
+        </column23>
+
+        <column24>
+            <chars>30</chars>
+            <points>100</points>
+            <align>left</align>
+            <mask></mask>
+            <function></function>
+            <cross></cross>
+        </column24>
+
+        <column25>
+            <chars>30</chars>
+            <points>100</points>
+            <align>left</align>
+            <mask></mask>
+            <function></function>
+            <cross></cross>
+        </column25>
+
+        <column26>
+            <chars>30</chars>
+            <points>100</points>
+            <align>left</align>
+            <mask></mask>
+            <function></function>
+            <cross></cross>
+        </column26>
+
+        <column27>
+            <chars>30</chars>
+            <points>100</points>
+            <align>left</align>
+            <mask></mask>
+            <function></function>
+            <cross></cross>
+        </column27>
+
+        <column28>
+            <chars>30</chars>
+            <points>100</points>
+            <align>left</align>
+            <mask></mask>
+            <function></function>
+            <cross></cross>
+        </column28>
+
+    </adjustments>
+
+    <graph>
+        <title></title>
+        <titlex></titlex>
+        <titley></titley>
+        <width>480</width>
+        <height>268</height>
+        <description></description>
+        <showdata></showdata>
+        <showvalues></showvalues>
+        <orientation>columns</orientation>
+    </graph>
+
+    <merge>
+        <header>#tab002#image images/carvalhaes.jpg
+#tab480#setcfa6a6a6#setftb26
+#rota030 Sample
+#setcf010101
+
+#setfan12
+#rect*380*000*434*040*2*#FFFFFF*#000000
+#rect*380*000*164*040*2*#FFFFFF*#000000
+A    #tab380 VENDEDOR:   #tab550 $var22     #setfab12
+$var10   #setfan12    #tab380 FONE REPRESENTANTE:    #tab550 $var21
+$var11
+$var12  $var13  $var15
+($var16)  $var17
+$var25
+</header>
+
+        <groupheader>#setfab16#setcf010101
+#tab340 ORÇAMENTO N$supo $var1 #setfab10 #tab600 DATA EMISSÃO:  $var2 #setfab12
+$line2
+#rectr*014*004*800*026*1*#000000*#000000
+#rectr*010*000*800*026*1*#C0C0C0*#000000
+         #tab006 ITEM  #tab040 CÓDIGO      #tab122 DESCRIÇÃO  #tab380 MARCA        #tab486 UNID.      #tab526 QUANT.     #tab584 PR. UNIT.  #tab652 IPI.       #tab680 TOT. C/IPI ENTREGA
+$line2
+#setfan12
+
+#tab240#bgimage /agata/images/gnome.png</groupheader>
+
+        <detail>#tab010$subfield1 $subfield2 $subfield3 $subfield4 $subfield5 $subfield6 $subfield7 $subfield8 $subfield9 $subfield10</detail>
+        <groupfooter>
+#setfab14#setcfffffff
+#rectr*010*000*800*026*1*#574d89*#000000
+#tab108Sub Total #tab680 $subfield9_sum
+
+</groupfooter>
+        <footer>#setcf010101
+#setfab12CONDIÇÕES GERAIS DE VENDA
+#setfan12PAGAMENTO: $var24
+FRETE:  $var27
+VALIDADE DA PROPOSTA:  $var28  DIAS
+FATURAMENTO MÍNIMO: R\$ $var7 ($var26)
+$var25
+</footer>
+
+        <adjustments>
+            <column1>
+                <chars>30</chars>
+                <points>40</points>
+                <align>left</align>
+                <mask></mask>
+                <function></function>
+                <cross></cross>
+            </column1>
+
+            <column2>
+                <chars>30</chars>
+                <points>60</points>
+                <align>left</align>
+                <mask></mask>
+                <function></function>
+                <cross></cross>
+            </column2>
+
+            <column3>
+                <chars>30</chars>
+                <points>280</points>
+                <align>left</align>
+                <mask></mask>
+                <function></function>
+                <cross></cross>
+            </column3>
+
+            <column4>
+                <chars>30</chars>
+                <points>80</points>
+                <align>center</align>
+                <mask></mask>
+                <function></function>
+                <cross></cross>
+            </column4>
+
+            <column5>
+                <chars>30</chars>
+                <points>60</points>
+                <align>left</align>
+                <mask></mask>
+                <function></function>
+                <cross></cross>
+            </column5>
+
+            <column6>
+                <chars>30</chars>
+                <points>60</points>
+                <align>left</align>
+                <mask></mask>
+                <function></function>
+                <cross></cross>
+            </column6>
+
+            <column7>
+                <chars>30</chars>
+                <points>60</points>
+                <align>left</align>
+                <mask></mask>
+                <function></function>
+                <cross></cross>
+            </column7>
+
+            <column8>
+                <chars>30</chars>
+                <points>40</points>
+                <align>left</align>
+                <mask></mask>
+                <function></function>
+                <cross></cross>
+            </column8>
+
+            <column9>
+                <chars>30</chars>
+                <points>70</points>
+                <align>left</align>
+                <mask>#R$-9.999,99</mask>
+                <function></function>
+                <cross></cross>
+            </column9>
+
+            <column10>
+                <chars>30</chars>
+                <points>50</points>
+                <align>left</align>
+                <mask></mask>
+                <function></function>
+                <cross></cross>
+            </column10>
+
+        </adjustments>
+
+        <pagesetup>
+            <format>A4</format>
+            <orientation>landscape</orientation>
+            <marginleft>0</marginleft>
+            <marginright>0</marginright>
+            <margintop>10</margintop>
+            <marginbottom>100</marginbottom>
+            <linespace>14</linespace>
+        </pagesetup>
+
+        <query>
+            <select> ITEM, PRODUCT, DESCR, MARCA, UNITY, QUANTITY, UNITY_VALUE, FEE, VALUE, DELIVERY_DAYS</select>
+            <from>BUDGET_ITEMS</from>
+            <where>BUDGET_NUMBER='$var1'</where>
+            <groupby></groupby>
+            <orderby></orderby>
+        </query>
+
+    </merge>
+
+    <label>
+        <body></body>
+        <config>
+            <horizontal_spacing></horizontal_spacing>
+            <vertical_spacing></vertical_spacing>
+            <label_width></label_width>
+            <label_height></label_height>
+            <left_margin></left_margin>
+            <top_margin></top_margin>
+            <label_cols></label_cols>
+            <label_rows></label_rows>
+            <page_format></page_format>
+            <line_spacing></line_spacing>
+        </config>
+
+    </label>
+
+</report>

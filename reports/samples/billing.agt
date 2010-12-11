@@ -1,0 +1,260 @@
+<?xml version="1.0"?>
+<report>
+    <description></description>
+    <datasource>
+        <name>Samples</name>
+    </datasource>
+
+    <header>
+        <body></body>
+        <align>center</align>
+    </header>
+
+    <footer>
+        <body></body>
+        <align>center</align>
+    </footer>
+
+    <preferences>
+        <showgroup></showgroup>
+        <showdetail>1</showdetail>
+        <showlabel></showlabel>
+        <shownumber>1</shownumber>
+        <showindent>1</showindent>
+        <distinct></distinct>
+        <pagesetup></pagesetup>
+    </preferences>
+
+    <query>
+        <select>billing.id as "Bill ID", billing.value as "Bill Value", billing.document_no as "Document", billing.maturity_date as "Maturity Date", customer.name as "Customer Name", customer.address as "Customer Address", city.description as "City Description", state.code as "State Code", city.postal_code as "Postal Code", customer.document as "Document", customer.register as "Register", billing.value as "Bill Value"</select>
+        <from>billing,customer,city,state</from>
+        <where>customer.ref_city = city.code and city.ref_state = state.code and billing.ref_customer = customer.code</where>
+        <groupby></groupby>
+        <orderby></orderby>
+    </query>
+
+    <adjustments>
+        <column1>
+            <chars>30</chars>
+            <points>60</points>
+            <align>left</align>
+            <mask></mask>
+            <function></function>
+            <cross></cross>
+        </column1>
+
+        <column2>
+            <chars>30</chars>
+            <points>60</points>
+            <align>left</align>
+            <mask></mask>
+            <function></function>
+            <cross></cross>
+        </column2>
+
+        <column3>
+            <chars>30</chars>
+            <points>60</points>
+            <align>left</align>
+            <mask></mask>
+            <function></function>
+            <cross></cross>
+        </column3>
+
+        <column4>
+            <chars>30</chars>
+            <points>60</points>
+            <align>left</align>
+            <mask></mask>
+            <function></function>
+            <cross></cross>
+        </column4>
+
+        <column5>
+            <chars>30</chars>
+            <points>60</points>
+            <align>left</align>
+            <mask></mask>
+            <function></function>
+            <cross></cross>
+        </column5>
+
+        <column6>
+            <chars>30</chars>
+            <points>60</points>
+            <align>left</align>
+            <mask></mask>
+            <function></function>
+            <cross></cross>
+        </column6>
+
+        <column7>
+            <chars>30</chars>
+            <points>60</points>
+            <align>left</align>
+            <mask></mask>
+            <function></function>
+            <cross></cross>
+        </column7>
+
+        <column8>
+            <chars>30</chars>
+            <points>60</points>
+            <align>left</align>
+            <mask></mask>
+            <function></function>
+            <cross></cross>
+        </column8>
+
+        <column9>
+            <chars>30</chars>
+            <points>60</points>
+            <align>left</align>
+            <mask></mask>
+            <function></function>
+            <cross></cross>
+        </column9>
+
+        <column10>
+            <chars>30</chars>
+            <points>60</points>
+            <align>left</align>
+            <mask></mask>
+            <function></function>
+            <cross></cross>
+        </column10>
+
+        <column11>
+            <chars>30</chars>
+            <points>60</points>
+            <align>left</align>
+            <mask></mask>
+            <function></function>
+            <cross></cross>
+        </column11>
+
+        <column12>
+            <chars>30</chars>
+            <points>60</points>
+            <align>left</align>
+            <mask></mask>
+            <function>/numbers/a_to_palavra.fun</function>
+            <cross></cross>
+        </column12>
+
+    </adjustments>
+
+    <graph>
+        <title></title>
+        <titlex></titlex>
+        <titley></titley>
+        <width>480</width>
+        <height>268</height>
+        <description></description>
+        <showdata>1</showdata>
+        <showvalues>1</showvalues>
+        <orientation>columns</orientation>
+    </graph>
+
+    <merge>
+        <header>
+#rectr*010*000*320*100*1*#FFFFFF*#000000
+#rectr*340*000*240*100*1*#FFFFFF*#000000
+#rectr*010*114*190*250*1*#FFFFFF*#000000
+#rectr*208*114*300*044*1*#FFFFFF*#000000
+#rectr*208*164*300*100*1*#FFFFFF*#000000
+#rectr*208*272*300*054*1*#dddddd*#000000
+#rect*514*114*060*220*1*#FFFFFF*#000000
+#sety018
+#tab022#bgimage /agata/images/logo_fat.jpg
+#setfab18
+#sety154#tab208#lineH300   #sety140#tab268#lineH172
+#sety128#tab268#lineV044   #sety128#tab360#lineV044  #sety128#tab440#lineV044
+#sety020
+#tab342 #setfab12 FATURA
+#setspace008
+#tab344 #setfan08 Estrada Cândido Pinheiro de Barcelos, 2332
+#tab344 #setfan08 Distrito Industrial - RS Cep 94836-010
+#tab344 #setfan08 Alvorada - RS
+#tab344 #setfan08 CNPJ 01.530.501/0001-42
+#tab344 #setfan08 Inscrição Estadual 165/0109366
+
+#tab344 #setfan08 Data da Emissão:  $day de $monthname de $year 
+
+#sety128#tab218FATURA  #sety124#tab278Fatura/Duplicata  #sety124#tab380Duplicata       #sety130#tab448Vencimento
+                       #sety138#tab292Valor R$          #sety138#tab364Número de Ordem
+
+#sety130#tab520Para uso
+#sety140#tab520da instituição
+#sety150#tab520Financeira
+
+#sety154#tab218 $var1 #tab292 $var2 #tab380 $var3  #tab450 $var4
+#setfan09
+#sety188#tab220Nome do Sacado:  #sety194 #tab300 #frameNL200$var5 
+#sety202#tab220Endereço:  $var6 
+#sety216#tab220Município:  $var7   - Estado:  $var8 
+#sety230#tab220CEP:  $var9 
+#sety244#tab220CNPJ:  $var10   - Inscr. Est:  $var11 
+
+#sety286#tab268#lineV054
+#sety290#tab220Valor por
+#sety304#tab220Extenso
+#setspace016
+#sety290#tab280#frameNL200$var12 
+#setfan06
+#sety336#tab210DEVEM A IMPORTÂNCIA DESTA DUPLICATA DE VENDA MERCANTIL PAGÁVEL A CARVALHAES
+#sety344#tab210PRODUTOS PARA LABORATÓRIO LTDA, OU À SUA ORDEM NA PRAÇA E VENCIMENTO ACIMA INDICADOS
+#setfan08
+#sety360#tab210Em ____/____/2005  #tab360 _______________________________
+#setfan06
+#sety368#tab228Data do aceite     #tab400 Assinatura do Sacado
+
+
+#setfan08
+#sety360#tab050#rotaUCARVALHAES PRODUTOS PARA LABORATÓRIO LTDA.
+#sety128#tab160#lineV250
+#sety300#tab180#rotaUASSINATURA DO EMITENTE
+#setspace014</header>
+        <groupheader></groupheader>
+        <detail></detail>
+        <groupfooter></groupfooter>
+        <footer></footer>
+        <adjustments></adjustments>
+        <pagesetup>
+            <format>A4</format>
+            <orientation>portrait</orientation>
+            <marginleft>0</marginleft>
+            <marginright>0</marginright>
+            <margintop>0</margintop>
+            <marginbottom>0</marginbottom>
+            <linespace>8</linespace>
+        </pagesetup>
+
+        <query>
+            <select></select>
+            <from></from>
+            <where></where>
+            <groupby></groupby>
+            <orderby></orderby>
+        </query>
+
+    </merge>
+
+    <label>
+        <body></body>
+        <config>
+            <horizontal_spacing>15</horizontal_spacing>
+            <vertical_spacing>0</vertical_spacing>
+            <label_width>288</label_width>
+            <label_height>72</label_height>
+            <left_margin>11</left_margin>
+            <top_margin>36</top_margin>
+            <label_cols>2</label_cols>
+            <label_rows>10</label_rows>
+            <page_format>A3</page_format>
+            <line_spacing>14</line_spacing>
+        </config>
+
+    </label>
+
+</report>

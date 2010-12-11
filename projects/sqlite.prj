@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<project>
+    <desc></desc>
+    <author>Jamiel Spezia</author>
+    <date>2006-05-08</date>
+    <host>localhost</host>
+    <name>samples.db</name>
+    <user></user>
+    <pass></pass>
+    <type>native-sqlite</type>
+    <dict>Samples</dict>
+</project>
+

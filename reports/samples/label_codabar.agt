@@ -1,0 +1,275 @@
+<?xml version="1.0"?>
+<report>
+    <description>Labels with barcode</description>
+    <datasource>
+        <name>Samples</name>
+    </datasource>
+
+    <header>
+        <body></body>
+        <align>center</align>
+    </header>
+
+    <footer>
+        <body></body>
+        <align>center</align>
+    </footer>
+
+    <preferences>
+        <showgroup></showgroup>
+        <showdetail>1</showdetail>
+        <showlabel></showlabel>
+        <shownumber>1</shownumber>
+        <showindent>1</showindent>
+        <distinct></distinct>
+        <pagesetup></pagesetup>
+    </preferences>
+
+    <query>
+        <select>customer.code as "Customer Code", customer.name as "Customer Name", customer.phone as "Customer Phone", customer.address as "Customer Address", customer.age as "Customer Age", customer.photo as "Customer Photo", customer.ref_city as "Customer City Code", city.description as "City Description", state.code as "State Code", state.description as "State Description"</select>
+        <from>customer,city,state</from>
+        <where>city.ref_state = state.code and customer.ref_city = city.code</where>
+        <groupby></groupby>
+        <orderby>customer.name asc</orderby>
+    </query>
+
+    <adjustments>
+        <column1>
+            <chars>30</chars>
+            <points>100</points>
+            <align>left</align>
+            <mask></mask>
+            <function></function>
+            <cross></cross>
+        </column1>
+
+        <column2>
+            <chars>30</chars>
+            <points>100</points>
+            <align>left</align>
+            <mask></mask>
+            <function>/strings/a_upper.fun</function>
+            <cross></cross>
+        </column2>
+
+        <column3>
+            <chars>30</chars>
+            <points>100</points>
+            <align>left</align>
+            <mask></mask>
+            <function></function>
+            <cross></cross>
+        </column3>
+
+        <column4>
+            <chars>30</chars>
+            <points>100</points>
+            <align>left</align>
+            <mask></mask>
+            <function></function>
+            <cross></cross>
+        </column4>
+
+        <column5>
+            <chars>30</chars>
+            <points>100</points>
+            <align>left</align>
+            <mask></mask>
+            <function></function>
+            <cross></cross>
+        </column5>
+
+        <column6>
+            <chars>30</chars>
+            <points>100</points>
+            <align>left</align>
+            <mask></mask>
+            <function></function>
+            <cross></cross>
+        </column6>
+
+        <column7>
+            <chars>30</chars>
+            <points>100</points>
+            <align>left</align>
+            <mask></mask>
+            <function></function>
+            <cross></cross>
+        </column7>
+
+        <column8>
+            <chars>30</chars>
+            <points>100</points>
+            <align>left</align>
+            <mask></mask>
+            <function></function>
+            <cross></cross>
+        </column8>
+
+        <column9>
+            <chars>30</chars>
+            <points>100</points>
+            <align>left</align>
+            <mask></mask>
+            <function></function>
+            <cross></cross>
+        </column9>
+
+        <column10>
+            <chars>30</chars>
+            <points>100</points>
+            <align>left</align>
+            <mask></mask>
+            <function></function>
+            <cross></cross>
+        </column10>
+
+    </adjustments>
+
+    <graph>
+        <title></title>
+        <titlex></titlex>
+        <titley></titley>
+        <width>480</width>
+        <height>268</height>
+        <description></description>
+        <showdata>1</showdata>
+        <showvalues>1</showvalues>
+        <orientation>lines</orientation>
+    </graph>
+
+    <merge>
+        <header>
+#setftb18
+#setcf010101
+#tab240Credit Company Letter
+
+
+#setfcn16
+#setcf700c01
+#rect*060*000*280*072*1*#fffe8f*#010101
+#tab060 Name: $var2
+
+#tab060 Address: $var3 
+#tab060 State: $var9 
+#tab060 City: $var8.
+
+
+
+#setftn14
+#setcf000034
+#tab060 We recently wrote to a number of Internet customers regarding an outstanding balance on their account. Credit Company was acting under instruction of its client, Internet Provider who provided on a wholesale basis, internet ports to Internet.
+
+#tab060 Due to a significant number of enquiries regarding the previous management of these accounts, we thought it appropriate to write to you again, and advise that we have now returned all Internet accounts back to our client and Credit Company is no longer acting in respect of this matter.  
+
+#tab060 Any information provided or payments made by you have been passed on to our client.  Any future enquiries should be directed to "Paul Ney Green more", Internet on 0123 456 7890.
+
+#tab060 If you would like to make a payment to clear any undisputed amount, we would be pleased to accept this within the next seven days, and assure you that all monies received will be promptly remitted to our client.  
+
+#tab060 Please accept our sincere apologies for any inconvenience this may have caused.  
+</header>
+        <groupheader>#rect*062*002*480*020*1*#000000*#000000
+#rect*060*000*480*020*1*#c5c6bd*#010101
+#tab070Code    #tab120Description #tab320Amount  #tab420Date    #tab480Price
+</groupheader>
+
+        <detail> #tab070$subfield1  #tab120$subfield2 #tab340$subfield3  #tab400$subfield4  #tab480$subfield5 </detail>
+        <groupfooter>
+#setcf6a1000
+#rect*060*000*480*020*1*#e5f3ff*#010101
+#tab120Sumarization #tab480$subfield5_sum</groupfooter>
+        <footer>#setcf010000
+#setfti14
+
+#tab460 Yours sincerely 
+#tab460 Credit Company</footer>
+
+        <adjustments>
+            <column1>
+                <chars>30</chars>
+                <points>100</points>
+                <align>left</align>
+                <mask></mask>
+                <function></function>
+                <cross></cross>
+            </column1>
+
+            <column2>
+                <chars>30</chars>
+                <points>100</points>
+                <align>left</align>
+                <mask></mask>
+                <function></function>
+                <cross></cross>
+            </column2>
+
+            <column3>
+                <chars>30</chars>
+                <points>100</points>
+                <align>left</align>
+                <mask></mask>
+                <function></function>
+                <cross></cross>
+            </column3>
+
+            <column4>
+                <chars>30</chars>
+                <points>100</points>
+                <align>left</align>
+                <mask></mask>
+                <function></function>
+                <cross></cross>
+            </column4>
+
+            <column5>
+                <chars>30</chars>
+                <points>100</points>
+                <align>left</align>
+                <mask></mask>
+                <function></function>
+                <cross></cross>
+            </column5>
+
+        </adjustments>
+
+        <pagesetup>
+            <format>A4</format>
+            <orientation>portrait</orientation>
+            <marginleft>0</marginleft>
+            <marginright>0</marginright>
+            <margintop>0</margintop>
+            <marginbottom>0</marginbottom>
+            <linespace>14</linespace>
+        </pagesetup>
+
+        <query>
+            <select>product.code as "Product Code", product.description as "Product Description", sales.amount as "Amount", sales.date as "Date", sales.price as "Price"</select>
+            <from>sales,product</from>
+            <where>sales.ref_product = product.code and sales.ref_customer  = $var1</where>
+            <groupby></groupby>
+            <orderby></orderby>
+        </query>
+
+    </merge>
+
+    <label>
+        <body>#barcode*$var1*20*50*1
+$var1 - $var2 
+</body>
+
+        <config>
+            <horizontal_spacing>15</horizontal_spacing>
+            <vertical_spacing>0</vertical_spacing>
+            <label_width>200</label_width>
+            <label_height>72</label_height>
+            <left_margin>11</left_margin>
+            <top_margin>36</top_margin>
+            <label_cols>3</label_cols>
+            <label_rows>6</label_rows>
+            <page_format>Automatic</page_format>
+            <line_spacing>14</line_spacing>
+        </config>
+
+    </label>
+
+</report>

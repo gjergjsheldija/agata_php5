@@ -1,0 +1,306 @@
+<?xml version="1.0"?>
+<Report>
+    <Version>7.4</Version>
+    <Properties>
+        <Description>Customers List, letter and labels.</Description>
+        <Layout>default-HTML</Layout>
+        <Format>html</Format>
+    </Properties>
+
+    <Header>
+        <Align>center</Align>
+    </Header>
+
+    <Footer>
+        <Align>center</Align>
+    </Footer>
+
+    <Parameters>
+        <city>
+            <mask>999</mask>
+            <value>1</value>
+        </city>
+
+    </Parameters>
+
+    <DataSet>
+        <DataSource>
+            <Name>sqlite</Name>
+        </DataSource>
+
+        <Query>
+            <Select>customer.code as "Customer Code", customer.name as "Customer Name", customer.phone as "Customer Phone", customer.address as "Customer Address", customer.age as "Customer Age", customer.photo as "Customer Photo", customer.ref_city as "Customer City Code", city.description as "City Description", state.code as "State Code", state.description as "State Description"</Select>
+            <From>customer,city,state</From>
+            <Where>city.ref_state = state.code and customer.ref_city = city.code and city.code  =$city</Where>
+            <OrderBy>customer.name asc</OrderBy>
+            <Config>
+                <OffSet>0</OffSet>
+                <Limit>0</Limit>
+            </Config>
+
+            <AgataWeb>
+                <Select>customer.code as "Customer Code",customer.name as "Customer Name",customer.phone as "Customer Phone",customer.address as "Customer Address",customer.age as "Customer Age",customer.photo as "Customer Photo",customer.ref_city as "Customer City Code",city.description as "City Description",state.code as "State Code",state.description as "State Description"</Select>
+                <Where></Where>
+            </AgataWeb>
+
+        </Query>
+
+        <Groups>
+            <Config>
+                <ShowDetail>1</ShowDetail>
+                <ShowNumber>1</ShowNumber>
+                <ShowIndent>1</ShowIndent>
+            </Config>
+
+        </Groups>
+
+        <Fields>
+            <Column1>
+                <Chars>30</Chars>
+                <Points>30</Points>
+                <Align>left</Align>
+                <Conditional>if "/contrib/a_customer_age.fun"  = "20" then fontface="Arial-B-20", fontcolor="#f30006", bgcolor="#FFFFFF";if "/contrib/a_customer_age.fun"  = "24" then fontface="Arial-I-22", fontcolor="#14006c", bgcolor="#FFFFFF";if "/contrib/a_customer_age.fun"  = "17" then fontface="Arial-B-17", fontcolor="#a21195", bgcolor="#FFFFFF";if "/contrib/a_customer_age.fun"  = "14" then fontface="Arial-U-30", fontcolor="#7af1df", bgcolor="#FFFFFF";</Conditional>
+            </Column1>
+
+            <Column2>
+                <Chars>30</Chars>
+                <Points>60</Points>
+                <Align>left</Align>
+                <Mask>@TO: ZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ</Mask>
+                <Conditional>if "/contrib/a_customer_age.fun"  = "20" then fontface="Arial-B-4", fontcolor="#ff0b00", bgcolor="#bfbfbf";</Conditional>
+            </Column2>
+
+            <Column3>
+                <Chars>20</Chars>
+                <Points>40</Points>
+                <Align>left</Align>
+                <Mask>@[99] {9999} (9999)</Mask>
+                <Conditional>if "/contrib/a_customer_age.fun" then fontface="Arial-B-12", fontcolor="#ffffff", bgcolor="#ff0000"</Conditional>
+            </Column3>
+
+            <Column4>
+                <Chars>30</Chars>
+                <Points>40</Points>
+                <Align>left</Align>
+                <Conditional>if "/contrib/a_customer_age.fun" then fontface="Arial-B-12", fontcolor="#ffffff", bgcolor="#ff0000"</Conditional>
+            </Column4>
+
+            <Column5>
+                <Chars>30</Chars>
+                <Points>30</Points>
+                <Align>left</Align>
+                <Conditional>if "/contrib/a_customer_age.fun" then fontface="Arial-B-12", fontcolor="#ffffff", bgcolor="#ff0000"</Conditional>
+            </Column5>
+
+            <Column6>
+                <Chars>30</Chars>
+                <Points>58</Points>
+                <Align>left</Align>
+                <Conditional>if "/contrib/a_customer_age.fun" then fontface="Arial-B-12", fontcolor="#ffffff", bgcolor="#ff0000"</Conditional>
+            </Column6>
+
+            <Column7>
+                <Chars>30</Chars>
+                <Points>40</Points>
+                <Align>left</Align>
+                <Conditional>if "/contrib/a_customer_age.fun" then fontface="Arial-B-12", fontcolor="#ffffff", bgcolor="#ff0000"</Conditional>
+            </Column7>
+
+            <Column8>
+                <Chars>30</Chars>
+                <Points>50</Points>
+                <Align>left</Align>
+                <Conditional>if "/contrib/a_customer_age.fun" then fontface="Arial-B-12", fontcolor="#ffffff", bgcolor="#ff0000"</Conditional>
+            </Column8>
+
+            <Column9>
+                <Chars>30</Chars>
+                <Points>20</Points>
+                <Align>left</Align>
+                <Conditional>if "/contrib/a_customer_age.fun" then fontface="Arial-B-12", fontcolor="#ffffff", bgcolor="#ff0000"</Conditional>
+            </Column9>
+
+            <Column10>
+                <Chars>30</Chars>
+                <Points>40</Points>
+                <Align>left</Align>
+                <Conditional>if "/contrib/a_customer_age.fun" then fontface="Arial-B-12", fontcolor="#ffffff", bgcolor="#ff0000"</Conditional>
+            </Column10>
+
+        </Fields>
+
+    </DataSet>
+
+    <PageSetup>
+        <Format>A3</Format>
+        <Orientation>landscape</Orientation>
+        <LeftMargin>5</LeftMargin>
+        <RightMargin>7</RightMargin>
+        <TopMargin>6</TopMargin>
+        <BottomMargin>8</BottomMargin>
+        <LineSpace>14</LineSpace>
+    </PageSetup>
+
+    <Graph>
+        <Width>480</Width>
+        <Height>268</Height>
+        <ShowData>1</ShowData>
+        <ShowValues>1</ShowValues>
+        <Orientation>lines</Orientation>
+    </Graph>
+
+    <Merge>
+        <ReportHeader>
+#setfab18
+#setcf38358d
+#tab180Credit Company Letter
+
+#tab400#setcfa6a6a6#setftb26
+#rota030 Sample
+
+#setfcb16
+#setcf700c01
+#rect*060*000*320*092*1*#fffe8f*#010101
+#tab400#bgimage $var6
+#tab060 Name: $var2     
+
+#tab060 Address: $var3 
+#tab060 State: $var9 
+#tab060 City: $var8.
+
+
+
+#tab120#bgimage /agata/images/background.png
+#setftn14#setcf000034
+#tab060 We recently wrote to a number of Internet customers regarding an outstanding balance on their account. Credit Company was acting under instruction of its client, Internet Provider who provided on a wholesale basis, internet ports to Internet.
+
+#tab060 Due to a significant number of enquiries regarding the previous management of these accounts, we thought it appropriate to write to you again, and advise that we have now returned all Internet accounts back to our client and Credit Company is no longer acting in respect of this matter.  
+
+#tab060 Any information provided or payments made by you have been passed on to our client.  Any future enquiries should be directed to "Paul Ney Green more", Internet on 0123 456 7890.
+
+#tab060 If you would like to make a payment to clear any undisputed amount, we would be pleased to accept this within the next seven days, and assure you that all monies received will be promptly remitted to our client.  
+
+#tab060 Please accept our sincere apologies for any inconvenience this may have caused.  
+
+</ReportHeader>
+        <Details>
+            <Detail1>
+                <GroupHeader>#setfan14#setcf000034
+#rect*062*002*480*020*1*#000000*#000000
+#rect*060*000*480*020*1*#c5c6bd*#010101
+#tab070Code    #tab120Description #tab320Amount  #tab420Date    #tab480Price
+
+#setfab16#setcf8e2118
+#tab040#rotaDITEMS
+#setftn14#setcf000034</GroupHeader>
+
+                <Body>#tab060#setcf010101$subfield1  $subfield2 $subfield3 $subfield4 $subfield5</Body>
+                <DataSet>
+                    <Query>
+                        <Select>product.code as "Product Code", product.description as "Product Description", sales.amount as "Amount", sales.date as "Date", sales.price as "Price"</Select>
+                        <From>sales,product</From>
+                        <Where>sales.ref_product = product.code and sales.ref_customer  = $var1</Where>
+                        <Config>
+                            <OffSet>0</OffSet>
+                            <Limit>0</Limit>
+                        </Config>
+
+                    </Query>
+
+                    <Fields>
+                        <Column1>
+                            <Chars>30</Chars>
+                            <Points>48</Points>
+                            <Align>left</Align>
+                        </Column1>
+
+                        <Column2>
+                            <Chars>30</Chars>
+                            <Points>200</Points>
+                            <Align>left</Align>
+                            <Function>/strings/a_upper.fun</Function>
+                        </Column2>
+
+                        <Column3>
+                            <Chars>30</Chars>
+                            <Points>80</Points>
+                            <Align>center</Align>
+                        </Column3>
+
+                        <Column4>
+                            <Chars>30</Chars>
+                            <Points>80</Points>
+                            <Align>center</Align>
+                            <Mask>@9999/99/99</Mask>
+                        </Column4>
+
+                        <Column5>
+                            <Chars>30</Chars>
+                            <Points>70</Points>
+                            <Align>right</Align>
+                            <Mask>#U$-9,999.99</Mask>
+                        </Column5>
+
+                    </Fields>
+
+                </DataSet>
+
+                <GroupFooter>#setcf6a1000
+
+#rect*060*000*480*020*1*#e5f3ff*#010101
+#tab120Sumarization #tab480$subfield5_sum
+</GroupFooter>
+
+            </Detail1>
+
+        </Details>
+
+        <ReportFooter>
+#sety700
+#setcf010000
+#setfti14
+
+#tab420 Yours sincerely 
+#tab420 Credit Company</ReportFooter>
+        <PageSetup>
+            <Format>A4</Format>
+            <Orientation>portrait</Orientation>
+            <LeftMargin>20</LeftMargin>
+            <RightMargin>20</RightMargin>
+            <TopMargin>40</TopMargin>
+            <BottomMargin>0</BottomMargin>
+            <LineSpace>14</LineSpace>
+        </PageSetup>
+
+    </Merge>
+
+    <Label>
+        <Body>#setfcb12
+#rect*012*000*280*068*1*#fff9c5*#000000
+#setcf010101 Code:    #setcf77121b $var1 
+#setcf010101 Name:    #setcf77121b $var2 
+#setcf010101 Address: #setcf77121b $var4 
+#setcf010101 City:    #setcf77121b $var8 - $var9 
+#rotaUsample</Body>
+
+        <Config>
+            <HorizontalSpacing>15</HorizontalSpacing>
+            <VerticalSpacing>0</VerticalSpacing>
+            <LabelWidth>288</LabelWidth>
+            <LabelHeight>72</LabelHeight>
+            <LeftMargin>11</LeftMargin>
+            <TopMargin>37</TopMargin>
+            <Columns>2</Columns>
+            <Rows>10</Rows>
+            <PageFormat>Letter</PageFormat>
+            <LineSpacing>14</LineSpacing>
+        </Config>
+
+    </Label>
+
+    <CrossTab></CrossTab>
+    <OpenOffice>
+        <Source>/agata/resources/teste.sxw</Source>
+    </OpenOffice>
+
+</Report>

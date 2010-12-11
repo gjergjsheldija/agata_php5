@@ -1,0 +1,53 @@
+# Basic Theme v0.1
+# This is the whole basic theme, just this one gtkrc file.
+# It uses components of the standard and metal theme engines
+# If you want to make more or fewer widgets look like the metal theme
+# go down to the bottom of this file and add/remove the class statements.
+# Written by T. Liebeck, based on lots of different gtkrc files but
+# primarily the one for the metal theme.
+# email: tliebeck@interkinetic.com
+
+style "default"
+{
+  font = "-b&h-helvetica-medium-r-normal-*-*-120-*-*-p-*-iso8859-1"
+
+  fg[NORMAL]      = { 0.00, 0.00, 0.20 }
+  text[NORMAL]      = { 0.00, 0.00, 0.20 }
+  bg[NORMAL]      = { 0.85, 0.85, 0.87 }
+  base[NORMAL]    = { 1.00, 1.00, 1.00 }
+
+  fg[INSENSITIVE]      = { 0.60, 0.60, 0.62 }
+  bg[INSENSITIVE]      = { 0.85, 0.85, 0.87 }
+  base[INSENSITIVE]      = { 0.85, 0.85, 0.87 }
+
+  fg[PRELIGHT]    = { 0.20, 0.40, 0.60 }
+  text[PRELIGHT]    = { 0.20, 0.40, 0.60 }
+  bg[PRELIGHT]    = { 0.60, 0.80, 1.00 }
+  base[PRELIGHT]    = { 0.60, 0.80, 1.00 }
+
+  fg[ACTIVE]      = { 0.20, 0.40, 0.60 }
+  text[ACTIVE]      = { 0.20, 0.40, 0.60 }
+  bg[ACTIVE]      = { 0.85, 0.85, 0.87 }
+  base[ACTIVE]      = { 0.85, 0.85, 0.87 }
+
+  fg[SELECTED]    = { 0.00, 0.00, 0.30 }
+  text[SELECTED]    = { 0.00, 0.00, 0.00 }
+  bg[SELECTED]    = { 0.40, 0.60, 0.80 }
+  base[SELECTED]    = { 0.40, 0.60, 0.80 }
+}
+
+style "metal"
+{
+  engine "metal"
+  {
+    thickness = 1
+  }  
+}
+
+class "GtkWidget" style "default"
+class "GtkRange" style "metal"
+class "GtkRadioButton" style "metal"
+class "GtkCheckButton" style "metal"
+class "GtkOptionMenu" style "metal"
+class "GtkArrow" style "metal"
+

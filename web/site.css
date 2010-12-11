@@ -1,0 +1,228 @@
+.toplink {
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+    font-style: normal;
+    line-height: normal;
+    color: #FFFFFF;
+    text-decoration: underline;
+    font-weight: normal
+}
+
+.menutopic {
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+    font-style: normal;
+    font-weight: bold;
+    font-size:12pt;
+    color: black;
+    text-decoration: none;
+    margin-top: 1em;
+    margin-bottom: 1em;
+    margin-left: 0.5em;
+}
+
+.linkimg:visited {
+    font-weight: bold;
+    text-decoration: none;
+    color: #969696;
+}
+
+.linkmenu {
+	font-family: Verdana, Arial, sans-serif;
+	font-style: normal;
+	font-weight: none;
+	font-size:12px;
+	color: #0c3f87;
+	text-decoration: none;
+    margin-top: 2em;
+    margin-bottom: 2em;
+    margin-left: 0.5em;
+}
+
+.linkfaq {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-style: normal;
+	font-weight: bold;
+	color: blue;
+	text-decoration: underline;
+	font-size:10pt;
+}
+
+.textosolis{
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-style: normal;
+	font-weight: bold;
+	color: #FFFFFF;
+	text-decoration: none;
+	font-size:10pt;
+}
+
+.texto {
+    font-size:12px;font-family:Verdana,Arial, sans-serif
+}
+
+.textohelp {
+    font-size:12px;
+	font-family:Verdana,Arial, sans-serif; 
+	margin-left: 0.5em;
+	margin-right: 0.5em;
+}
+
+body {
+	font-family: Verdana, arial, sans-serif, helvetica;
+	font-size: 10pt;
+}
+
+note {
+	list-style-type: none;
+	padding-left: 0.5em;
+	font-size: 10pt;
+	color: #cc3300;
+	background-color: transparent;
+	margin-top: 0;
+}
+
+code {
+	font-weight: bold;
+	font-size: 10pt;
+}
+
+.obs {
+	font-size: 7pt;
+	font-weight: bold;
+	font-family: verdana, arial, helvetica, sans-serif;
+	margin-left: 0.1em;
+	margin-right: 0.1em;
+	margin-top: 1em;
+	margin-bottom: 1em;
+	padding-left: 0.4em;
+	padding-right: 0;
+	padding-top: 0;
+	padding-bottom: 0;
+	text-indent: 0.5em;
+	color: black;
+	background-color: #dddddd;
+	border: solid;
+	border-width: 1px;
+#	border-collapse: collapse;
+        border-bottom:1px continuous #000000;
+	border-top:1px continuous #000000;
+        border-left:1px;
+	border-right:1px;
+
+}
+
+h3	{
+	font-size: 12pt;
+	font-family: verdana, arial, helvetica, sans-serif;
+	margin-left: 0.1em;
+	margin-right: 0.1em;
+	margin-top: 1em;
+	margin-bottom: 0.5em;
+	padding-left: 0;
+	padding-right: 0;
+	padding-top: 0;
+	padding-bottom: 0;
+	text-indent: 0.5em;
+	color: white;
+#	background-color: 709dcb;
+	background-color: 0099cc;
+	border: solid;
+	border-width: 2px;
+	border-color: #000000;
+}
+
+topic	{
+	font-size: 12pt;
+	font-family: verdana, arial, helvetica, sans-serif;
+	font-weight: bold;
+	margin-left: 0;
+	margin-right: 0;
+	margin-top: 1em;
+	margin-bottom: 0.5em;
+	padding-left: 0.5em;
+	padding-right: 0;
+	padding-top: 0;
+	padding-bottom: 0;
+	text-indent: 1em;
+	color: teal;
+	background-color: transparent;
+}
+
+item {
+	font-size: 8pt;
+	font-family: verdana, arial, helvetica, sans-serif;
+	font-weight: bold;
+	font-style: italic;
+	margin-left: 0;
+	margin-right: 0;
+	margin-top: 1em;
+	margin-bottom: 0.5em;
+	padding-left: 0;
+	padding-right: 0;
+	padding-top: 0;
+	padding-bottom: 0;
+	text-indent: 1em;
+	color: green;
+	background-color: transparent;
+}	
+
+table,tr,td { 
+#	margin: 0px;
+	padding: 0px;
+	border-collapse: collapse;
+	font-size:12px;
+	font-family:Verdana,Arial, sans-serif
+}
+.tabletitle { font-family: Verdana, Arial, Helvetica, sans-serif;
+	   font-style: normal;
+	   line-height: normal;
+	   color: #000000;
+	   font-weight: normal;
+       background-color: #c6c6c6
+}
+
+.tablepath { font-family: Verdana, Arial, Helvetica, sans-serif;
+	   font-style: normal;
+	   line-height: normal;
+	   color: #FFFFFF;
+	   font-weight: normal;
+       background-color: #606060
+}
+
+.oddline { 
+    background-color: #d0d0d0;
+}
+
+.tablebg { 
+    background-color: #F0F0F0;
+}
+
+
+.tablemenu { 
+#	margin: 0px;
+	padding: 5px;
+    background-color: #FOFOFO;
+#	border-collapse: collapse;
+    text-align: left !important;
+    #border-bottom: 1px dashed #00cc00;
+    border-bottom:1px dashed #A7AFB1;
+	border-top:0px dashed #A7AFB1;
+    border-left:0px dashed #A7AFB1;
+	border-right:1px dashed #A7AFB1;    
+}
+
+.dashedtable { 
+#	margin: 0px;
+	padding: 5px;
+#	border-collapse: collapse;
+        text-align: left !important;
+        border-bottom:1px dashed #A7AFB1;
+	border-top:0px dashed;
+        border-left:0px dashed #A7AFB1;
+	border-right:0px dashed #A7AFB1;    
+}
+
+.loginentry {
+	margin: 1px;
+    border:solid;
+    border-width: 1px;
+}

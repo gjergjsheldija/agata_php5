@@ -1,0 +1,44 @@
+# pixmap_path "<dir 1>:<dir 2>:<dir 3>:..."
+#
+# include "rc-file"
+#
+# style <name> [= <name>]
+# {
+#   <option>
+# }
+#
+# widget <widget_set> style <style_name>
+# widget_class <widget_class_set> style <style_name>
+
+style "default"
+{
+  fg[NORMAL] = "#000000"
+  fg[ACTIVE] = "#000000"
+  fg[PRELIGHT] = "#000000"
+  fg[SELECTED] = "#ffffff"
+  fg[INSENSITIVE] = "#333333"
+
+  bg[NORMAL] = "#c6c3c6"
+  bg[ACTIVE] = "#c6c3c6"
+  bg[PRELIGHT] = "#c6c3c6"
+  bg[SELECTED] = "#345d56"
+  bg[INSENSITIVE] = "#c6c3c6"
+
+  text[NORMAL] = "#000000"
+  text[ACTIVE] = "#000000"
+  text[PRELIGHT] = "#000000"
+  text[SELECTED] = "#ffffff"
+  text[INSENSITIVE] = "#000000"
+
+  base[NORMAL] = "#f7f3f7"
+  base[ACTIVE] = "#ffffff"
+  base[PRELIGHT] = "#c6c3c6"
+  base[SELECTED] = "#345d56"
+  base[INSENSITIVE] = "#c6c3c6"
+
+  engine "raleigh" 
+    {
+    }
+}
+
+class "GtkWidget" style "default"

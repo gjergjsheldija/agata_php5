@@ -1,0 +1,135 @@
+<?xml version="1.0"?>
+<report>
+    <description>Relatório de Vendas com sumarizações e gráficos</description>
+    <datasource>
+        <name>Exemplos</name>
+    </datasource>
+
+    <header>
+        <body>#image images/baner2.png</body>
+        <align>center</align>
+    </header>
+
+    <footer>
+        <body></body>
+        <align>center</align>
+    </footer>
+
+    <preferences>
+        <showgroup></showgroup>
+        <showdetail>1</showdetail>
+        <showlabel></showlabel>
+        <shownumber>1</shownumber>
+        <showindent>1</showindent>
+        <distinct></distinct>
+        <pagesetup></pagesetup>
+    </preferences>
+
+    <query>
+        <select>cliente.nome as "Nome do Cliente", produto.descricao as "Descrição do Produto", vendas.quantidade as "Quantidade", vendas.data as "Data", vendas.preco as "Preço"</select>
+        <from>vendas, produto, cliente,cidade</from>
+        <where>vendas.ref_produto = produto.codigo and cliente.ref_cidade = cidade.codigo and vendas.ref_cliente = cliente.codigo</where>
+        <groupby></groupby>
+        <orderby>1</orderby>
+    </query>
+
+    <groups>
+        <group1>count(2),sum(3),sum(5)</group1>
+    </groups>
+
+    <adjustments>
+        <column1>
+            <chars>40</chars>
+            <points>100</points>
+            <align>left</align>
+            <mask></mask>
+            <function></function>
+            <cross></cross>
+        </column1>
+
+        <column2>
+            <chars>40</chars>
+            <points>100</points>
+            <align>left</align>
+            <mask></mask>
+            <function></function>
+            <cross></cross>
+        </column2>
+
+        <column3>
+            <chars>10</chars>
+            <points>30</points>
+            <align>right</align>
+            <mask></mask>
+            <function></function>
+            <cross></cross>
+        </column3>
+
+        <column4>
+            <chars>10</chars>
+            <points>30</points>
+            <align>center</align>
+            <mask></mask>
+            <function></function>
+            <cross></cross>
+        </column4>
+
+        <column5>
+            <chars>10</chars>
+            <points>30</points>
+            <align>right</align>
+            <mask>#R$-9.999,99</mask>
+            <function></function>
+            <cross></cross>
+        </column5>
+
+    </adjustments>
+
+    <graph>
+        <title>Título do Gráfico</title>
+        <titlex>Título X</titlex>
+        <titley>Título Y</titley>
+        <width>480</width>
+        <height>268</height>
+        <description>Exemplo de geração de gráfico</description>
+        <showdata>1</showdata>
+        <showvalues>1</showvalues>
+        <orientation>lines</orientation>
+    </graph>
+
+    <merge>
+        <header></header>
+        <groupheader></groupheader>
+        <detail></detail>
+        <groupfooter></groupfooter>
+        <footer></footer>
+        <adjustments></adjustments>
+        <pagesetup></pagesetup>
+        <query>
+            <select></select>
+            <from></from>
+            <where></where>
+            <groupby></groupby>
+            <orderby></orderby>
+        </query>
+
+    </merge>
+
+    <label>
+        <body></body>
+        <config>
+            <horizontal_spacing>15</horizontal_spacing>
+            <vertical_spacing>0</vertical_spacing>
+            <label_width>288</label_width>
+            <label_height>72</label_height>
+            <left_margin>11</left_margin>
+            <top_margin>36</top_margin>
+            <label_cols>2</label_cols>
+            <label_rows>10</label_rows>
+            <page_format>A3</page_format>
+            <line_spacing>14</line_spacing>
+        </config>
+
+    </label>
+
+</report>
