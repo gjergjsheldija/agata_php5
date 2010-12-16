@@ -1,4 +1,4 @@
-<?
+<?php
 if (strtoupper(substr(PHP_OS, 0, 3)) == 'WIN')
 dl('php_gtk.dll');
 else
@@ -9,7 +9,7 @@ function Fecha()
     Gtk::main_quit();
 }
 
-$window = &new GtkWindow;
+$window = new GtkWindow;
 $window->connect('delete-event', 'Fecha');
 $window->set_title('!!');
 $window->set_border_width(0);
@@ -18,14 +18,14 @@ $window->set_position(center);
 
 $window->realize();
 
-$box_ = &new GtkHBox();
+$box_ = new GtkHBox();
 $window->add($box_);
 $box_->show();
 $texto = new GtkLabel('  Wait a moment ... ');
 $texto->show();
 
 list($pixmap, $mask) = Gdk::pixmap_create_from_xpm($window->window, null, "wait.xpm");
-$pixmapwid = &new GtkPixmap($pixmap, $mask);
+$pixmapwid = new GtkPixmap($pixmap, $mask);
 $box_->pack_start($pixmapwid);
 $box_->pack_start($texto);
 $pixmapwid->show();

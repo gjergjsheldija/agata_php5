@@ -1,5 +1,5 @@
 <link href="site.css" rel="stylesheet" type="text/css">
-<?
+<?php
 include 'start.php';
 $web  = new AgataWEB;
 new TMaster;

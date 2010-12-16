@@ -24,7 +24,7 @@
     }
 </script>
 
-<?
+<?php
 $url1 = "javascript:js('tab-page-1')";
 $url2 = "javascript:js('tab-page-2')";
 $url3 = "javascript:js('tab-page-3')";
@@ -35,14 +35,14 @@ $url4 = "javascript:js('tab-page-4')";
 <tr>
 <td width=84 valign=top>
     <map name="menu">
-    <area shape="rect" coords="01,01,80,58"    HREF="<?echo $url1;?>">
-    <area shape="rect" coords="01,64,80,124"   HREF="<?echo $url2;?>">
-    <area shape="rect" coords="01,126,80,186"  HREF="<?echo $url3;?>">
-    <area shape="rect" coords="01,188,80,248"  HREF="<?echo $url4;?>">
+    <area shape="rect" coords="01,01,80,58"    HREF="<?php echo $url1;?>">
+    <area shape="rect" coords="01,64,80,124"   HREF="<?php echo $url2;?>">
+    <area shape="rect" coords="01,126,80,186"  HREF="<?php echo $url3;?>">
+    <area shape="rect" coords="01,188,80,248"  HREF="<?php echo $url4;?>">
     
     <area SHAPE="DEFAULT" NOHREF></map>
     <img src='imagens/bar1.png' usemap="#menu" ismap border=0><br><br>
-    <center><a href='index.php'><img src='imagens/browse.png' border=0><br><? echo _a('Reports');?></a>
+    <center><a href='index.php'><img src='imagens/browse.png' border=0><br><?php echo _a('Reports');?></a>
     </center>
 </td>
 <td width=716 align=left valign=top>
@@ -52,10 +52,10 @@ $url4 = "javascript:js('tab-page-4')";
     <table width=100% cellspacing=0 border=0>
     <tr class=tabletitle height=30>
     <td colspan=4>
-        <b>&nbsp;Agata CoreReport:: <? echo _a('Report Generation'); ?></b>
+        <b>&nbsp;Agata CoreReport:: <?php echo _a('Report Generation'); ?></b>
     </td>
     </tr>
-    <?
+    <?php
         $Report = CoreReport::OpenReport($file);
         $Blocks = CoreReport::ExtractBlock($Report['Report']['DataSet']);
         $datasource = $Report['Report']['DataSet']['DataSource']['Name'];
@@ -63,7 +63,7 @@ $url4 = "javascript:js('tab-page-4')";
     <form name=sheet1 method=post action=restrictions.php onsubmit="return MySubmit(this);">
     <tr class=tablepath>
     <td colspan=4>
-        &nbsp;<?echo _a('Project Name'); ?>
+        &nbsp;<?php echo _a('Project Name'); ?>
     
     </td>
     </tr>
@@ -72,9 +72,9 @@ $url4 = "javascript:js('tab-page-4')";
         <td width=6%>  </td>
         <td width=10% align=center>
         <img src='imagens/ico_db.png' border=0></td>
-        <td colspan=2 width=84%> <? echo _a('Project Name') . ':'; ?>
+        <td colspan=2 width=84%> <?php echo _a('Project Name') . ':'; ?>
         <select name="connection">
-        <?
+        <?php
         $projects = array_keys(Project::ReadProjects());
         foreach ($projects as $project)
         {
@@ -88,10 +88,10 @@ $url4 = "javascript:js('tab-page-4')";
 
     <tr class=tablepath>
     <td colspan=4>
-        &nbsp;<?echo _a('File') . ' : ' . $file; ?>
+        &nbsp;<?php echo _a('File') . ' : ' . $file; ?>
     </td>
     </tr>
-    <?
+    <?php
     $images['From']     = 'imagens/ico_table.png';
     $images['Group by'] = 'imagens/ico_group.png';
     $images['Order by'] = 'imagens/ico_sort.png';
@@ -227,10 +227,10 @@ $url4 = "javascript:js('tab-page-4')";
         ?>
         <tr class=tablepath>
         <td colspan=4>
-            &nbsp;<?echo _a('Parameters'); ?>
+            &nbsp;<?php echo _a('Parameters'); ?>
         </td>
         </tr>
-        <?
+        <?php
         foreach ($parameters as $parameter => $properties)
         {
             //$value = $Report['Report']['Parameters'][$parameter]['value'];
@@ -247,57 +247,57 @@ $url4 = "javascript:js('tab-page-4')";
                              <td width=10% align=center><img src='imagens/ico_param.png' border=0>
                              </td>
                              <td width=44%>
-                             <? echo $parameter; ?>
+                             <?php echo $parameter; ?>
                              </td>
                              <td width=44% align=left>
-                             <?
+                             <?php
                              if (strstr($mask, 'dd') and strstr($mask, 'mm') and strstr($mask, 'yyyy'))
                              {
                                  ?>
-                                <input type="text" value='<? echo $value; ?>' name=Parameters[<? echo $parameter; ?>] id="f_date_c" readonly="1"/>
+                                <input type="text" value='<?php echo $value; ?>' name=Parameters[<?php echo $parameter; ?>] id="f_date_c" readonly="1"/>
                                 <img src="imagens/popdate.png" id="f_trigger_c" style="cursor: pointer; border: 1px solid red;" title="Date selector"
                                         onmouseover="this.style.background='red';" onmouseout="this.style.background=''" />
                                         
                                 <script type="text/javascript">
                                     Calendar.setup({
                                         inputField     :    "f_date_c",     // id of the input field
-                                        ifFormat       :    "<? echo $newmask;//"%Y-%m-%d" ?>",      // format of the input field
+                                        ifFormat       :    "<?php echo $newmask;//"%Y-%m-%d" ?>",      // format of the input field
                                         button         :    "f_trigger_c",  // trigger for the calendar (button ID)
                                         align          :    "Tl",           // alignment (defaults to "Bl")
                                         firstDay       :     0,
                                         singleClick    :    true
                                     });
                                 </script>
-                                 <?
+                                 <?php
                              }
                              else
                              {
                                  ?>
-                                 <input type=entry value='<? echo $value; ?>' name=Parameters[<? echo $parameter; ?>] maxwidth=100>
-                                 <?
+                                 <input type=entry value='<?php echo $value; ?>' name=Parameters[<?php echo $parameter; ?>] maxwidth=100>
+                                 <?php
                              }
                              ?>
                              </td>
             </td>
             </tr>
-            <?
+            <?php
         }
         ?>
         </td>
         </tr>
-        <?
+        <?php
     }
 
 
     ?>
-    <input type=hidden name=file value=<? echo $file; ?>>
+    <input type=hidden name=file value=<?php echo $file; ?>>
     <input type=hidden name=type value='report'>
-    <input type=hidden name=lang value=<? echo $lang; ?>>
+    <input type=hidden name=lang value=<?php echo $lang; ?>>
     
     <tr class=line1> <td colspan=4 align=right height=30>
         <a class=link href="javascript:MySubmit(document.sheet1)"><img src='imagens/proceed.png' border=0></a>
         &nbsp;&nbsp;&nbsp;<br>
-        <a class=link href="javascript:MySubmit(document.sheet1)"><? echo _a('Proceed'); ?></a>&nbsp;&nbsp;
+        <a class=link href="javascript:MySubmit(document.sheet1)"><?php echo _a('Proceed'); ?></a>&nbsp;&nbsp;
         </p><br>
     </td></tr>
     </form>

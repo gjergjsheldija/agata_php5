@@ -44,13 +44,13 @@ class MergeInterface
         $this->entries['LabelFormat'] = $glade->get_widget('entryLabelFormat');
         $this->entries['LabelSpacing']= $glade->get_widget('spinLabelSpacing');
 
-        $this->textSections['@LabelText']    = &new TextArea;
-        $this->textSections['@MergeHeader']  = &new TextArea; // header
-        $this->textSections['@GroupHeader']  = &new TextArea; // groupheader
-        $this->textSections['@MergeDetail']  = &new TextArea; // detail
-        $this->textSections['@GroupFooter']  = &new TextArea; // groupfooter
-        $this->textSections['@MergeFooter']  = &new TextArea; // footer
-        $this->textSections['@FinalSummary'] = &new TextArea; // final summary
+        $this->textSections['@LabelText']    = new TextArea;
+        $this->textSections['@MergeHeader']  = new TextArea; // header
+        $this->textSections['@GroupHeader']  = new TextArea; // groupheader
+        $this->textSections['@MergeDetail']  = new TextArea; // detail
+        $this->textSections['@GroupFooter']  = new TextArea; // groupfooter
+        $this->textSections['@MergeFooter']  = new TextArea; // footer
+        $this->textSections['@FinalSummary'] = new TextArea; // final summary
         //$this->textSections['@MergeDetail']->connect_object('painted', array(&$this, 'alert'));
         //modified
         //painted
@@ -75,10 +75,10 @@ class MergeInterface
         $Fonts = array('Arial', 'Courier', 'Times');
         foreach ($Fonts as $font)
         {
-            $item = &new GtkListItem();
-            $box = &new GtkHBox();
-            $arrow = &new GtkPixmap($Pixmaps['TrueType'][0], $Pixmaps['TrueType'][1]);
-            $label = &new GtkLabel($font);
+            $item = new GtkListItem();
+            $box = new GtkHBox();
+            $arrow = new GtkPixmap($Pixmaps['TrueType'][0], $Pixmaps['TrueType'][1]);
+            $label = new GtkLabel($font);
             $box->pack_start($arrow, false, false);
             $box->pack_start($label, false, false, 2);
             $item->add($box);
@@ -87,10 +87,10 @@ class MergeInterface
             $item->show_all();
         }
 
-        $this->SubSelectList[0] = &new SelectList(null);
+        $this->SubSelectList[0] = new SelectList(null);
         $this->SubSelectList[0]->connect_object('changed', array(&$this, 'RefreshSubFields'), 0);
         $this->Containers['frameSubQuery']->add($this->SubSelectList[0]->widget);
-        //&new ColorButton($Description);
+        //new ColorButton($Description);
 
 
         $this->Labels['labelHeader'] = $glade->get_widget('labelHeader');
@@ -452,7 +452,7 @@ class MergeInterface
         }
         else
         {
-            $this->PageSetup = &new PageSetup(array(&$this, 'GetPageSetup'));
+            $this->PageSetup = new PageSetup(array(&$this, 'GetPageSetup'));
         }
         $this->PageSetup->SetValues($this->PageValues);
     }
@@ -703,7 +703,7 @@ class MergeInterface
         $ParameterList[] = array('#FFFFFF',  _a('Fill color'),  false, 'colors', true);
         $ParameterList[] = array('#000000',  _a('Line color'),  false, 'colors', true);
 
-        $this->RectFormEntry = &new FormEntry(_a('New Rectangle'), $ParameterList);
+        $this->RectFormEntry = new FormEntry(_a('New Rectangle'), $ParameterList);
         $this->RectFormEntry->SetStatus(_a('The X,Y Coordinates are relative to the current line'));
 
         $this->RectFormEntry->button->connect_object('clicked', array(&$this,'ReturnRectangle'));
@@ -722,7 +722,7 @@ class MergeInterface
         $ParameterList[] = array('',  '',                false, $radio2,  null);
         $ParameterList[] = array(100, _a('Size'),        false, 'spin',   true);
 
-        $this->LineFormEntry = &new FormEntry(_a('Insert Line'), $ParameterList, null, true);
+        $this->LineFormEntry = new FormEntry(_a('Insert Line'), $ParameterList, null, true);
 
         $this->LineFormEntry->button->connect_object('clicked', array(&$this,'ReturnLine'));
         $this->LineFormEntry->Show();
@@ -760,7 +760,7 @@ class MergeInterface
         $ParameterList[] = array(45,  _a('Degrees'),     false, 'spin',   true);
         $ParameterList[] = array('',  _a('Text'),        false, null,     true);
 
-        $this->VTextFormEntry = &new FormEntry(_a('Text rotation'), $ParameterList, null, true);
+        $this->VTextFormEntry = new FormEntry(_a('Text rotation'), $ParameterList, null, true);
 
         $this->VTextFormEntry->button->connect_object('clicked', array(&$this,'ReturnVText'));
         $this->VTextFormEntry->Show();
@@ -824,7 +824,7 @@ class MergeInterface
         $ParameterList[] = array('#FFFFFF',  _a('Fill color'),  false, 'colors', true);
         $ParameterList[] = array('#000000',  _a('Line color'),  false, 'colors', true);
 
-        $this->RectFormEntry = &new FormEntry(_a('New Rounded Rectangle'), $ParameterList);
+        $this->RectFormEntry = new FormEntry(_a('New Rounded Rectangle'), $ParameterList);
         $this->RectFormEntry->SetStatus(_a('The X,Y Coordinates are relative to the current line'));
 
         $this->RectFormEntry->button->connect_object('clicked', array(&$this,'ReturnRound'));
@@ -861,7 +861,7 @@ class MergeInterface
         $ParameterList[] = array('#FFFFFF', _a('Fill color'),  false, 'colors', true);
         $ParameterList[] = array('#000000', _a('Line color'),  false, 'colors', true);
 
-        $this->EllipseFormEntry = &new FormEntry(_a('New Ellipse'), $ParameterList);
+        $this->EllipseFormEntry = new FormEntry(_a('New Ellipse'), $ParameterList);
         $this->EllipseFormEntry->SetStatus(_a('The X,Y Coordinates are relative to the current line'));
 
         $this->EllipseFormEntry->button->connect_object('clicked', array(&$this,'ReturnEllipse'));
@@ -902,7 +902,7 @@ class MergeInterface
         $ParameterList[] = array(50,   _a('Height'),     false, 'spin',         true);
         $ParameterList[] = array(50,   _a('Print Text'), false, 'CheckButton',  true);
 
-        $this->BarCodeFormEntry = &new FormEntry(_a('New Bar Code'), $ParameterList);
+        $this->BarCodeFormEntry = new FormEntry(_a('New Bar Code'), $ParameterList);
         $this->BarCodeFormEntry->SetStatus(_a('Code may be a fixed value or a report column'));
 
         $this->BarCodeFormEntry->button->connect_object('clicked', array(&$this,'ReturnBarCode'));
@@ -959,10 +959,10 @@ class MergeInterface
         }
         $this->MergeSubFields[$currentSubReport][$caption] = $value;
         # SubField
-        $item = &new GtkListItem();
-        $box = &new GtkHBox();
-        $arrow = &new GtkPixmap($pixmap[0], $pixmap[1]);
-        $label = &new GtkLabel($caption);
+        $item = new GtkListItem();
+        $box = new GtkHBox();
+        $arrow = new GtkPixmap($pixmap[0], $pixmap[1]);
+        $label = new GtkLabel($caption);
         $box->pack_start($arrow, false, false);
         $box->pack_start($label, false, false, 2);
         $this->comboSubFields->set_item_string($item, $caption);
@@ -988,10 +988,10 @@ class MergeInterface
         $fieldsTotalList = $this->comboTotalFields->list;
         $this->MergeSubFields[$currentSubReport][$caption] = $value;
         # SubField Sumarization
-        $item = &new GtkListItem();
-        $box = &new GtkHBox();
-        $arrow = &new GtkPixmap($pixmap[0], $pixmap[1]);
-        $label = &new GtkLabel($caption);
+        $item = new GtkListItem();
+        $box = new GtkHBox();
+        $arrow = new GtkPixmap($pixmap[0], $pixmap[1]);
+        $label = new GtkLabel($caption);
         $box->pack_start($arrow, false, false);
         $box->pack_start($label, false, false, 2);
         $this->comboTotalFields->set_item_string($item, $caption);
@@ -1009,10 +1009,10 @@ class MergeInterface
         $this->MergeSubFields['@FinalSummary'][$caption] = $value;
 
         # SubField Sumarization
-        $item = &new GtkListItem();
-        $box = &new GtkHBox();
-        $arrow = &new GtkPixmap($pixmap[0], $pixmap[1]);
-        $label = &new GtkLabel($caption);
+        $item = new GtkListItem();
+        $box = new GtkHBox();
+        $arrow = new GtkPixmap($pixmap[0], $pixmap[1]);
+        $label = new GtkLabel($caption);
         $box->pack_start($arrow, false, false);
         $box->pack_start($label, false, false, 2);
         $this->comboTotalFinalSummary->set_item_string($item, $caption);
@@ -1095,10 +1095,10 @@ class MergeInterface
         foreach($Elements as $Element)
         {
             $this->MergeFields[$Element] = ' $var' . $i . ' ';
-            $item = &new GtkListItem();
-            $box = &new GtkHBox();
-            $arrow = &new GtkPixmap($Pixmaps['field'][0], $Pixmaps['field'][1]);
-            $label = &new GtkLabel($Element);
+            $item = new GtkListItem();
+            $box = new GtkHBox();
+            $arrow = new GtkPixmap($Pixmaps['field'][0], $Pixmaps['field'][1]);
+            $label = new GtkLabel($Element);
             $box->pack_start($arrow, false, false);
             $box->pack_start($label, false, false, 2);
             $item->add($box);
@@ -1113,10 +1113,10 @@ class MergeInterface
             {
                 $caption = _a('Parameter') . ' : ' . $Parameter;
                 $this->MergeFields[$caption] = $Parameter;
-                $item = &new GtkListItem();
-                $box = &new GtkHBox();
-                $arrow = &new GtkPixmap($Pixmaps['ico_edit'][0], $Pixmaps['ico_edit'][1]);
-                $label = &new GtkLabel($caption);
+                $item = new GtkListItem();
+                $box = new GtkHBox();
+                $arrow = new GtkPixmap($Pixmaps['ico_edit'][0], $Pixmaps['ico_edit'][1]);
+                $label = new GtkLabel($caption);
                 $box->pack_start($arrow, false, false);
                 $box->pack_start($label, false, false, 2);
                 $item->add($box);
@@ -1154,7 +1154,7 @@ class MergeInterface
         //$button1 = array('interface/output.xpm', _a('Output'), $OutputDir);
         //new FileDialog(_a('Label Templates'), array('agl'), null, $LabelDir, array(&$this, 'ApplyLabelTemplate'));
         $items = Label::ListLabels();
-        $this->LabelList = &new IList($items, array(&$this, 'ApplyLabelTemplate'), $Pixmaps['agl'], _a('Label Templates'), _a('Labels'));
+        $this->LabelList = new IList($items, array(&$this, 'ApplyLabelTemplate'), $Pixmaps['agl'], _a('Label Templates'), _a('Labels'));
         $this->LabelList->window->set_default_size(400, 260);
     }
 
@@ -1191,11 +1191,11 @@ class MergeInterface
             $label = new GtkLabel($this->numberSubReport);
 
             //Cria botão para remover aba
-            $this->SubSelectListDelButton[$this->numberSubReport] = &new GtkButton('-');
+            $this->SubSelectListDelButton[$this->numberSubReport] = new GtkButton('-');
             $this->SubSelectListDelButton[$this->numberSubReport]->connect_object('clicked', array(&$this, 'delDetail'), $this->numberSubReport);
             $this->SubSelectListDelButton[$this->numberSubReport]->show();
 
-            $this->SubSql[$this->numberSubReport] = &new SubSql($this->eventAddDetail, array(&$this, 'TypeSubField'));
+            $this->SubSql[$this->numberSubReport] = new SubSql($this->eventAddDetail, array(&$this, 'TypeSubField'));
 
             $this->SubSelectList[$this->numberSubReport] = &$this->SubSql[$this->numberSubReport]->selectList;
             $this->SubSelectList[$this->numberSubReport]->connect_object('changed', array(&$this, 'RefreshSubFields'), $this->numberSubReport);

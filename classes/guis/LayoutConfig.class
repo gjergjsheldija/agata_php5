@@ -10,7 +10,7 @@ class LayoutConfig
     /***********************************************************/
     function LayoutConfig()
     {
-        $this->pwindow = &new GtkWindow;
+        $this->pwindow = new GtkWindow;
         $this->pwindow->connect_object('delete-event', array(&$this, 'Hide'));
         $this->pwindow->connect_object('key_press_event', array(&$this,'KeyTest'), $this->pwindow);
         $this->pwindow->set_title(_a('Configuration'));
@@ -80,7 +80,7 @@ class LayoutConfig
         $slot_ok = array(&$this, 'onLayoutConfig');
         $slot_del = array(&$this, 'DeleteLayout');
 
-        $this->LayoutList = &new Preferences(&$hbox);
+        $this->LayoutList = new Preferences(&$hbox);
         $this->LayoutList->SetTitleImage(images . 'layout.xpm');
         $this->LayoutList->SetTitle(_a('Preferences'));
         $this->LayoutList->SetPlus($Plus);

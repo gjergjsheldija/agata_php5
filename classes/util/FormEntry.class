@@ -1,4 +1,4 @@
-<?
+<?php
 /***********************************************************/
 /* FormEntry Class, build a simple form
 /* by Pablo Dall'Oglio 2001-2006
@@ -36,15 +36,15 @@ class FormEntry extends CommonForm
         
         $this->CheckVars = $CheckVars;
 
-        $this->FirstBox = $FirstBox = &new GtkVBox;
+        $this->FirstBox = $FirstBox = new GtkVBox;
         $this->FirstBox->pack_start(darktxt($mensagem), false, false);
         $this->window->add($FirstBox);
         
-        $Sbox = &new GtkHBox();
+        $Sbox = new GtkHBox();
         $FirstBox->pack_start($Sbox, false, false, 10);
         
-        $this->vbox  = &new GtkVBox(false, 4);
-        $this->vbox2 = &new GtkVBox(false, 4);
+        $this->vbox  = new GtkVBox(false, 4);
+        $this->vbox2 = new GtkVBox(false, 4);
         
         $Sbox->pack_start($this->vbox,  false, false, 4);
         $Sbox->pack_start($this->vbox2, false, false, 4);
@@ -56,7 +56,7 @@ class FormEntry extends CommonForm
         $entries = $this->InputEntries['unique'];
 
         $pixmap = Gdk::pixmap_create_from_xpm($this->window->window, null,  images . 'ico_ok.xpm');
-        $this->button = &new VoidButton(' OK ', $pixmap, IMAGEBUTTON);
+        $this->button = new VoidButton(' OK ', $pixmap, IMAGEBUTTON);
         $this->button->set_border_width(5);
 
         $tmpbox = new GtkHBox;
@@ -83,9 +83,9 @@ class FormEntry extends CommonForm
     
     function AddAction($message, $ico, $callback)
     {
-        $button = &new Icone($this->window->window, images . $ico,  '  ' . $message . '  ', $message, true);
+        $button = new Icone($this->window->window, images . $ico,  '  ' . $message . '  ', $message, true);
         $button->connect_object('clicked', $callback);
-        $box = &new GtkHBox(false, 3);
+        $box = new GtkHBox(false, 3);
         $box->pack_start($button, false, false, 10);
         $this->vbox2->pack_start($box, false,false);
         $box->show_all();
@@ -97,7 +97,7 @@ class FormEntry extends CommonForm
     /***********************************************************/
     function SetStatus($Status)
     {
-        $statusbar = &new GtkStatusBar();
+        $statusbar = new GtkStatusBar();
         $statusbar->push(1, $Status);
         $statusbar->show_all();
 

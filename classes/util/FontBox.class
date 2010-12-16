@@ -1,4 +1,4 @@
-<?
+<?php
 /***********************************************************/
 /* FontBox, used to allows the user to choose colors
 /* by Pablo Dall'Oglio 2004-2006
@@ -11,10 +11,10 @@ class FontBox
     function FontBox($Description, $moreoptions)
     {
         global $Pixmaps;
-        $tooltip = &new GtkTooltips;
-        $this->entry = &new GtkEntry;
+        $tooltip = new GtkTooltips;
+        $this->entry = new GtkEntry;
 
-        $box = &new GtkHBox;
+        $box = new GtkHBox;
         $this->widget = new Box($box, $Description);
         $this->button = new Button(array($this, 'SelFont'), _a('Font Selection'), $Pixmaps['font'], ICONBUTTON, $moreoptions, true);
         $this->button->set_relief(GTK_RELIEF_NONE);
@@ -72,7 +72,7 @@ class FontBox
     /***********************************************************/
     function SelFont($moreoptions = false)
     {
-        $glade  = &new GladeXML(images . 'font.glade');
+        $glade  = new GladeXML(images . 'font.glade');
         $this->ftwindow = $window1 = $glade->get_widget( 'window1' );
         $this->ftwindow->connect_object('key_press_event', array(&$this,'KeyTest'), $this->ftwindow);
         $window1->set_title(_a('Font Selection'));
@@ -198,10 +198,10 @@ class GtkFontBox
     function GtkFontBox($Description, $Content)
     {
         global $Pixmaps;
-        $tooltip = &new GtkTooltips;
-        $this->entry = &new GtkEntry;
+        $tooltip = new GtkTooltips;
+        $this->entry = new GtkEntry;
 
-        $box = &new GtkHBox;
+        $box = new GtkHBox;
         $this->widget = new Box($box, $Description);
         $this->button = new Button(array($this, 'SelGtkFont'), _a('Font Selection'), $Pixmaps['font'], ICONBUTTON, $Content, true);
         $this->button->set_relief(GTK_RELIEF_NONE);
@@ -265,7 +265,7 @@ class GtkFontBox
         $janela->set_position(GTK_WIN_POS_MOUSE);
         $vbox = new GtkVBox;
         
-        $this->GtkFontSel = &new GtkFontSelection();
+        $this->GtkFontSel = new GtkFontSelection();
         $this->GtkFontSel->set_font_name($Content);
         $botao = new GtkButton('OK');
         $botao->connect_object('clicked', array(&$this, 'GetGtkFont'));

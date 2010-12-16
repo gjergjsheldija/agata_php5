@@ -1,4 +1,4 @@
-<?
+<?php
 /***********************************************************/
 /* Questions class, ask the user for yes or no
 /* by Pablo Dall'Oglio 2001-2006
@@ -25,7 +25,7 @@ class Ask
         
         $hbox1 = new GtkHbox(false, 10);
         $img   = Gdk::pixmap_create_from_xpm($this->window->window, null,  images . 'ico_ask.xpm');
-        $pixmapwid = &new GtkPixmap($img[0], $img[1]);
+        $pixmapwid = new GtkPixmap($img[0], $img[1]);
         $hbox1->pack_start($pixmapwid, false, false);
         $texto = new GtkLabel($question);
         

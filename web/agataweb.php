@@ -1,5 +1,5 @@
 <html>
-<?
+<?php
     # Including the necessary classes and definitions.
     include 'start.php';
     Trans::SetLanguage($lang);
@@ -29,22 +29,22 @@
 <div id="tab-pane-1" class="dynamic-tab-pane-control tab-pane">
 
     <div id="tab-page-1" class="tab-page" style="display: block;">
-        <? include_once 'sheet1.php'; ?>
+        <?php  include_once 'sheet1.php'; ?>
 
     </div>
 
     <div id="tab-page-2" class="tab-page" style="display: none;">
-        <? include_once 'sheet2.php'; ?>
+        <?php  include_once 'sheet2.php'; ?>
 
     </div>
 
     <div id="tab-page-3" class="tab-page" style="display: none;">
-        <? include_once 'sheet3.php'; ?>
+        <?php  include_once 'sheet3.php'; ?>
 
     </div>
 
     <div id="tab-page-4" class="tab-page" style="display: none;">
-        <? include_once 'sheet4.php'; ?>
+        <?php  include_once 'sheet4.php'; ?>
 
     </div>
 </div>

@@ -2,14 +2,14 @@
 <tr>
 <td width=84 valign=top>
     <map name="menu">
-    <area shape="rect" coords="01,01,80,58"    HREF="<?echo $url1;?>">
-    <area shape="rect" coords="01,64,80,124"   HREF="<?echo $url2;?>">
-    <area shape="rect" coords="01,126,80,186"  HREF="<?echo $url3;?>">
-    <area shape="rect" coords="01,188,80,248"  HREF="<?echo $url4;?>">
+    <area shape="rect" coords="01,01,80,58"    HREF="<?php echo $url1;?>">
+    <area shape="rect" coords="01,64,80,124"   HREF="<?php echo $url2;?>">
+    <area shape="rect" coords="01,126,80,186"  HREF="<?php echo $url3;?>">
+    <area shape="rect" coords="01,188,80,248"  HREF="<?php echo $url4;?>">
     
     <area SHAPE="DEFAULT" NOHREF></map>
     <img src='imagens/bar2.png' usemap="#menu" ismap border=0><br><br>
-    <center><a href='index.php'><img src='imagens/browse.png' border=0><br><? echo _a('Reports');?></a>
+    <center><a href='index.php'><img src='imagens/browse.png' border=0><br><?php  echo _a('Reports');?></a>
     </center>
 </td>
 <td width=716 align=left valign=top>
@@ -19,18 +19,18 @@
     <table width=100% cellspacing=0 border=0>
     <tr class=tabletitle height=30>
     <td colspan=4>
-        <b>&nbsp;Agata CoreReport:: <? echo _a('Report Generation'); ?></b>
+        <b>&nbsp;Agata CoreReport:: <?php  echo _a('Report Generation'); ?></b>
     </td>
     </tr>
     
     <tr class=tablepath>
     <td colspan=4>
         &nbsp;
-    <? echo _a('Report Levels'); ?>
+    <?php  echo _a('Report Levels'); ?>
     
     </td>
     </tr>
-    <?
+    <?php 
         $Report = CoreReport::OpenReport($file);
         $Breaks = CoreReport::ExtractBreaks($Report);
         $Elements  = MyExplode(trim($Report['Report']['DataSet']['Query']['Select']), _a('Column'), true);

@@ -1,4 +1,4 @@
-<?
+<?php
 /***********************************************************/
 /* Dialog class, shows messages to the users
 /* by Pablo Dall'Oglio 2001-2006
@@ -19,12 +19,12 @@ class MemoArea
             $this->window->set_position(GTK_WIN_POS_CENTER);
             $this->window->realize();
             
-            $vbox = &new GtkVBox;
+            $vbox = new GtkVBox;
             
             $this->window->add($vbox);
-            $col1 = &new GdkColor(56000, 0, 0);
+            $col1 = new GdkColor(56000, 0, 0);
             
-            $HelpText = &new GtkText();
+            $HelpText = new GtkText();
             $HelpText->set_word_wrap(true);
             $vbox->pack_start($HelpText, true, true);
             $font = gdk::font_load ("-bitstream-helvetica-medium-r-normal-*-*-140-*-*-m-*-iso8859-9");

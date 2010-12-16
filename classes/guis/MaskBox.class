@@ -11,11 +11,11 @@ class MaskBox
     function MaskBox($Description, $guides = true)
     {
         global $Pixmaps;
-        $tooltip = &new GtkTooltips;
-        $this->entry = &new GtkEntry;
+        $tooltip = new GtkTooltips;
+        $this->entry = new GtkEntry;
         $this->guides = $guides;
 
-        $box = &new GtkHBox;
+        $box = new GtkHBox;
         $this->widget = new Box($box, $Description);
         $this->button = new Button(array($this, 'MaskSel'), _a('Format'), $Pixmaps['ico_format'], ICONBUTTON, $isdir, true);
         $this->button->set_relief(GTK_RELIEF_NONE);

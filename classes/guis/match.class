@@ -15,7 +15,7 @@ class Match
     function Match($agataDB)
     {
         $bar = (OS == 'WIN') ? $bar = '\\' : $bar = '/';
-        $this->glade= &new GladeXML(images . 'match.glade');
+        $this->glade= new GladeXML(images . 'match.glade');
         $this->window = $this->glade->get_widget( 'window1' );
         $this->window->connect_object('key_press_event', array(&$this, 'KeyTest'));
         

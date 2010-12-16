@@ -1,4 +1,4 @@
-<?
+<?php
 
   $fd = fopen ("gtkrc", "r");
   $fd2 = fopen ("gtkrc2", "w");

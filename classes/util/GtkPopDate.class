@@ -1,4 +1,4 @@
-<?
+<?php
 /***********************************************************/
 /* GtkPopDate, used to allows the user to choose date
 /* by Pablo Dall'Oglio 2004-2006
@@ -12,15 +12,15 @@ class GtkPopDate
     {
         global $Pixmaps;
         $this->Mask = $Mask;
-        $tooltip = &new GtkTooltips;
+        $tooltip = new GtkTooltips;
         $newmask = $Mask;
         $newmask = str_replace('yyyy', '9999',  $newmask);
         $newmask = str_replace('mm',   '99',    $newmask);
         $newmask = str_replace('dd',   '99',    $newmask);
         
-        $this->entry = &new GtkEntryMask($newmask);
+        $this->entry = new GtkEntryMask($newmask);
 
-        $this->widget = $box = &new GtkHBox;
+        $this->widget = $box = new GtkHBox;
         $this->button = new Button(array($this, 'DateSel'), _a('Date Selection'), $Pixmaps['popdate'], ICONBUTTON, $isdir, true);
         $this->button->set_relief(GTK_RELIEF_NONE);
 
@@ -104,7 +104,7 @@ class GtkPopDate
         $this->janela = new GtkWindow;
         $this->janela->connect_object('key_press_event', array(&$this,'KeyTest'), $this->janela);
         $this->janela->set_position(GTK_WIN_POS_CENTER);
-        $calendar = &new GtkCalendar;
+        $calendar = new GtkCalendar;
         $calendar->select_month(date('n') -1, date('Y'));
         $calendar->select_day(date('j'));
         $calendar->connect_object('day-selected-double-click', array(&$this, 'GetDate'), &$calendar);

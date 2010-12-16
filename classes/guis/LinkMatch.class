@@ -134,19 +134,19 @@ class LinkMatch
         $this->lwindow->set_position(GTK_WIN_POS_CENTER);
         $this->lwindow->connect_object('key_press_event', array(&$this,'KeyTest'), $this->lwindow);
         
-        $vbox = &new GtkVBox;
+        $vbox = new GtkVBox;
         $vbox->pack_start(darktxt(_a('Linking Settings')), false, false);
         $vbox->pack_start(new GtkHSeparator, false, false);
-        $hbox = &new GtkHBox;
+        $hbox = new GtkHBox;
         $vbox->pack_start($hbox, true, true);
         
-        $scroll1 = &new GtkScrolledWindow;
+        $scroll1 = new GtkScrolledWindow;
         $scroll1->set_policy(GTK_POLICY_AUTOMATIC, GTK_POLICY_ALWAYS);
 
-        $scroll2 = &new GtkScrolledWindow;
+        $scroll2 = new GtkScrolledWindow;
         $scroll2->set_policy(GTK_POLICY_AUTOMATIC, GTK_POLICY_ALWAYS);
         
-        $this->ctreeTable1= &new TableTree('', true);
+        $this->ctreeTable1= new TableTree('', true);
         $this->ctreeTable1->set_selection_mode(GTK_SELECTION_EXTENDED);
         $this->ctreeTable1->set_column_width(0, 200);
         $this->ctreeTable1->column_titles_hide();
@@ -156,7 +156,7 @@ class LinkMatch
         $button = new Button(array(&$this, 'Link'), _a('Link Tables'), $local_pix['link'], 	 TOPBUTTON);
         $hbox->pack_start(vcentral($button), false, false);
 
-        $this->ctreeTable2= &new TableTree('', true);
+        $this->ctreeTable2= new TableTree('', true);
         $this->ctreeTable2->set_selection_mode(GTK_SELECTION_EXTENDED);
         $this->ctreeTable2->set_column_width(0, 200);
         $this->ctreeTable2->column_titles_hide();

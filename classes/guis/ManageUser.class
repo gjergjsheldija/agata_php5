@@ -23,7 +23,7 @@ class ManageUser extends GtkWindow
             $this->set_position(GTK_WIN_POS_CENTER);
             $this->set_usize(320,280);
             $this->realize();
-            $fixed = &new GtkFixed;
+            $fixed = new GtkFixed;
             $this->set_policy(false, false, false);
 
             global $userCombo;
@@ -65,22 +65,22 @@ class ManageUser extends GtkWindow
             $fixed->put($isadminCombo, 100, 130);
 
             $pix        = Gdk::pixmap_create_from_xpm($this->window, null, 'interface/ico_next.xpm');
-            $image      = &new GtkPixmap($pix[0], $pix[1]);
+            $image      = new GtkPixmap($pix[0], $pix[1]);
             $buttonSave = new GtkButton();
             $buttonSave ->set_usize(80, 30);
             $buttonSave ->connect_object('clicked', array(&$this, 'saveUser'));
-            $hbox       = &new GtkHBox();
+            $hbox       = new GtkHBox();
             $hbox       ->pack_start(new GtkLabel(_a('Save')));
             $hbox       ->pack_start($image);
             $buttonSave->add($hbox);
             $fixed      ->put($buttonSave, 100, 160);
 
             $pix2       = Gdk::pixmap_create_from_xpm($this->window, null, 'interface/del.xpm');
-            $image2     = &new GtkPixmap($pix2[0], $pix2[1]);
+            $image2     = new GtkPixmap($pix2[0], $pix2[1]);
             $buttonDel  = new GtkButton();
             $buttonDel  ->set_usize(80, 30);
             $buttonDel  ->connect_object('clicked', array(&$this, 'deleteUser'));
-            $hbox2      = &new GtkHBox();
+            $hbox2      = new GtkHBox();
             $hbox2      ->pack_start(new GtkLabel(_a('Delete')));
             $hbox2      ->pack_start($image2);
             $buttonDel  ->add($hbox2);
@@ -106,21 +106,21 @@ class ManageUser extends GtkWindow
             $fixed      ->put($tableList, 100,230);
 
             $pix3       = Gdk::pixmap_create_from_xpm($this->window, null, 'interface/ico_add.xpm');
-            $image3     = &new GtkPixmap($pix3[0], $pix3[1]);
+            $image3     = new GtkPixmap($pix3[0], $pix3[1]);
             $buttonAdd  = new GtkButton();
             $buttonAdd  ->set_usize(30, 22);
             $buttonAdd  ->connect_object('clicked', array(&$this, 'addToTable'));
-            $hbox3      = &new GtkHBox();
+            $hbox3      = new GtkHBox();
             $hbox3      ->pack_start($image3);
             $buttonAdd  ->add($hbox3);
             $fixed      ->put($buttonAdd, 280, 200);
 
             $pix4       = Gdk::pixmap_create_from_xpm($this->window, null, 'interface/del.xpm');
-            $image4     = &new GtkPixmap($pix4[0], $pix4[1]);
+            $image4     = new GtkPixmap($pix4[0], $pix4[1]);
             $buttonDel2 = new GtkButton();
             $buttonDel2 ->set_usize(30, 22);
             $buttonDel2 ->connect_object('clicked', array(&$this, 'deleteAccess'));
-            $hbox4      = &new GtkHBox();
+            $hbox4      = new GtkHBox();
             $hbox4      ->pack_start($image4);
             $buttonDel2 ->add($hbox4);
             $fixed      ->put($buttonDel2, 280, 230);

@@ -11,10 +11,10 @@ class MeasureBox
     function MeasureBox($Description)
     {
         global $Pixmaps;
-        $tooltip = &new GtkTooltips;
-        $this->entry = &new GtkSpinButton(new GtkAdjustment((double)0, 0, 999, 1, 10, 10), 1, 0);
+        $tooltip = new GtkTooltips;
+        $this->entry = new GtkSpinButton(new GtkAdjustment((double)0, 0, 999, 1, 10, 10), 1, 0);
 
-        $box = &new GtkHBox;
+        $box = new GtkHBox;
         $this->widget = new Box($box, $Description);
         $this->button = new Button(array($this, 'MeasuresSel'), _a('Measures'), $Pixmaps['measures'], ICONBUTTON, $isdir, true);
         $this->button->set_relief(GTK_RELIEF_NONE);
@@ -81,16 +81,16 @@ class MeasureBox
         //$this->window->set_border_width(20);
         $this->window->realize();
         
-        $vbox = &new GtkVBox;
+        $vbox = new GtkVBox;
         //$vbox->set_border_width(20);
-        $hbox1 = &new GtkHBox;
-        $hbox2 = &new GtkHBox;
+        $hbox1 = new GtkHBox;
+        $hbox2 = new GtkHBox;
         $vbox->pack_start(darktxt(_a('Measures')), false, false, 0);
         $vbox->pack_start($hbox1, true, true, 20);
         $vbox->pack_start($hbox2, true, true, 20);
         
-        $this->centimeters = $cm = &new GtkSpinButton(new GtkAdjustment((double)0, 0, 999, 0.02, 10, 10), 0.02, 2);
-        $this->inches      = $in = &new GtkSpinButton(new GtkAdjustment((double)0, 0, 999, 0.02, 10, 10), 0.02, 2);
+        $this->centimeters = $cm = new GtkSpinButton(new GtkAdjustment((double)0, 0, 999, 0.02, 10, 10), 0.02, 2);
+        $this->inches      = $in = new GtkSpinButton(new GtkAdjustment((double)0, 0, 999, 0.02, 10, 10), 0.02, 2);
         $cm->set_usize(80,22);
         $in->set_usize(80,22);
         $cm->set_numeric(true);

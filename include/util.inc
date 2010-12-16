@@ -1,4 +1,4 @@
-<?
+<?php
 /***********************************************************/
 /* Translates the message
 /***********************************************************/
@@ -409,7 +409,7 @@ function HandlerFile($extras = null)
         $Mask = array($Mask);
     }
 
-    $FileSelection = &new FileDialog($Title, $Mask, $Buttons, $Path, $Action, $Parameter);
+    $FileSelection = new FileDialog($Title, $Mask, $Buttons, $Path, $Action, $Parameter);
 }
 
 function FormatMonetary($number, $precision, $thousep, $decsep)
@@ -596,7 +596,7 @@ function darkbox($widget, $width, $height, $color)
 
 function frame_title($text, $image)
 {
-    $box = &new GtkHBox;
+    $box = new GtkHBox;
     $dock1 = new GtkPixmap($image[0], $image[1]);
     $dock2 = new GtkLabel($text);
     $box->pack_start($dock1, false, false, 4);

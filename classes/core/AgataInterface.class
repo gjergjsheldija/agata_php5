@@ -79,13 +79,13 @@ class AgataInterface
     {
         $this->subQuery = $subQuery;
         $this->agataConfig = $agataConfig;
-        $this->glade = &new GladeXML('interface' . bar . 'agata.glade');
+        $this->glade = new GladeXML('interface' . bar . 'agata.glade');
         $this->window = $this->glade->get_widget('window');
 
         $this->window->set_border_width(0);
         $this->window->realize();
         $this->connected = false;
-        $this->tooltips = &new GtkTooltips();
+        $this->tooltips = new GtkTooltips();
 
         include ('include/getwidgets.inc');
         include ('include/createwidgets.inc');
@@ -106,7 +106,7 @@ class AgataInterface
             /***********************************************************/
             /* Levels Area
             /***********************************************************/
-            $this->LevelsArea = &new LevelsArea($this->glade);
+            $this->LevelsArea = new LevelsArea($this->glade);
             $this->LevelsArea->connect_object('onchange', array(&$this, 'onBreakAction'));
             $this->Containers['viewportFixed']->add($this->LevelsArea->widget);
             $this->LevelsArea->CreateBreakList();
@@ -116,8 +116,8 @@ class AgataInterface
             /***********************************************************/
             /* Merge Interface
             /***********************************************************/
-            $this->MergeInterface   = &new MergeInterface($this->glade, $this->agataConfig);
-            $this->HeaderFooterArea = &new HeaderFooterArea($this->glade);
+            $this->MergeInterface   = new MergeInterface($this->glade, $this->agataConfig);
+            $this->HeaderFooterArea = new HeaderFooterArea($this->glade);
             $this->MergeInterface->Buttons['SubQuery']->connect_object('clicked', array(&$this, 'SubQuery'));
             $this->MergeInterface->eventAddDetail(array(&$this, 'SubQuery'));
 
@@ -135,7 +135,7 @@ class AgataInterface
             /***********************************************************/
             /* OpenOffice Interface
             /***********************************************************/
-            $this->OfficeInterface   = &new OfficeInterface($this->glade, $this->agataConfig);
+            $this->OfficeInterface   = new OfficeInterface($this->glade, $this->agataConfig);
             $this->OfficeInterface->buttonOpenOfficeParse->connect_object('clicked', array(&$this, 'PreReport'), 'ParseOO');
 
             $this->PackConnection(true);
@@ -163,10 +163,10 @@ class AgataInterface
     function PackMainMenu()
     {
         global $Pixmaps;
-        $this->accel = $accelgroup = &new GtkAccelGroup();
+        $this->accel = $accelgroup = new GtkAccelGroup();
         $this->window->add_accel_group($accelgroup);
 
-        $MenuBar = &new GtkMenuBar;
+        $MenuBar = new GtkMenuBar;
 
         $Menu = new MyAltMenuItem(_a('File'), '_' . _a('File'), $accelgroup);
 
@@ -181,14 +181,14 @@ class AgataInterface
         $Subitem5 = new MyControlMenuItem($Pixmaps['menu_saveas'],  _a('Save as'),    '',                 $accelgroup, 'HandlerFile', $this->param['SaveRep']);
         $Subitem6 = new MyControlMenuItem($Pixmaps['sql'],          _a('Save SQL'),   '' .   _a('Save'),  $accelgroup, 'HandlerFile', $this->param['SaveSql']);
         $Subitem7 = new MyControlMenuItem($Pixmaps['publish'],      _a('Publish Report'),    '',          $accelgroup, array(&$this, 'PublishReport'));
-        $Subitem8= &new GtkMenuItem;
+        $Subitem8= new GtkMenuItem;
         $Subitem9 = new MyControlMenuItem($Pixmaps['menu_prop'],    _a('Report Properties'), '' . _a('xxx'),  $accelgroup, array(&$this, 'Properties'));
         $SubitemA = new MyControlMenuItem($Pixmaps['ico_edit'],     _a('Custom Parameters'), '' . _a('xxx'),  $accelgroup, array(&$this, 'CustomParameters'));
         $SubitemB = new MyControlMenuItem($Pixmaps['menu_page'],    _a('Page Setup'), '' .   _a('Save'),  $accelgroup, array(&$this, 'PageSetup'));
-        $SubitemC= &new GtkMenuItem;
+        $SubitemC= new GtkMenuItem;
         $SubitemD= new MyControlMenuItem($Pixmaps['menu_quit'], _a('Quit'),   '_Q',      $accelgroup, array(Gtk, 'main_quit'));
 
-        $SubMenu = &new GtkMenu;
+        $SubMenu = new GtkMenu;
         $SubMenu->append($Subitem0);
         $SubMenu->append($SubitemE);
         global $agataConfig;
@@ -215,7 +215,7 @@ class AgataInterface
 
         $Menu = new MyAltMenuItem(_a('Report'), '_' . _a('Report'), $accelgroup);
         $Subitem0 = new MyFunctionMenuItem($Pixmaps['menu_execute'],_a('Preview of Report'),  65471, $accelgroup, array(&$this, 'PreReport'), 'screen');
-        $Subitem0a= &new GtkMenuItem;
+        $Subitem0a= new GtkMenuItem;
         $Subitem1 = new MyFunctionMenuItem($Pixmaps['menu_txt'],   _a('Export to TXT File'), 65472, $accelgroup, array(&$this, 'PreReport'), 'txt');
         $Subitem3 = new MyFunctionMenuItem($Pixmaps['menu_pdf'],   _a('Export to PDF File'), 65473, $accelgroup, array(&$this, 'PreReport'), 'pdf');
         $Subitem4 = new MyFunctionMenuItem($Pixmaps['menu_html'],  _a('Export to HTML File'),65474, $accelgroup, array(&$this, 'PreReport'), 'html');
@@ -226,7 +226,7 @@ class AgataInterface
         $Subitem9 = new GtkMenuItem;
         $SubitemA = new MyFunctionMenuItem($Pixmaps['menu_txt'],   _a('Export to TXT Form'),  '',   $accelgroup, array(&$this, 'PreReport'), 'TxtForm');
         $SubitemB= new MyFunctionMenuItem($Pixmaps['menu_html'],  _a('Export to HTML Frame'),'',   $accelgroup, array(&$this, 'PreReport'), 'HtmlFrame');
-        $SubMenu = &new GtkMenu;
+        $SubMenu = new GtkMenu;
 
         $SubMenu->append($Subitem0);
         $SubMenu->append($Subitem0a);
@@ -254,7 +254,7 @@ class AgataInterface
         $Subitem7 = new MyControlMenuItem($Pixmaps['menu_function'],  _a('Function Repository'),  '_F', $accelgroup, array(&$this, 'PackFunctions'));
 
 
-        $SubMenu = &new GtkMenu;
+        $SubMenu = new GtkMenu;
         $SubMenu->append($Subitem1);
         $SubMenu->append($Subitem2);
         $SubMenu->append($Subitem3);
@@ -269,7 +269,7 @@ class AgataInterface
         $Menu = new MyAltMenuItem('?', '' . '?', $accelgroup);
         $Subitem1 = new MyControlMenuItem($Pixmaps['menu_help'], _a('About'),  '', $accelgroup, array(&$this, 'About'));
 
-        $SubMenu = &new GtkMenu;
+        $SubMenu = new GtkMenu;
         $SubMenu->append($Subitem1);
 
         $Menu->set_submenu($SubMenu);
@@ -813,11 +813,11 @@ class AgataInterface
             $i = 1;
             foreach ($Elements as $Element)
             {
-                $oFunction    = &new FunctionBox(_a('Functions'));
-                $oCondHigh    = &new CondHighBox(_a('Conditional highlight'));
-                $oCross       = &new CrossBox(_a('Fields'));
+                $oFunction    = new FunctionBox(_a('Functions'));
+                $oCondHigh    = new CondHighBox(_a('Conditional highlight'));
+                $oCross       = new CrossBox(_a('Fields'));
                 $oCross->info = $Element;
-                $oMask        = &new MaskBox(_a('Format'));
+                $oMask        = new MaskBox(_a('Format'));
 
                 $chars      = $Adjustments[$i]['Chars']       ? $Adjustments[$i]['Chars']   : 30;
                 $points     = $Adjustments[$i]['Points']      ? $Adjustments[$i]['Points']  : 60;
@@ -949,7 +949,7 @@ class AgataInterface
             $this->SuggestTables($strings);
         }
 
-        $require = &new LinkedTables(array(&$this, 'SuggestTables'), $this->TableNames, $this->agataTbLinks, $this->agataDataDescription, $this->agataDB);
+        $require = new LinkedTables(array(&$this, 'SuggestTables'), $this->TableNames, $this->agataTbLinks, $this->agataDataDescription, $this->agataDB);
         $HierarquicalLinks = $require->CallLinks($strings, $this->RequiredTables, true);
 
         if ($HierarquicalLinks)
@@ -989,7 +989,7 @@ class AgataInterface
             $this->SuggestTables($strings);
         }
 
-        $require = &new LinkedTables(array(&$this, 'JoinTheseTables'), $this->TableNames, $this->agataTbLinks, $this->agataDataDescription, $this->agataDB);
+        $require = new LinkedTables(array(&$this, 'JoinTheseTables'), $this->TableNames, $this->agataTbLinks, $this->agataDataDescription, $this->agataDB);
         $HierarquicalLinks = $require->CallLinks(array($last), $this->RequiredTables, false);
 
         //if ($HierarquicalLinks)
@@ -1485,7 +1485,7 @@ class AgataInterface
             else
             {
                 $items = Layout::ListLayouts();
-                $this->LayoutList = &new IList($items, array(&$this, 'ReturnLayout'), $Pixmaps['ico_colors'], _a('Choose the Layout'), _a('Layout Name'), $type);
+                $this->LayoutList = new IList($items, array(&$this, 'ReturnLayout'), $Pixmaps['ico_colors'], _a('Choose the Layout'), _a('Layout Name'), $type);
             }
         }
     }
@@ -1554,7 +1554,7 @@ class AgataInterface
         else
         {
             $items = Layout::ListLayouts();
-            $this->LayoutList = &new IList($items, array(&$this, 'ReturnLayout'), $Pixmaps['ico_colors'], _a('Choose the Layout'), _a('Layout Name'), $type);
+            $this->LayoutList = new IList($items, array(&$this, 'ReturnLayout'), $Pixmaps['ico_colors'], _a('Choose the Layout'), _a('Layout Name'), $type);
         }
     }
 
@@ -2380,7 +2380,7 @@ class AgataInterface
             }
             else
             {
-                $this->TulipEditor= &new TulipEditor('functions');
+                $this->TulipEditor= new TulipEditor('functions');
             }
         }
         else
@@ -2408,7 +2408,7 @@ class AgataInterface
         }
         else
         {
-            $this->DictionaryWindow = &new DictionaryWindow();
+            $this->DictionaryWindow = new DictionaryWindow();
             $this->DictionaryWindow->connected = $this->connected;
             $this->DictionaryWindow->agataDB = $this->agataDB;
             $this->DictionaryWindow->Set(@array_keys($this->TableNames), $this->agataTbGroups, $this->PlainTbFamilies,
@@ -2428,7 +2428,7 @@ class AgataInterface
         }
         else
         {
-            $this->CustomParameterWindow = &new CustomParameterWindow();
+            $this->CustomParameterWindow = new CustomParameterWindow();
             $this->CustomParameterWindow->SetParameters($this->Parameters);
             $this->CustomParameterWindow->connect_object('return-parameters', array(&$this, 'ReturnCustomParameters'));
             $this->CustomParameterWindow->Show();
@@ -2444,14 +2444,14 @@ class AgataInterface
     function ConfigWindow()
     {
         include_once 'classes/guis/ConfigWindow.class';
-        $this->ConfigWindow = &new ConfigWindow(array(&$this,'ReturnVars'), $this->agataConfig);
+        $this->ConfigWindow = new ConfigWindow(array(&$this,'ReturnVars'), $this->agataConfig);
         $this->ConfigWindow->Show();
     }
 
     function Properties()
     {
         include_once 'classes/guis/PropertiesWindow.class';
-        $this->PropertiesWindow = &new PropertiesWindow(array(&$this,'ReturnPrefs'), $this->Properties);
+        $this->PropertiesWindow = new PropertiesWindow(array(&$this,'ReturnPrefs'), $this->Properties);
         $this->PropertiesWindow->Show();
     }
 
@@ -2473,7 +2473,7 @@ class AgataInterface
         }
         else
         {
-            $this->DiaWindow = &new DiaWindow($this->agataDB, $this->agataConfig,
+            $this->DiaWindow = new DiaWindow($this->agataDB, $this->agataConfig,
                                $this->ctreeTablesDia, $this->agataTbLinks, $this->project);
 
             $this->DiaWindow->connected = $this->connected;
@@ -2482,7 +2482,7 @@ class AgataInterface
 
     function ImportSql()
     {
-        $inWindow = &new InWindow;
+        $inWindow = new InWindow;
         $inWindow->connect_object('select-file', array(&$this, 'ReturnInSql'));
     }
 
@@ -2550,7 +2550,7 @@ class AgataInterface
     /***********************************************************/
     function ManageProject()
     {
-        $manageProject = &new ManageProject();
+        $manageProject = new ManageProject();
     }
 
     /**
@@ -2558,7 +2558,7 @@ class AgataInterface
     */
     function ManageUser()
     {
-        $manageUser = &new ManageUser();
+        $manageUser = new ManageUser();
     }
 
     /***********************************************************/
@@ -2576,7 +2576,7 @@ class AgataInterface
             }
             else
             {
-                $this->ConnectionWizard = &new ConnectionWizard(array(&$this,'ReturnProjectVars'));
+                $this->ConnectionWizard = new ConnectionWizard(array(&$this,'ReturnProjectVars'));
                 //$this->ConnectionWizard->connectButtonNewReport(array(&$this, 'NewReport'));
             }
         }
@@ -2598,7 +2598,7 @@ class AgataInterface
         }
         else
         {
-            $this->LayoutConfig = &new LayoutConfig;
+            $this->LayoutConfig = new LayoutConfig;
         }
     }
 
@@ -2614,7 +2614,7 @@ class AgataInterface
         }
         else
         {
-            $this->LabelConfig = &new LabelConfig;
+            $this->LabelConfig = new LabelConfig;
         }
     }
 
@@ -2631,7 +2631,7 @@ class AgataInterface
         }
         else
         {
-            $this->PageSetup = &new PageSetup(array(&$this, 'GetPageSetup'));
+            $this->PageSetup = new PageSetup(array(&$this, 'GetPageSetup'));
         }
         $this->PageSetup->SetValues($this->PageValues);
     }
@@ -2712,7 +2712,7 @@ class AgataInterface
                     $this->ReadAdjustments(1);
                     $Elements  = $this->SelectList->GetSelectColumns(_a('Column'));
                     $currentSubReport = $this->MergeInterface->GetCurrentSubReport();
-                    $this->Wizard = &new AgataInterface($this->agataConfig, true);
+                    $this->Wizard = new AgataInterface($this->agataConfig, true);
                     $this->Wizard->Connect($this->project, $this->agataDB);
                     $this->Wizard->SelectList->LoadBlocks($this->MergeInterface->SubSelectList[$currentSubReport]->Block);
                     $this->Wizard->SelectList->setDistinct($this->MergeInterface->SubSelectList[$currentSubReport]->getDistinct());

@@ -1,4 +1,4 @@
-<?
+<?php
 /***********************************************************/
 /* FileSelection class
 /* by Pablo Dall'Oglio 2001-2006
@@ -33,9 +33,9 @@ class FileDialog
             $this->desktop = $this->home . $this->barra . 'Desktop';
             
             $ico = Gdk::pixmap_create_from_xpm($this->gdkwindow, null, images . 'drive.xpm');
-            $this->MenuDrives = &new GtkMenu;
+            $this->MenuDrives = new GtkMenu;
             // A:
-            $item = &new MyNormalMenuItem($ico, " Drive A: ", array(&$this, 'GoLocal'), 'A:');
+            $item = new MyNormalMenuItem($ico, " Drive A: ", array(&$this, 'GoLocal'), 'A:');
             $this->MenuDrives->append($item);
             
             for ($n=66; $n<=90; $n++)
@@ -43,7 +43,7 @@ class FileDialog
                 $drive = chr($n) . ':';
                 if (file_exists($drive))
                 {
-                    $item = &new MyNormalMenuItem($ico, " Drive $drive ", array(&$this, 'GoLocal'), $drive);
+                    $item = new MyNormalMenuItem($ico, " Drive $drive ", array(&$this, 'GoLocal'), $drive);
                     $this->MenuDrives->append($item);
                 }
             }
@@ -129,10 +129,10 @@ class FileDialog
             $iconet = Gdk::pixmap_create_from_xpm($this->gdkwindow, null, images . 'ico_net.xpm');
             $this->LeftBox->pack_start($network, false, false, 5);
             
-            $this->MenuNetworks = &new GtkMenu;
+            $this->MenuNetworks = new GtkMenu;
             foreach ($Networks as $network)
             {
-                $item = &new MyNormalMenuItem($iconet, $network, array(&$this, 'GoRemote'), $network);
+                $item = new MyNormalMenuItem($iconet, $network, array(&$this, 'GoRemote'), $network);
                 $this->MenuNetworks->append($item);
             }
             $this->MenuNetworks->show_all();
@@ -195,7 +195,7 @@ class FileDialog
         $window->set_focus($EntryPath);
         $ActionBox->pack_start($EntryPath, true, true);
         
-        $this->DirListing = &new DirListing($this->gdkwindow, array(_a('File'), _a('Size'), _a('Date')));
+        $this->DirListing = new DirListing($this->gdkwindow, array(_a('File'), _a('Size'), _a('Date')));
         $dir = &$this->DirListing;
         $dir->barra = $this->barra;
         $dir->Combo = $ComboPath;

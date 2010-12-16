@@ -53,7 +53,7 @@ class AgataLabel extends AgataMerge
         
         Wait::On();
         $FileName = $this->FileName;
-        $this->PDF = &new FPDF($this->Orientation, 'pt', $this->PageFormat);
+        $this->PDF = new FPDF($this->Orientation, 'pt', $this->PageFormat);
         $this->PDF->SetAutoPageBreak(false);
         $this->PDF->SetMargins($this->LeftMargin, $this->TopMargin);
         $this->PDF->SetMargins($this->LeftMargin,$this->TopMargin,$this->RightMargin);

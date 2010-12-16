@@ -1,4 +1,4 @@
-<?
+<?php
 /***********************************************************/
 /* TextAreaClass, a wrapper for GtkScintilla used in Merge Tool
 /* by Pablo Dall'Oglio 2001-2006

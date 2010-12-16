@@ -1,20 +1,20 @@
-<?
+<?php
 # Including the necessary classes and definitions.
 include 'start.php';
 ?>
 <link href="site.css" rel="stylesheet" type="text/css">
 <form name=layout method=post action=generate.php>
-<input type=hidden name=file value=<? echo $file; ?>>
+<input type=hidden name=file value=<?php  echo $file; ?>>
 <input type=hidden name=type value='report'>
-<input type=hidden name=lang value=<? echo $lang; ?>>
-<input type=hidden name=connection            value=<? echo $connection; ?>>
-<input type=hidden name=Parameters            value='<? echo $Parameters; ?>'>
-<input type=hidden name=SelectFields          value='<? echo $SelectFields; ?>'>
-<input type=hidden name=constraint_fields     value='<? echo serialize($constraint_fields); ?>'>
-<input type=hidden name=constraint_entries    value='<? echo serialize($constraint_entries); ?>'>
-<input type=hidden name=constraint_operators  value='<? echo serialize($constraint_operators); ?>'>
-<input type=hidden name=ordering              value='<? echo serialize($ordering); ?>'>
-<?
+<input type=hidden name=lang value=<?php  echo $lang; ?>>
+<input type=hidden name=connection            value=<?php  echo $connection; ?>>
+<input type=hidden name=Parameters            value='<?php  echo $Parameters; ?>'>
+<input type=hidden name=SelectFields          value='<?php  echo $SelectFields; ?>'>
+<input type=hidden name=constraint_fields     value='<?php  echo serialize($constraint_fields); ?>'>
+<input type=hidden name=constraint_entries    value='<?php  echo serialize($constraint_entries); ?>'>
+<input type=hidden name=constraint_operators  value='<?php  echo serialize($constraint_operators); ?>'>
+<input type=hidden name=ordering              value='<?php  echo serialize($ordering); ?>'>
+<?php 
 $Layouts = getSimpleDirArray(AGATA_PATH . '/layout');
 if ($Layouts)
 {
@@ -47,7 +47,7 @@ if ($Layouts)
 
 <tr class=tablepath>
 <td colspan=4>
-&nbsp;<?echo _a('File') . ' : ' . $file; ?>
+&nbsp;<?php echo _a('File') . ' : ' . $file; ?>
 </td>
 </tr>
 
@@ -60,7 +60,7 @@ if ($Layouts)
 </td>
 </tr>
 <a name=radio> 
-<?
+<?php
 $formats = array('txt'  => 'TXT',
                  'html' => 'HTML',
                  'pdf'  => 'PDF',
@@ -91,6 +91,6 @@ echo "</tr>\n";
 <p align=right>
     <a class=link href="javascript:document.layout.submit()"><img src='imagens/download.png' border=0></a>
     &nbsp;&nbsp;<br>
-    <a class=link href="javascript:document.layout.submit()"><? echo _a('Download'); ?></a>
+    <a class=link href="javascript:document.layout.submit()"><?php  echo _a('Download'); ?></a>
 </p>
 </form>

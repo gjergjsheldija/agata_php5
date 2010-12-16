@@ -10,7 +10,7 @@ class CustomParameterWindow
     /***********************************************************/
     function CustomParameterWindow()
     {
-        $this->window = &new GtkWindow;
+        $this->window = new GtkWindow;
         $this->window->set_position(GTK_WIN_POS_CENTER);
         $this->window->set_default_size(400,240);
         $this->window->connect_object('delete-event', array(&$this, 'Hide'));
@@ -22,7 +22,7 @@ class CustomParameterWindow
         $this->window->add($vbox);
         
         $buttons = array('Add' => 1, 'Edit' => 1, 'Delete' => 1, 'Clear' => 1, 'Up' => 1, 'Down' => 1, 'Save' => 1);
-        $this->ParameterList = &new Alist(&$vbox, $this->window, _a('Tables'),
+        $this->ParameterList = new Alist(&$vbox, $this->window, _a('Tables'),
                                      array(_a('Parameter'), _a('Mask'), _a('Value')), null, 400, 200, false,
                                      $buttons, GTK_SELECTION_EXTENDED, array(images . 'ico_edit.xpm', images . 'ico_edit.xpm', images . 'ico_edit.xpm'));
         

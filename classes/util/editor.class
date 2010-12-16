@@ -1,4 +1,4 @@
-<?
+<?php
 // Find flags
 @define(  "SCINTILLA_FIND_DOWN"                     ,   1 ); 
 @define(  "SCINTILLA_FIND_WHOLE_WORDS"              ,   2 ); 

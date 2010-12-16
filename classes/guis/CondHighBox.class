@@ -11,10 +11,10 @@ class CondHighBox
     function CondHighBox($Description)
     {
         global $Pixmaps;
-        $tooltip = &new GtkTooltips;
-        $this->entry = &new GtkEntry;
+        $tooltip = new GtkTooltips;
+        $this->entry = new GtkEntry;
 
-        $box = &new GtkHBox;
+        $box = new GtkHBox;
         $this->widget = new Box($box, $Description);
         $this->button = new Button(array($this, 'HighlightSel'), _a('Conditional highlight'), $Pixmaps['ico_colors'], ICONBUTTON, $isdir, true);
         $this->button->set_relief(GTK_RELIEF_NONE);
@@ -72,7 +72,7 @@ class CondHighBox
     /***********************************************************/
     function HighlightSel()
     {
-        $this->window = &new GtkWindow;
+        $this->window = new GtkWindow;
         $this->window->connect_object('delete-event', array(&$this, 'Hide'));
         $this->window->connect_object('key_press_event', array(&$this,'KeyTest'));
         $this->window->set_title(_a('DataBase Connection Setup'));
@@ -95,7 +95,7 @@ class CondHighBox
             if ($piece)
             {
                 $cond_high  = splitCondHigh($piece);
-                $oFunction    = &new FunctionBox(_a('Functions'));
+                $oFunction    = new FunctionBox(_a('Functions'));
                 $Vars[$i][] = array($cond_high['function'],   _a('Functions'),     false, $oFunction, true);
                 $Vars[$i][] = array($cond_high['result'],     _a('Result'),        false, null, true);
                 $Vars[$i][] = array($cond_high['fontface'],   _a('Data Font'),     false, 'fonts', true);
@@ -105,7 +105,7 @@ class CondHighBox
             }
         }
         
-        $oFunction    = &new FunctionBox(_a('Functions'));
+        $oFunction    = new FunctionBox(_a('Functions'));
         $Plus[] = array('',   _a('Functions'),     false, 'FunctionBox', true);
         $Plus[] = array('',   _a('Result'),        false, null, true);
         $Plus[] = array('',   _a('Data Font'),     false, 'fonts', true);
@@ -120,7 +120,7 @@ class CondHighBox
         //$this->Conditional->Show();
 
         $slot_ok = array(&$this, 'GetConditional');
-        $this->ConditionalVars = &new Preferences(&$hbox);
+        $this->ConditionalVars = new Preferences(&$hbox);
         $this->ConditionalVars->SetTitleImage(images . 'conditional.xpm');
         $this->ConditionalVars->setAutomaticIncrement(true);
         $this->ConditionalVars->SetTitle(_a('Conditional highlight'));

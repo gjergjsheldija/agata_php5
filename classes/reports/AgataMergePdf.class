@@ -42,7 +42,7 @@ class AgataMergePdf extends AgataMerge
         Wait::On();
         $FileName = $this->FileName;
 
-        $this->PDF = &new FPDF($this->Orientation, 'pt', $this->PageFormat);
+        $this->PDF = new FPDF($this->Orientation, 'pt', $this->PageFormat);
         $this->PDF->SetAutoPageBreak(true);
         $this->PDF->SetMargins($this->LeftMargin,$this->TopMargin,$this->RightMargin);
         $this->PDF->SetCreator('Agata Report');

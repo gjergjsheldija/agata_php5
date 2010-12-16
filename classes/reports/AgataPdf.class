@@ -86,7 +86,7 @@ class AgataPdf extends AgataReport
         $this->PageFormat  = $this->XmlArray['Report']['PageSetup']['Format']      ? $this->XmlArray['Report']['PageSetup']['Format']         : 'A4';
         
         $FileName = $this->FileName;
-        $this->PDF = &new MyPdf($this->Orientation, 'mm', $this->PageFormat);
+        $this->PDF = new MyPdf($this->Orientation, 'mm', $this->PageFormat);
         $this->PDF->SetMargins($this->LeftMargin,$this->TopMargin,$this->RightMargin);
         $this->PDF->SetCreator('Agata Report');
         $this->PDF->SetTitle('Report');

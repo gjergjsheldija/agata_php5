@@ -31,8 +31,8 @@ class SelectList
         $this->hbox->pack_start($part1, false, fase, 2);
         $this->hbox->pack_start($part2, true,  true, 2);
 
-        $DelBox = &new GtkVBox(false, 0);
-        $a = &new GtkLabel('');  $a->set_usize(18,25);
+        $DelBox = new GtkVBox(false, 0);
+        $a = new GtkLabel('');  $a->set_usize(18,25);
     
         $DelBox->pack_start($a, false, false);
         $blocks = array('Select', 'From', 'Where', 'Group by', 'Order by');

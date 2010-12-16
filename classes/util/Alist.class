@@ -44,14 +44,14 @@ class Alist
         $this->Columns = $Columns;
         
         
-        $hbox = &new GtkHBox();
+        $hbox = new GtkHBox();
         $container->add($hbox);
         
-        $scrolled_win = &new GtkScrolledWindow();
+        $scrolled_win = new GtkScrolledWindow();
         $scrolled_win->set_border_width(5);
         $scrolled_win->set_policy(GTK_POLICY_AUTOMATIC, GTK_POLICY_AUTOMATIC);
         
-        $this->clist = &new GtkCList(count($Columns), $Columns);
+        $this->clist = new GtkCList(count($Columns), $Columns);
         $this->clist->set_selection_mode($mode);
         $scrolled_win->add($this->clist);
         
@@ -60,7 +60,7 @@ class Alist
         else
         $hbox->pack_start($scrolled_win);
         
-        $vbox = &new GtkVBox();
+        $vbox = new GtkVBox();
         $this->vbox = &$vbox;
         $hbox->pack_start($vbox, false, false, 5);
         
@@ -459,7 +459,7 @@ class Wlist extends Alist
     /***********************************************************/
     function Wlist($Title, $Columns, $Elements, $width, $height,  $isleft, $aButtons)
     {
-        $this->window = &new GtkWindow;
+        $this->window = new GtkWindow;
         $this->window->connect_object('delete-event', array(&$this,'CloseList'));
         $this->window->set_title($Title);
         $this->window->set_border_width(0);

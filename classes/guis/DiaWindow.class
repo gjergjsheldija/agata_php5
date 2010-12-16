@@ -14,7 +14,7 @@ class DiaWindow extends AgataCore
         $this->project      = $project;
         $this->DbAttributes = $DbAttributes;
 
-        $this->glade = &new GladeXML(images . 'dia.glade');
+        $this->glade = new GladeXML(images . 'dia.glade');
         $this->window = $this->glade->get_widget('window');
         $this->window->connect_object('delete-event', array(&$this, 'Hide'));
         $this->window->set_title(_a('Create Diagram'));
@@ -30,8 +30,8 @@ class DiaWindow extends AgataCore
         $local_pix['right']= Gdk::pixmap_create_from_xpm($this->window->window, null,  images . 'bigright.xpm');
         $local_pix['dia']= Gdk::pixmap_create_from_xpm($this->window->window, null,  images . 'dia.xpm');
 
-        $this->Buttons['SelectDia'] = &new Button(array(&$this, 'SelectDia'),  _a('Add'),           $local_pix['right'], TOPBUTTON);
-        $this->Buttons['Diagram'] =   &new Button(array(&$this, 'SaveDia'),    _a('Create Diagram'),$local_pix['dia'],   IMAGEBUTTON);
+        $this->Buttons['SelectDia'] = new Button(array(&$this, 'SelectDia'),  _a('Add'),           $local_pix['right'], TOPBUTTON);
+        $this->Buttons['Diagram'] =   new Button(array(&$this, 'SaveDia'),    _a('Create Diagram'),$local_pix['dia'],   IMAGEBUTTON);
 
         $this->Containers['vboxSelectDia']->pack_start($this->Buttons['SelectDia'], true, false);
         $this->Containers['hboxCreateDiagram']->pack_start($this->Buttons['Diagram'], false, false);

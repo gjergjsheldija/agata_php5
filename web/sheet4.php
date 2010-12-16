@@ -37,14 +37,14 @@
 <tr>
 <td width=84 valign=top>
     <map name="menu">
-    <area shape="rect" coords="01,01,80,58"    HREF="<?echo "javascript:js('$url1')";?>">
-    <area shape="rect" coords="01,64,80,124"   HREF="<?echo "javascript:js('$url2')";?>">
-    <area shape="rect" coords="01,126,80,186"  HREF="<?echo "javascript:js('$url3')";?>">
-    <area shape="rect" coords="01,188,80,248"  HREF="<?echo "javascript:js('$url4')";?>">
+    <area shape="rect" coords="01,01,80,58"    HREF="<?php echo "javascript:js('$url1')";?>">
+    <area shape="rect" coords="01,64,80,124"   HREF="<?php echo "javascript:js('$url2')";?>">
+    <area shape="rect" coords="01,126,80,186"  HREF="<?php echo "javascript:js('$url3')";?>">
+    <area shape="rect" coords="01,188,80,248"  HREF="<?php echo "javascript:js('$url4')";?>">
     
     <area SHAPE="DEFAULT" NOHREF></map>
     <img src='imagens/bar4.png' usemap="#menu" ismap border=0><br><br>
-    <center><a href='index.php'><img src='imagens/browse.png' border=0><br><? echo _a('Reports');?></a>
+    <center><a href='index.php'><img src='imagens/browse.png' border=0><br><?php  echo _a('Reports');?></a>
     </center>
 </td>
 <td width=716 align=left valign=top>
@@ -54,14 +54,14 @@
     <table width=100% cellspacing=0 border=0>
     <tr class=tabletitle height=30>
     <td colspan=4>
-        <b>&nbsp;Agata CoreReport:: <? echo _a('Merge Tool'); ?></b>
+        <b>&nbsp;Agata CoreReport:: <?php  echo _a('Merge Tool'); ?></b>
     </td>
     </tr>
 
     <form name=sheet4 method=post action=generate.php>
     <tr class=tablepath>
     <td colspan=4>
-        &nbsp;<?echo _a('Project Name'); ?>
+        &nbsp;<?php echo _a('Project Name'); ?>
     
     </td>
     </tr>
@@ -70,9 +70,9 @@
         <td width=6%>  </td>
         <td width=10% align=center>
         <img src='imagens/ico_db.png' border=0></td>
-        <td colspan=2 width=84%> <? echo _a('Project Name') . ':'; ?>
+        <td colspan=2 width=84%> <?php  echo _a('Project Name') . ':'; ?>
         <select name="connection">
-        <?
+        <?php 
         $Report = CoreReport::OpenReport($file);
         $datasource = $Report['Report']['DataSet']['DataSource']['Name'];
         $projects = array_keys(Project::ReadProjects());
@@ -88,19 +88,19 @@
 
     <tr class=tablepath>
     <td colspan=4>
-        <?
+        <?php 
             $tab_sheet = !$tab_sheet ? 1 : $tab_sheet;
         ?>
-        &nbsp;<?echo _a('File') . ' : ' . $file; ?>
-        <input type=hidden name=file value=<? echo $file; ?>>
-        <input type=hidden name=type value=<? echo ($tab_sheet == 1 ? 'merge' : 'label'); ?>>
+        &nbsp;<?php echo _a('File') . ' : ' . $file; ?>
+        <input type=hidden name=file value=<?php  echo $file; ?>>
+        <input type=hidden name=type value=<?php  echo ($tab_sheet == 1 ? 'merge' : 'label'); ?>>
     </td>
     </tr>
 
 
     <tr align=left>
     <td colspan=4 width=94 valign=top class=line1>
-    <?
+    <?php 
         $sub_tab   = !$sub_tab   ? 1 : $sub_tab;
         $content[1] = $Report['Report']['Merge']['ReportHeader'];
         $content[2] = $Report['Report']['Merge']['Details']['Detail1']['GroupHeader'];
@@ -169,7 +169,7 @@
     ?>
     </td>
     </tr>
-    <?
+    <?php 
         //$parameters = GetParameters($Report['Report']['DataSet']['Query']['Where']);
         $parameters = array_keys($Report['Report']['Parameters']);
         if ($parameters)
@@ -177,10 +177,10 @@
             ?>
             <tr class=tablepath>
             <td colspan=4>
-                &nbsp;<?echo _a('Parameters'); ?>
+                &nbsp;<?php echo _a('Parameters'); ?>
             </td>
             </tr>
-            <?
+            <?php 
             foreach ($parameters as $parameter)
             {
                 $value = $Report['Report']['Parameters'][$parameter]['value'];
@@ -190,19 +190,19 @@
                                  <td width=10% align=center><img src='imagens/ico_param.png' border=0>
                                  </td>
                                  <td width=44%>
-                                 <? echo $parameter; ?>
+                                 <?php  echo $parameter; ?>
                                  </td>
                                  <td width=44% align=left>
-                                 <input type=entry value='<? echo $value; ?>' name=Parameters[<? echo $parameter; ?>] maxwidth=100>
+                                 <input type=entry value='<?php  echo $value; ?>' name=Parameters[<?php  echo $parameter; ?>] maxwidth=100>
                                  </td>
                 </td>
                 </tr>
-                <?
+                <?php 
             }
             ?>
             </td>
             </tr>
-        <?
+        <?php 
         }
         ?>
 

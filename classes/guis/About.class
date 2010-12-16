@@ -16,15 +16,15 @@ class About
 		$GdkPixmap = Gdk::pixmap_create_from_xpm(
 				$this->about->window, null, images . 'about.xpm');
 
-		$Pixmap = &new GtkPixmap($GdkPixmap[0], $GdkPixmap[1]);
+		$Pixmap = new GtkPixmap($GdkPixmap[0], $GdkPixmap[1]);
 
-        $Fixed  = &new GtkFixed;
+        $Fixed  = new GtkFixed;
         $Fixed->put($Pixmap, 0, 0);
-        $botao  = &new GtkButton(_a('Credits'));
+        $botao  = new GtkButton(_a('Credits'));
         $botao->connect_object('clicked', array(&$this, 'Credits'));
         $Fixed->put($botao, 367, 147);
 
-        $botao  = &new GtkButton('ChangeLogs');
+        $botao  = new GtkButton('ChangeLogs');
         $botao->connect_object('clicked', array(&$this, 'Changelog'));
         $Fixed->put($botao, 356, 174);
 
@@ -43,13 +43,13 @@ class About
         $iwindow->set_default_size(540, 400);
         $iwindow->set_position(GTK_WIN_POS_CENTER);
 
-        $scrolled_win = &new GtkScrolledWindow();
+        $scrolled_win = new GtkScrolledWindow();
         $scrolled_win->set_border_width(5);
         $scrolled_win->set_policy(GTK_POLICY_AUTOMATIC, GTK_POLICY_AUTOMATIC);
 
         $iwindow->add($scrolled_win);
 
-        $HelpText = &new GtkText();
+        $HelpText = new GtkText();
         $scrolled_win->add($HelpText);
         $scrolled_win->show();
 
@@ -82,13 +82,13 @@ class About
         $iwindow->set_default_size(548, 400);
         $iwindow->set_position(GTK_WIN_POS_CENTER);
 
-        $scrolled_win = &new GtkScrolledWindow();
+        $scrolled_win = new GtkScrolledWindow();
         $scrolled_win->set_border_width(5);
         $scrolled_win->set_policy(GTK_POLICY_AUTOMATIC, GTK_POLICY_AUTOMATIC);
 
         $iwindow->add($scrolled_win);
 
-        $HelpText = &new GtkText();
+        $HelpText = new GtkText();
         $scrolled_win->add($HelpText);
         $scrolled_win->show();
 

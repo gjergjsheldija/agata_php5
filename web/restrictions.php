@@ -1,4 +1,4 @@
-<?
+<?php
 # Including the necessary classes and definitions.
 include 'start.php';
 ?>
@@ -6,11 +6,11 @@ include 'start.php';
 <link href="site.css" rel="stylesheet" type="text/css">
 
 <form name=restrictions method=post action=layout.php>
-<input type=hidden name=file value=<? echo $file; ?>>
+<input type=hidden name=file value=<?php echo $file; ?>>
 <input type=hidden name=type value='report'>
-<input type=hidden name=lang value=<? echo $lang; ?>>
-<input type=hidden name=connection value=<? echo $connection; ?>>
-<?
+<input type=hidden name=lang value=<?php echo $lang; ?>>
+<input type=hidden name=connection value=<?php echo $connection; ?>>
+<?php
 if ($Parameters)
 {
     foreach ($Parameters as $key =>$content)
@@ -19,10 +19,10 @@ if ($Parameters)
     }
 }
 ?>
-<input type=hidden name=Parameters   value='<? echo serialize($newParam); ?>'>
-<input type=hidden name=SelectFields value='<? echo serialize($SelectFields); ?>'>
+<input type=hidden name=Parameters   value='<?php echo serialize($newParam); ?>'>
+<input type=hidden name=SelectFields value='<?php echo serialize($SelectFields); ?>'>
 
-<?
+<?php
 $Report       = CoreReport::OpenReport($file);
 $operators    = array('=', '>', '<', '<>', '>=', '<=', 'like', 'not like');
 //$constraints  = explode(' and ', $Report['Report']['DataSet']['Query']['AgataWeb']['Where']);
@@ -109,6 +109,6 @@ echo "</table>\n";
 <p align=right>
     <a class=link href="javascript:document.restrictions.submit()"><img src='imagens/proceed.png' border=0></a>
     &nbsp;&nbsp;&nbsp;<br>
-    <a class=link href="javascript:document.restrictions.submit()"><? echo _a('Proceed'); ?></a>
+    <a class=link href="javascript:document.restrictions.submit()"><?php echo _a('Proceed'); ?></a>
 </p>
 </form>

@@ -1,4 +1,4 @@
-<?
+<?php
 /***********************************************************/
 /* Button class, builds different kind of buttons
 /* by Pablo Dall'Oglio 2001-2006
@@ -30,23 +30,23 @@ class Button extends GtkButton
             }
         }
 
-        $pixmapConfig = &new GtkPixmap($image[0], $image[1]);
+        $pixmapConfig = new GtkPixmap($image[0], $image[1]);
         $text = $this->text = new GtkLabel('  ' . $message . '  ');
 
         if ($kind == IMAGEBUTTON)
         {
-            $boxConfig = &new GtkHBox();
+            $boxConfig = new GtkHBox();
             $boxConfig->pack_start($pixmapConfig, false, false);
             $boxConfig->pack_start($text, true, true);
         }
         else if ($kind == ICONBUTTON)
         {
-            $boxConfig = &new GtkHBox();
+            $boxConfig = new GtkHBox();
             $boxConfig->pack_start($pixmapConfig, true, true);
         }
         else if ($kind == TOPBUTTON)
         {
-            $boxConfig = &new GtkVBox();
+            $boxConfig = new GtkVBox();
             $boxConfig->pack_start($pixmapConfig, false, false);
             $boxConfig->pack_start($text, true, true);
         }

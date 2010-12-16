@@ -10,7 +10,7 @@ class LabelConfig
     /***********************************************************/
     function LabelConfig()
     {
-        $this->pwindow = &new GtkWindow;
+        $this->pwindow = new GtkWindow;
         $this->pwindow->connect_object('delete-event', array(&$this, 'Hide'));
         $this->pwindow->connect_object('key_press_event', array(&$this,'KeyTest'), $this->pwindow);
         $this->pwindow->set_title(_a('Configuration'));
@@ -55,7 +55,7 @@ class LabelConfig
                                    'label_width', 'label_height', 'left_margin',
                                    'top_margin', 'line_spacing')))
                 {
-                    $type = &new MeasureBox(_a($desc[$var]));
+                    $type = new MeasureBox(_a($desc[$var]));
                 }
                 else if ($var == 'page_format')
                 {
@@ -78,7 +78,7 @@ class LabelConfig
         $slot_ok = array(&$this, 'onLabelConfig');
         $slot_del = array(&$this, 'DeleteLabel');
 
-        $this->LabelList = &new Preferences(&$hbox);
+        $this->LabelList = new Preferences(&$hbox);
         $this->LabelList->SetTitleImage(images . 'label_bar.xpm');
         $this->LabelList->SetTitle(_a('Label Templates'));
         $this->LabelList->SetPlus($Plus);

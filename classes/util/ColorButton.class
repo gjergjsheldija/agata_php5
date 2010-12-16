@@ -1,4 +1,4 @@
-<?
+<?php
 /***********************************************************/
 /* ColorButton, used to allows the user to choose colors
 /* by Pablo Dall'Oglio 2004-2006
@@ -11,14 +11,14 @@ class ColorButton
     function ColorButton($Description)
     {
         global $Pixmaps;
-        $tooltip = &new GtkTooltips;
-        $this->button = &new GtkButton('');
+        $tooltip = new GtkTooltips;
+        $this->button = new GtkButton('');
 
-        $box = &new GtkHBox;
+        $box = new GtkHBox;
         $this->widget = new Box($box, $Description);
         $tooltip->set_tip($this->button, _a('Color Selection'), '');
 
-        $pixmap = &new GtkPixmap($Pixmaps['cor'][0], $Pixmaps['cor'][1]);
+        $pixmap = new GtkPixmap($Pixmaps['cor'][0], $Pixmaps['cor'][1]);
         
         $box->pack_start($this->button);
         $box->pack_start($pixmap);

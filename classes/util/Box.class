@@ -1,4 +1,4 @@
-<?
+<?php
 /***********************************************************/
 /* Generic box
 /* by Pablo Dall'Oglio 2001-2006
@@ -12,7 +12,7 @@ class Box extends GtkFrame
     {
         GtkFrame::GtkFrame($title);
         GtkFrame::set_shadow_type(GTK_SHADOW_NONE);
-        $bbox = &new GtkHButtonBox();
+        $bbox = new GtkHButtonBox();
 
         $bbox->set_border_width(4);
         $bbox->set_layout(GTK_BUTTONBOX_SPREAD);
@@ -40,7 +40,7 @@ class EntryBox extends GtkFrame
     {
         GtkFrame::GtkFrame($title);
         GtkFrame::set_shadow_type(GTK_SHADOW_NONE);
-        $bbox = &new GtkHButtonBox();
+        $bbox = new GtkHButtonBox();
         
         $bbox->set_border_width(4);
         $bbox->set_layout(GTK_BUTTONBOX_SPREAD);
@@ -70,7 +70,7 @@ class TextBox extends GtkFrame
     {
         GtkFrame::GtkFrame($title);
         GtkFrame::set_shadow_type(GTK_SHADOW_NONE);
-        $bbox = &new GtkHButtonBox();
+        $bbox = new GtkHButtonBox();
         
         $bbox->set_border_width(5);
         $bbox->set_layout(GTK_BUTTONBOX_SPREAD);

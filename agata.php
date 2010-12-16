@@ -92,7 +92,7 @@ class App
 
         if ($agataConfig['general']['SplashScreen'])
         {
-            $this->StartWindow = &new Gtkwindow(GTK_WINDOW_POPUP);
+            $this->StartWindow = new Gtkwindow(GTK_WINDOW_POPUP);
             $this->StartWindow->set_border_width(0);
             $this->StartWindow->set_position(GTK_WIN_POS_CENTER);
             $this->StartWindow->connect_object('destroy', array('Gtk', 'Main_quit'));
@@ -101,11 +101,11 @@ class App
             $PixStart = Gdk::pixmap_create_from_xpm($this->StartWindow->window, null, 'interface/start_new.xpm');
             $Start = new GtkPixmap($PixStart[0], $PixStart[1]);
 
-            $fixed = &new GtkFixed;
+            $fixed = new GtkFixed;
             $this->StartWindow->add($fixed);
             $fixed->put($Start, 0, 0);
 
-            $this->Languages = &new GtkCombo();
+            $this->Languages = new GtkCombo();
             $this->Languages->set_usize(120,40);
             $EntryA = $this->Languages->entry;
             $EntryA->set_editable(false);
@@ -117,7 +117,7 @@ class App
             }
             $fixed->put($this->Languages, 348, 170);
 
-            $this->Themes = &new GtkCombo();
+            $this->Themes = new GtkCombo();
             $this->Themes->set_usize(120,40);
             $EntryB = $this->Themes->entry;
             $EntryB->set_editable(false);
@@ -177,6 +177,6 @@ class App
     }
 }
 
-$agata = &new App;
+$agata = new App;
 Gtk::main();
 ?>

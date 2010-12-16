@@ -1,4 +1,4 @@
-<?
+<?php
 /***********************************************************/
 /* MenuItem class, a wrapper for GtkMenuItem
 /* by Pablo Dall'Oglio 2001-2006

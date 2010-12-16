@@ -22,7 +22,7 @@ class TulipEditor
     /***********************************************************/
     function TulipEditor($Dir)
     {
-        $this->window = &new GtkWindow;
+        $this->window = new GtkWindow;
         $this->window->connect_object('delete-event', array(&$this, 'Hide'));
         $this->window->connect_object('key_press_event', array(&$this,'KeyTest'));
         $this->window->set_title(_a('Function Repository'));
@@ -70,13 +70,13 @@ class TulipEditor
         }
         
         $extensions = array('.fun');
-        $this->arquivos = &new FileTree();
+        $this->arquivos = new FileTree();
         $this->arquivos->DefineExtensions($extensions);
         $this->arquivos->set_column_width(0,400);
         $this->arquivos->AbreDiretorio($Dir, null, 'Root');
         $botao = $this->arquivos->BotaoOk;
         //$botao->connect_object('clicked', array(&$this,'AbrirTree'));
-        $this->FunctionsHandler = &new TreeHandler($this->arquivos);
+        $this->FunctionsHandler = new TreeHandler($this->arquivos);
         $ItemOpen = $this->FunctionsHandler->OpenAction;
         $ItemOpen->connect_object('clicked', array(&$this, 'AbrirTree'));
         
@@ -147,7 +147,7 @@ class TulipEditor
     /***********************************************************/
     function NewFunction()
     {
-        $this->newfunction = &new InputBox(_a('Function Name') . ' :', 120, '', array(&$this, 'NewFunctionX'));
+        $this->newfunction = new InputBox(_a('Function Name') . ' :', 120, '', array(&$this, 'NewFunctionX'));
     }
 
     /***********************************************************/
@@ -210,7 +210,7 @@ class TulipEditor
         global $Pixmaps;
         $vbox = new GtkVBox;
         $path = new GtkLabel;
-        $style = &new GtkStyle();
+        $style = new GtkStyle();
         $style->font = gdk::font_load ("-*-helvetica-bold-r-*-*-*-100-*-*-*-*-*-*");
         $path->set_style($style);
         $scintilla = new ScintillaPHP;

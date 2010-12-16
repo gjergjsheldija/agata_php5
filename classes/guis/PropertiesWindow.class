@@ -11,7 +11,7 @@ class PropertiesWindow
     /***********************************************************/
     function PropertiesWindow($slot, $Properties)
     {
-        $this->window = &new GtkWindow;
+        $this->window = new GtkWindow;
         $this->window->connect_object('delete-event', array(&$this, 'Hide'));
         $this->window->connect_object('key_press_event', array(&$this,'KeyTest'));
         $this->window->set_title(_a('Properties'));
@@ -20,7 +20,7 @@ class PropertiesWindow
         $this->Properties = $Properties;
         $this->slot       = $slot;
 
-        $vbox = &new GtkVBox;
+        $vbox = new GtkVBox;
         $this->window->add($vbox);
 
         $Vars = null;
@@ -34,7 +34,7 @@ class PropertiesWindow
 
         $Vars[_a('Miscellaneous')][] = array($Properties['FrameSize'],_a('Frame Size'), false, false, true);
 
-        $this->ConfigList = &new Preferences(&$vbox);
+        $this->ConfigList = new Preferences(&$vbox);
         $this->ConfigList->SetTitleImage(images . 'properties.xpm');
         $this->ConfigList->SetTitle(_a('Properties'));
         $this->ConfigList->SetOptions(false);

@@ -193,12 +193,12 @@ class AgataScreen extends AgataReport
                             }
                             if ($withcontent)
                             {
-                                $bg = &new GdkColor(54000, 54000, 54000);
+                                $bg = new GdkColor(54000, 54000, 54000);
                                 $style = null;
-                                $style = &new GtkStyle;
+                                $style = new GtkStyle;
                                 $style->base[GTK_STATE_NORMAL] = $bg;
                                 $node = $this->TreeList->AppendLineItems($this->Nodes[$this->Association[$chave]], $totalline, null, $style);
-                                $fg = &new GdkColor(51400, 0, 0);
+                                $fg = new GdkColor(51400, 0, 0);
                                 $style->fg[GTK_STATE_NORMAL] = $fg;
                             }
                         }
@@ -298,9 +298,9 @@ class AgataScreen extends AgataReport
                         }
                         if ($withcontent)
                         {
-                            $bg = &new GdkColor(54000, 54000, 54000);
+                            $bg = new GdkColor(54000, 54000, 54000);
                             $style = null;
-                            $style = &new GtkStyle;
+                            $style = new GtkStyle;
                             $style->base[GTK_STATE_NORMAL] = $bg;
                             if ($TreeView)
                             {
@@ -310,7 +310,7 @@ class AgataScreen extends AgataReport
                             {
                                 $node = $this->TreeList->AppendLineItems($totalline, $style);
                             }
-                            $fg = &new GdkColor(51400, 0, 0);
+                            $fg = new GdkColor(51400, 0, 0);
                             $style->fg[GTK_STATE_NORMAL] = $fg;
                         }
                     }
@@ -344,7 +344,7 @@ class AgataScreen extends AgataReport
         if (!in_array($type, array('txt', 'xml', 'csv')))
         {
             $items  = Layout::ListLayouts();
-            $this->LayoutList = &new IList($items, array(&$this, 'ReturnLayout'), $Pixmaps['ico_colors'], _a('Choose the Layout'), _a('Layout Name'), $type);
+            $this->LayoutList = new IList($items, array(&$this, 'ReturnLayout'), $Pixmaps['ico_colors'], _a('Choose the Layout'), _a('Layout Name'), $type);
         }
         else
         {
@@ -370,7 +370,7 @@ class AgataScreen extends AgataReport
         if ($FileName)
         {
             $fileselection->hide();
-            $objQueryData = &new AgataQueryArray($this->QueryArray);
+            $objQueryData = new AgataQueryArray($this->QueryArray);
             $objQueryData->Columns = $this->CurrentQuery->Columns;
             $objQueryData->ColumnCount = $this->CurrentQuery->ColumnCount;
 

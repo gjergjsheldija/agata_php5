@@ -1,4 +1,4 @@
-<?
+<?php
 /***********************************************************/
 /* Icon class
 /* by Pablo Dall'Oglio 2001-2006
@@ -15,7 +15,7 @@ class Icone extends GtkButton
         $Imagem = new GtkPixmap($Pixmap[0], $Pixmap[1]);
         $Rotulo = new GtkLabel($texto);
         
-        $help = &new GtkTooltips;
+        $help = new GtkTooltips;
         $help->set_tip($this, $dica);
         if ($horizontal)
         {
@@ -48,7 +48,7 @@ class ToggleIcone extends GtkToggleButton
         $Imagem = new GtkPixmap($Pixmap[0], $Pixmap[1]);
         $Rotulo = new GtkLabel($texto);
         
-        $help = &new GtkTooltips;
+        $help = new GtkTooltips;
         $help->set_tip($this, $dica);
         $vbox = new GtkVBox;
         $vbox->pack_start($Imagem);
@@ -73,7 +73,7 @@ class IconeImg extends GtkButton
         $Pixmap = Gdk::pixmap_create_from_xpm($gdkwindow, null, $imagem);
         $Imagem = new GtkPixmap($Pixmap[0], $Pixmap[1]);
         
-        $help = &new GtkTooltips;
+        $help = new GtkTooltips;
         $help->set_tip($this, $dica);
         $vbox = new GtkVBox;
         $vbox->pack_start($Imagem);

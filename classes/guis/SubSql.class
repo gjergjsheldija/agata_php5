@@ -14,16 +14,16 @@ class SubSql
         $this->widget = new GtkVBox;
         $this->widget->set_border_width(4);
 
-        $notebook = &new GtkNotebook();
+        $notebook = new GtkNotebook();
         $notebook->set_tab_pos(GTK_POS_LEFT);
 
         $ico_sql  = Gdk::pixmap_create_from_xpm($this->window->window, null,  images . 'ico_sql.xpm');
-        $ico_sql_pix = &new GtkPixmap($ico_sql[0], $ico_sql[1]);
+        $ico_sql_pix = new GtkPixmap($ico_sql[0], $ico_sql[1]);
         $notebook->insert_page($this->generateSql(), $ico_sql_pix, 0);
 
         $ico_width  = Gdk::pixmap_create_from_xpm($this->window->window, null,  images . 'ico_width.xpm');
-        $ico_width_pix = &new GtkPixmap($ico_width[0], $ico_width[1]);
-        $this->vbox = &new GtkVBox();
+        $ico_width_pix = new GtkPixmap($ico_width[0], $ico_width[1]);
+        $this->vbox = new GtkVBox();
         $notebook->insert_page($this->vbox, $ico_width_pix, 1);
         $this->generateAdjustments();
 
@@ -38,18 +38,18 @@ class SubSql
         $hbox->pack_start($notebook, true, true, 0);
         $hbox->pack_start($vbox  , true, true, 0);
 
-        $this->notebookDetail = &new GtkNotebook();
+        $this->notebookDetail = new GtkNotebook();
         $this->notebookDetail->set_tab_pos(GTK_POS_LEFT);
 
         $ico_groupheader  = Gdk::pixmap_create_from_xpm($this->window->window, null,  images . 'ico_groupheader.xpm');
-        $ico_groupheader_pix = &new GtkPixmap($ico_groupheader[0], $ico_groupheader[1]);
+        $ico_groupheader_pix = new GtkPixmap($ico_groupheader[0], $ico_groupheader[1]);
         $this->notebookDetail->insert_page($this->generateGroupHeader(), $ico_groupheader_pix, 0);
 
         $vboxNote = new GtkVBox();
         $vboxNote->pack_start($this->generateBarSubFields($eventTypeSubField), false, false, 0);
         $vboxNote->pack_start($this->generateDetails(), true, true, 0);
         $ico_detail  = Gdk::pixmap_create_from_xpm($this->window->window, null,  images . 'ico_detail.xpm');
-        $ico_detail_pix = &new GtkPixmap($ico_detail[0], $ico_detail[1]);
+        $ico_detail_pix = new GtkPixmap($ico_detail[0], $ico_detail[1]);
         $this->notebookDetail->insert_page($vboxNote, $ico_detail_pix, 1);
 
 
@@ -62,7 +62,7 @@ class SubSql
         $frame = new GtkFrame(_a('SubQuery Session'));
         $frame->set_border_width(4);
         $frame->set_usize(342, -1);
-        $this->selectList = &new SelectList(null);
+        $this->selectList = new SelectList(null);
         $frame->add($this->selectList->widget);
 
         return $frame;
@@ -70,9 +70,9 @@ class SubSql
 
     function generateAdjustments()
     {
-        $hbox = &new GtkHBox();
+        $hbox = new GtkHBox();
         $this->vbox->add($hbox);
-        $this->SubAdjustmentsConfig = &new Preferences(&$hbox);
+        $this->SubAdjustmentsConfig = new Preferences(&$hbox);
         $this->SubAdjustmentsConfig->SetTitle(_a('Adjustments'));
         $this->SubAdjustmentsConfig->SetOptions(false);
         $this->SubAdjustmentsConfig->SetPlus($Plus);
@@ -90,11 +90,11 @@ class SubSql
 
     function generateBarSubFields($event)
     {
-        $handleBox  = &new GtkHandleBox();
-        $hHBox = &new GtkHBox();
+        $handleBox  = new GtkHandleBox();
+        $hHBox = new GtkHBox();
         $handleBox->add($hHBox);
 
-        $this->comboSubFields = &new GtkCombo();
+        $this->comboSubFields = new GtkCombo();
         $this->comboSubFields->set_border_width(4);
         $this->comboSubFields->set_usize(220, 30);
 
@@ -113,9 +113,9 @@ class SubSql
 
     function generateDetails()
     {
-        $scrolled     = &new GtkScrolledWindow();
+        $scrolled     = new GtkScrolledWindow();
         $scrolled->set_policy(GTK_POLICY_NEVER, GTK_POLICY_ALWAYS);
-        $this->detail = &new TextArea;
+        $this->detail = new TextArea;
         $scrolled->add($this->detail);
 
         return $scrolled;
@@ -123,9 +123,9 @@ class SubSql
 
     function generateGroupHeader()
     {
-        $scrolled     = &new GtkScrolledWindow();
+        $scrolled     = new GtkScrolledWindow();
         $scrolled->set_policy(GTK_POLICY_NEVER, GTK_POLICY_ALWAYS);
-        $this->groupHeader = &new TextArea;
+        $this->groupHeader = new TextArea;
         $scrolled->add($this->groupHeader);
 
         return $scrolled;

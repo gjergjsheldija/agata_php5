@@ -14,7 +14,7 @@ class AgataCore
     {
         $class = 'Agata' . strtoupper(substr($type,0,1)) . substr($type,1);
         include_once AGATA_PATH . "/classes/reports/{$class}.class";
-        $obj = &new $class;
+        $obj = new $class;
         $obj->SetProperties($params);
         return $obj;
     }
@@ -27,7 +27,7 @@ class AgataCore
         include_once AGATA_PATH . '/classes/reports/AgataMerge.class';
         include_once AGATA_PATH . "/classes/reports/AgataMerge{$kind}.class";
         $class = "AgataMerge$kind";
-        $obj = &new $class;
+        $obj = new $class;
         $obj->SetProperties($params);
         return $obj;
     }
@@ -41,7 +41,7 @@ class AgataCore
         include_once AGATA_PATH . '/classes/reports/AgataOOParser' . $engine . '.class';
 
         $class = "AgataOOParser" . $engine;
-        $obj = &new $class;
+        $obj = new $class;
         $obj->SetProperties($params);
         return $obj;
     }
@@ -53,7 +53,7 @@ class AgataCore
     {
         include_once AGATA_PATH . '/classes/reports/AgataMerge.class';
         include_once AGATA_PATH . '/classes/reports/AgataLabel.class';
-        $obj = &new AgataLabel;
+        $obj = new AgataLabel;
         $obj->SetProperties($params);
         return $obj;
     }
@@ -64,7 +64,7 @@ class AgataCore
     function CreateGraph($params)
     {
         include_once AGATA_PATH . '/classes/reports/AgataGraph.class';
-        $obj = &new AgataGraph;
+        $obj = new AgataGraph;
         $obj->SetProperties($params);
         return $obj;
     }
@@ -92,7 +92,7 @@ class AgataCore
                 }
                 $x++;
             }
-            $CurrentQuery = &new AgataQueryArray($newArray);
+            $CurrentQuery = new AgataQueryArray($newArray);
             return $CurrentQuery;
         }
         else
@@ -136,7 +136,7 @@ class AgataCore
                     $newArray[$z][0][0] = $col;
                 }
             }
-            $CurrentSubQuery = &new AgataSubQueryArray($newArray);
+            $CurrentSubQuery = new AgataSubQueryArray($newArray);
             return $CurrentSubQuery;
         }
         else
@@ -180,7 +180,7 @@ class AgataCore
                 }
             }
 
-            $CurrentSubQuery = &new AgataSubQueryObject($newArray);
+            $CurrentSubQuery = new AgataSubQueryObject($newArray);
             return $CurrentSubQuery;
         }
         else
@@ -286,7 +286,7 @@ class AgataCore
                     }
                 }
                 
-                $CurrentQuery = &new AgataDataSet;           
+                $CurrentQuery = new AgataDataSet;           
                 $CurrentQuery->FunctionMatrix = $function_matrix;
                 $CurrentQuery->CrossMatrix    = $cross_matrix;
                 $CurrentQuery->ColumnCount    = $ColumnCount;

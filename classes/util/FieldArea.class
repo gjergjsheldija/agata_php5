@@ -1,4 +1,4 @@
-<?
+<?php
 class FieldArea extends GtkFixed
 {
     function FieldArea($horizontal = true, $limit = false)
@@ -63,7 +63,7 @@ class FieldArea extends GtkFixed
                 $label = $udata[0];
                 $name  = $udata[1];
                 
-                $button = &new VoidButton($label, $Pixmaps['field'], IMAGEBUTTON);
+                $button = new VoidButton($label, $Pixmaps['field'], IMAGEBUTTON);
                 # set_tip com a descricao full
                 $tooltips = $button->tooltips;
                 $tooltips->set_tip($button, $name);

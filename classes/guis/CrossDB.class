@@ -43,8 +43,8 @@ class CrossDB extends AgataCore
         $scroll1->set_policy(GTK_POLICY_AUTOMATIC, GTK_POLICY_ALWAYS);
         $scroll2->set_policy(GTK_POLICY_AUTOMATIC, GTK_POLICY_ALWAYS);
         
-        $this->tree1 = &new TableTree(_a('Tables Structure'), true);
-        $this->tree2 = &new TableTree(_a('Tables Structure'), true);
+        $this->tree1 = new TableTree(_a('Tables Structure'), true);
+        $this->tree2 = new TableTree(_a('Tables Structure'), true);
         $this->tree1->connect_object('tree-select-row', array(&$this, 'LoadTables2'));
         
         $scroll1->add($this->tree1);

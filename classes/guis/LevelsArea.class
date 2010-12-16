@@ -12,7 +12,7 @@ class LevelsArea
     {
         global $Pixmaps;
 
-        $this->widget    = &new GtkFixed;
+        $this->widget    = new GtkFixed;
 
         $this->MenuLevels = new GtkMenu;
         $option1 = new MyNormalMenuItem($Pixmaps['menu_replace'],  _a('Edit'), null);
@@ -39,7 +39,7 @@ class LevelsArea
         $this->Containers['boxLevelMask']  = $glade->get_widget('boxLevelMask');
         $this->Containers['frameTotalLabel'] = $glade->get_widget('frameTotalLabel');
         $this->Containers['frameGroup']      = $glade->get_widget('frameGroup');
-        $this->Mask = &new MaskBox(_a('Format'), false);
+        $this->Mask = new MaskBox(_a('Format'), false);
         $this->Containers['boxLevelMask']->add($this->Mask->widget);
         
         $this->Containers['frameFunction']->set_label(_a('Apply Function'));
@@ -62,7 +62,7 @@ class LevelsArea
 
     function CreateBreakList()
     {
-        $this->widget2   = &new GtkHBox;
+        $this->widget2   = new GtkHBox;
         $this->widget->realize();
         $this->clistBreak = new Alist(&$this->widget2, $this->widget, _a('xxx'),
                                 array(_a('Groups'), _a('Formulas')), null, 400, 200,
@@ -132,7 +132,7 @@ class LevelsArea
     {
         if ($Formulas[1])
         {
-            $this->Hint = &new HintWindow;
+            $this->Hint = new HintWindow;
             $this->Hint->set_title(_a('Formulas'));
             $this->Hint->set_uposition(480,164);
             $this->Hint->set_usize(280,-1);

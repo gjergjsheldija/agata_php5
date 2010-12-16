@@ -1,4 +1,4 @@
-<?
+<?php 
 #+-----------------------------------------------------------------+
 #| AGATA Report  (http://www.agata.org.br)                         |
 #| Copyleft (l) 2004  Solis - Lajeado - RS - Brasil                |

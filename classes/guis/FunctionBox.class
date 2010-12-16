@@ -12,10 +12,10 @@ class FunctionBox
     {
         global $Pixmaps;
         $Description = (!$Description) ? _a('Functions') : $Description;
-        $tooltip = &new GtkTooltips;
-        $this->entry = &new GtkEntry;
+        $tooltip = new GtkTooltips;
+        $this->entry = new GtkEntry;
 
-        $box = &new GtkHBox;
+        $box = new GtkHBox;
         $this->widget = new Box($box, $Description);
         $this->button = new Button(array($this, 'FunctionSel'), _a('Function Repository'), $Pixmaps['menu_function'], ICONBUTTON, $isdir, true);
         $this->button->set_relief(GTK_RELIEF_NONE);
@@ -81,17 +81,17 @@ class FunctionBox
         $janela->set_default_size(320,320);
         $janela->realize();
         
-        $vbox = &new GtkVBox;
+        $vbox = new GtkVBox;
         $janela->add($vbox);
         $extensions = array('.fun');
-        $this->RepositoryTree = $filetree = &new FileTree();
+        $this->RepositoryTree = $filetree = new FileTree();
         $this->RepositoryTree->Info = $Info;
         $filetree->set_column_width(0,400);
         $filetree->DefineExtensions($extensions);
         $filetree->AbreDiretorio('functions', null);
         $filetree->set_column_width(0, 600);
         
-        $SavedQueriesHandler = &new TreeHandler($filetree, array(0 => array($Pixmaps['require'], 'Apply')));
+        $SavedQueriesHandler = new TreeHandler($filetree, array(0 => array($Pixmaps['require'], 'Apply')));
         $ItemOpen = $SavedQueriesHandler->OpenAction;
         $ItemOpen->connect_object('clicked', array(&$this, 'GetFunction'));
         $ItemOpen->connect_object('clicked', array(&$janela, 'hide'));

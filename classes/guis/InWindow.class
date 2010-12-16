@@ -19,17 +19,17 @@ class InWindow
         $janela->set_default_size(320,320);
         $janela->realize();
         
-        $vbox = &new GtkVBox;
+        $vbox = new GtkVBox;
         $janela->add($vbox);
         $extensions = array('.sql');
-        $this->RepositoryTree = $filetree = &new FileTree();
+        $this->RepositoryTree = $filetree = new FileTree();
         $this->RepositoryTree->Info = $Info;
         $filetree->set_column_width(0,400);
         $filetree->DefineExtensions($extensions);
         $filetree->AbreDiretorio($agataConfig['general']['SqlDir'], null);
         $filetree->set_column_width(0, 600);
         
-        $SavedQueriesHandler = &new TreeHandler($filetree, array(0 => array($Pixmaps['require'], 'Apply')));
+        $SavedQueriesHandler = new TreeHandler($filetree, array(0 => array($Pixmaps['require'], 'Apply')));
         $ItemOpen = $SavedQueriesHandler->OpenAction;
         $ItemOpen->connect_object('clicked', array(&$this, 'GetQuery'));
         $ItemOpen->connect_object('clicked', array(&$janela, 'hide'));
