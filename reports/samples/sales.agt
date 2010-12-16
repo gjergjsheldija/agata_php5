@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <Report>
-    <Version>7.4</Version>
+    <Version>7.5</Version>
     <Properties>
         <Title>Sales</Title>
         <Author>Pablo</Author>
@@ -129,7 +129,7 @@ qtde min: $amount</Body>
     <Merge>
         <Details>
             <Detail1>
-                <DataSet>
+                <DataSet1>
                     <Query>
                         <Config>
                             <OffSet>0</OffSet>
@@ -138,7 +138,8 @@ qtde min: $amount</Body>
 
                     </Query>
 
-                </DataSet>
+                    <Body></Body>
+                </DataSet1>
 
             </Detail1>
 
@@ -161,5 +162,18 @@ qtde min: $amount</Body>
         </Config>
 
     </Label>
+
+    <Report>
+        <Merge>
+            <Details>
+                <Detail1>
+                    <NumberSubSql>0</NumberSubSql>
+                </Detail1>
+
+            </Details>
+
+        </Merge>
+
+    </Report>
 
 </Report>
