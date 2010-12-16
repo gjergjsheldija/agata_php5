@@ -171,7 +171,8 @@
     </tr>
     <?php 
         //$parameters = GetParameters($Report['Report']['DataSet']['Query']['Where']);
-        $parameters = array_keys($Report['Report']['Parameters']);
+        if(is_array($Report['Report']['Parameters']) || !is_null($Report['Report']['Parameters']))
+        	$parameters = array_keys($Report['Report']['Parameters']);
         if ($parameters)
         {
             ?>
