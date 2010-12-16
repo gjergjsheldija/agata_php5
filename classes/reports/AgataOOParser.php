@@ -2,7 +2,7 @@
 /* class AgataOOParser
  * Jamiel Spezia 2005 - 2005
  */
-include_once 'classes/util/AgataOO.class';
+include_once 'classes/util/AgataOO.php';
 class AgataOOParser extends AgataMerge
 {
     var $buffer;
@@ -457,7 +457,7 @@ class AgataOOParser extends AgataMerge
      */
     function barCode($string)
     {
-        include_once 'AgataBarCode.class';
+        include_once 'AgataBarCode.php';
         
         preg_match('/\([A-z0-9]*\)/', $string, $match1);  // "(var1)"
         preg_match('/[0-9]x[0-9]/',   $string, $match2);   // "5x4"

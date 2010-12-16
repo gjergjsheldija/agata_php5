@@ -13,7 +13,7 @@ class AgataCore
     function CreateReport($type, $params)
     {
         $class = 'Agata' . strtoupper(substr($type,0,1)) . substr($type,1);
-        include_once AGATA_PATH . "/classes/reports/{$class}.class";
+        include_once AGATA_PATH . "/classes/reports/{$class}.php";
         $obj = new $class;
         $obj->SetProperties($params);
         return $obj;
@@ -24,8 +24,8 @@ class AgataCore
     /*******************************************************************************/
     function CreateMergedDocument($params, $kind)  
     {
-        include_once AGATA_PATH . '/classes/reports/AgataMerge.class';
-        include_once AGATA_PATH . "/classes/reports/AgataMerge{$kind}.class";
+        include_once AGATA_PATH . '/classes/reports/AgataMerge.php';
+        include_once AGATA_PATH . "/classes/reports/AgataMerge{$kind}.php";
         $class = "AgataMerge$kind";
         $obj = new $class;
         $obj->SetProperties($params);
@@ -37,8 +37,8 @@ class AgataCore
     /*******************************************************************************/
     function ParseOpenOffice($params, $kind, $engine=null)
     {
-        include_once AGATA_PATH . '/classes/reports/AgataMerge.class';
-        include_once AGATA_PATH . '/classes/reports/AgataOOParser' . $engine . '.class';
+        include_once AGATA_PATH . '/classes/reports/AgataMerge.php';
+        include_once AGATA_PATH . '/classes/reports/AgataOOParser' . $engine . '.php';
 
         $class = "AgataOOParser" . $engine;
         $obj = new $class;
@@ -51,8 +51,8 @@ class AgataCore
     /*******************************************************************************/
     function CreateAddressLabel($params)
     {
-        include_once AGATA_PATH . '/classes/reports/AgataMerge.class';
-        include_once AGATA_PATH . '/classes/reports/AgataLabel.class';
+        include_once AGATA_PATH . '/classes/reports/AgataMerge.php';
+        include_once AGATA_PATH . '/classes/reports/AgataLabel.php';
         $obj = new AgataLabel;
         $obj->SetProperties($params);
         return $obj;
@@ -63,7 +63,7 @@ class AgataCore
     /*******************************************************************************/
     function CreateGraph($params)
     {
-        include_once AGATA_PATH . '/classes/reports/AgataGraph.class';
+        include_once AGATA_PATH . '/classes/reports/AgataGraph.php';
         $obj = new AgataGraph;
         $obj->SetProperties($params);
         return $obj;

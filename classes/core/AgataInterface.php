@@ -14,61 +14,61 @@
 # | Author: Pablo Dall'Oglio (pablo@dalloglio.net)                  |
 # +-----------------------------------------------------------------+
 
-include_once 'classes/util/Dialog.class';
-include_once 'classes/util/AGrid.class';
-include_once 'classes/util/InputBox.class';
-include_once 'classes/util/InputArea.class';
-include_once 'classes/util/Alist.class';
-include_once 'classes/util/SimpleTree.class';
-include_once 'classes/util/Listing.class';
-include_once 'classes/util/CommonForm.class';
-include_once 'classes/util/FormEntry.class';
-include_once 'classes/util/Preferences.class';
-include_once 'classes/util/Wait.class';
-include_once 'classes/util/Ask.class';
-include_once 'classes/util/Button.class';
-include_once 'classes/util/ColorButton.class';
-include_once 'classes/util/FontBox.class';
-include_once 'classes/util/FileBox.class';
-include_once 'classes/util/icone.class';
-include_once 'classes/util/FileTree.class';
-include_once 'classes/util/FileList.class';
-include_once 'classes/util/editor.class';
-include_once 'classes/util/TableTree.class';
-include_once 'classes/util/TreeHandler.class';
-include_once 'classes/util/TextArea.class';
-include_once 'classes/util/MemoArea.class';
-include_once 'classes/util/XmlArray.class';
-include_once 'classes/util/Box.class';
-include_once 'classes/util/IList.class';
-include_once 'classes/util/FileDialog.class';
-include_once 'classes/util/MenuItem.class';
-include_once 'classes/util/HintWindow.class';
-include_once 'classes/util/GtkEntryMask.class';
-include_once 'classes/util/GtkPopDate.class';
-include_once 'classes/util/AgataOO.class';
-include_once 'classes/util/ProjectList.class';
-include_once 'classes/guis/match.class';
-include_once 'classes/guis/CrossDB.class';
-include_once 'classes/guis/CrossBox.class';
-include_once 'classes/guis/FunctionBox.class';
-include_once 'classes/guis/CondHighBox.class';
-include_once 'classes/guis/MaskBox.class';
-include_once 'classes/guis/About.class';
-include_once 'classes/guis/LinkMatch.class';
-include_once 'classes/guis/InWindow.class';
-include_once 'classes/guis/SelectList.class';
-include_once 'classes/guis/SubSql.class';
-include_once 'classes/guis/LevelsArea.class';
-include_once 'classes/guis/LinkedTables.class';
-include_once 'classes/guis/MergeInterface.class';
-include_once 'classes/guis/OfficeInterface.class';
-include_once 'classes/guis/ManageProject.class';
-include_once 'classes/guis/ManageUser.class';
-include_once 'classes/util/FieldArea.class';
-include_once 'classes/guis/ConnectionWizard.class';
-include_once 'classes/guis/HeaderFooterArea.class';
-include_once 'classes/reports/AgataReport.class';
+include_once 'classes/util/Dialog.php';
+include_once 'classes/util/AGrid.php';
+include_once 'classes/util/InputBox.php';
+include_once 'classes/util/InputArea.php';
+include_once 'classes/util/Alist.php';
+include_once 'classes/util/SimpleTree.php';
+include_once 'classes/util/Listing.php';
+include_once 'classes/util/CommonForm.php';
+include_once 'classes/util/FormEntry.php';
+include_once 'classes/util/Preferences.php';
+include_once 'classes/util/Wait.php';
+include_once 'classes/util/Ask.php';
+include_once 'classes/util/Button.php';
+include_once 'classes/util/ColorButton.php';
+include_once 'classes/util/FontBox.php';
+include_once 'classes/util/FileBox.php';
+include_once 'classes/util/icone.php';
+include_once 'classes/util/FileTree.php';
+include_once 'classes/util/FileList.php';
+include_once 'classes/util/editor.php';
+include_once 'classes/util/TableTree.php';
+include_once 'classes/util/TreeHandler.php';
+include_once 'classes/util/TextArea.php';
+include_once 'classes/util/MemoArea.php';
+include_once 'classes/util/XmlArray.php';
+include_once 'classes/util/Box.php';
+include_once 'classes/util/IList.php';
+include_once 'classes/util/FileDialog.php';
+include_once 'classes/util/MenuItem.php';
+include_once 'classes/util/HintWindow.php';
+include_once 'classes/util/GtkEntryMask.php';
+include_once 'classes/util/GtkPopDate.php';
+include_once 'classes/util/AgataOO.php';
+include_once 'classes/util/ProjectList.php';
+include_once 'classes/guis/match.php';
+include_once 'classes/guis/CrossDB.php';
+include_once 'classes/guis/CrossBox.php';
+include_once 'classes/guis/FunctionBox.php';
+include_once 'classes/guis/CondHighBox.php';
+include_once 'classes/guis/MaskBox.php';
+include_once 'classes/guis/About.php';
+include_once 'classes/guis/LinkMatch.php';
+include_once 'classes/guis/InWindow.php';
+include_once 'classes/guis/SelectList.php';
+include_once 'classes/guis/SubSql.php';
+include_once 'classes/guis/LevelsArea.php';
+include_once 'classes/guis/LinkedTables.php';
+include_once 'classes/guis/MergeInterface.php';
+include_once 'classes/guis/OfficeInterface.php';
+include_once 'classes/guis/ManageProject.php';
+include_once 'classes/guis/ManageUser.php';
+include_once 'classes/util/FieldArea.php';
+include_once 'classes/guis/ConnectionWizard.php';
+include_once 'classes/guis/HeaderFooterArea.php';
+include_once 'classes/reports/AgataReport.php';
 
 class AgataInterface
 {
@@ -2373,7 +2373,7 @@ class AgataInterface
     {
         if (class_exists('GtkScintilla'))
         {
-            include_once 'classes/guis/TulipEditor.class';
+            include_once 'classes/guis/TulipEditor.php';
             if ($this->TulipEditor)
             {
                 $this->TulipEditor->Show();
@@ -2394,7 +2394,7 @@ class AgataInterface
     /***********************************************************/
     function Dictionary()
     {
-        include_once 'classes/guis/DictionaryWindow.class';
+        include_once 'classes/guis/DictionaryWindow.php';
         if ($this->DictionaryWindow)
         {
             $this->DictionaryWindow->Show();
@@ -2420,7 +2420,7 @@ class AgataInterface
 
     function CustomParameters()
     {
-        include_once 'classes/guis/CustomParameterWindow.class';
+        include_once 'classes/guis/CustomParameterWindow.php';
         if ($this->CustomParameterWindow)
         {
             $this->CustomParameterWindow->SetParameters($this->Parameters);
@@ -2443,14 +2443,14 @@ class AgataInterface
 
     function ConfigWindow()
     {
-        include_once 'classes/guis/ConfigWindow.class';
+        include_once 'classes/guis/ConfigWindow.php';
         $this->ConfigWindow = new ConfigWindow(array(&$this,'ReturnVars'), $this->agataConfig);
         $this->ConfigWindow->Show();
     }
 
     function Properties()
     {
-        include_once 'classes/guis/PropertiesWindow.class';
+        include_once 'classes/guis/PropertiesWindow.php';
         $this->PropertiesWindow = new PropertiesWindow(array(&$this,'ReturnPrefs'), $this->Properties);
         $this->PropertiesWindow->Show();
     }
@@ -2460,7 +2460,7 @@ class AgataInterface
     /***********************************************************/
     function PackDia()
     {
-        include_once 'classes/guis/DiaWindow.class';
+        include_once 'classes/guis/DiaWindow.php';
         if ($this->DiaWindow)
         {
             $this->DiaWindow->connected    = $this->connected;
@@ -2591,7 +2591,7 @@ class AgataInterface
     /***********************************************************/
     function LayoutConfig()
     {
-        include_once 'classes/guis/LayoutConfig.class';
+        include_once 'classes/guis/LayoutConfig.php';
         if ($this->LayoutConfig)
         {
             $this->LayoutConfig->Show();
@@ -2607,7 +2607,7 @@ class AgataInterface
     /***********************************************************/
     function LabelConfig()
     {
-        include_once 'classes/guis/LabelConfig.class';
+        include_once 'classes/guis/LabelConfig.php';
         if ($this->LabelConfig)
         {
             $this->LabelConfig->Show();
@@ -2624,7 +2624,7 @@ class AgataInterface
     /***********************************************************/
     function PageSetup()
     {
-        include_once 'classes/guis/PageSetup.class';
+        include_once 'classes/guis/PageSetup.php';
         if ($this->PageSetup)
         {
             $this->PageSetup->Show();

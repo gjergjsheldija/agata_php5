@@ -35,7 +35,7 @@ class AgataPdf extends AgataReport
 
         define('FPDF_FONTPATH','classes' . bar . 'fpdf151' . bar . 'font' . bar);
         include_once('classes' . bar . 'fpdf151' . bar . 'fpdf.php');
-        include_once('classes' . bar . 'reports' . bar . 'MyPdf.class');
+        include_once('classes' . bar . 'reports' . bar . 'MyPdf.php');
         
         if (isGui)
         {

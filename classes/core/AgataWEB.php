@@ -8,7 +8,7 @@ class AgataWEB
 {
     function AgataWEB()
     {
-        include_once AGATA_PATH . '/web/class/sys.html/core/TMaster.class.php';
+        include_once AGATA_PATH . '/web/class/sys.html/core/TMaster.php.php';
     }
     
     function readReports($user, $dir)

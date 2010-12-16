@@ -1,6 +1,6 @@
 <?php
            # Include AgataAPI class
-            include_once '/agata/classes/core/AgataAPI.class';
+            include_once '/agata/classes/core/AgataAPI.php';
 
             # Instantiate AgataAPI
             $api = new AgataAPI;

@@ -10,7 +10,7 @@ class AgataAPI
     function AgataAPI()
     {
         # Define the Agata's Path
-        define('AGATA_PATH', substr(__FILE__,0,-28));
+        define('AGATA_PATH', substr(__FILE__,0,-25));
         define('OS', strtoupper(substr(PHP_OS, 0, 3)));
         
         if (OS == 'WIN')
@@ -53,23 +53,23 @@ class AgataAPI
                     AGATA_PATH . cut . AGATA_PATH . '/classes');
             
             include_once AGATA_PATH . "/include/util.inc";
-            include_once AGATA_PATH . "/classes/core/AgataCompatibility.class";
-            include_once AGATA_PATH . "/classes/core/AgataConnection.class";
-            include_once AGATA_PATH . "/classes/core/AgataQuery.class";
-            include_once AGATA_PATH . "/classes/core/AgataError.class";
-            include_once AGATA_PATH . "/classes/core/AgataDataSet.class";
-            include_once AGATA_PATH . "/classes/core/Project.class";
-            include_once AGATA_PATH . "/classes/core/CoreReport.class";
-            include_once AGATA_PATH . "/classes/core/Layout.class";
-            include_once AGATA_PATH . "/classes/core/AgataCore.class";
-            include_once AGATA_PATH . "/classes/core/AgataConfig.class";
-            include_once AGATA_PATH . "/classes/util/Wait.class";
-            include_once AGATA_PATH . "/classes/util/Dialog.class";
-            include_once AGATA_PATH . "/classes/util/MemoArea.class";
-            include_once AGATA_PATH . "/classes/util/Trans.class";
-            include_once AGATA_PATH . "/classes/util/XmlArray.class";
-            include_once AGATA_PATH . "/classes/util/AgataOO.class";
-            include_once AGATA_PATH . "/classes/reports/AgataReport.class";
+            include_once AGATA_PATH . "/classes/core/AgataCompatibility.php";
+            include_once AGATA_PATH . "/classes/core/AgataConnection.php";
+            include_once AGATA_PATH . "/classes/core/AgataQuery.php";
+            include_once AGATA_PATH . "/classes/core/AgataError.php";
+            include_once AGATA_PATH . "/classes/core/AgataDataSet.php";
+            include_once AGATA_PATH . "/classes/core/Project.php";
+            include_once AGATA_PATH . "/classes/core/CoreReport.php";
+            include_once AGATA_PATH . "/classes/core/Layout.php";
+            include_once AGATA_PATH . "/classes/core/AgataCore.php";
+            include_once AGATA_PATH . "/classes/core/AgataConfig.php";
+            include_once AGATA_PATH . "/classes/util/Wait.php";
+            include_once AGATA_PATH . "/classes/util/Dialog.php";
+            include_once AGATA_PATH . "/classes/util/MemoArea.php";
+            include_once AGATA_PATH . "/classes/util/Trans.php";
+            include_once AGATA_PATH . "/classes/util/XmlArray.php";
+            include_once AGATA_PATH . "/classes/util/AgataOO.php";
+            include_once AGATA_PATH . "/classes/reports/AgataReport.php";
         }
     }
 

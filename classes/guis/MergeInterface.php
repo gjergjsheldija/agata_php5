@@ -445,7 +445,7 @@ class MergeInterface
     /***********************************************************/
     function PageSetup()
     {
-        include_once 'classes/guis/PageSetup.class';
+        include_once 'classes/guis/PageSetup.php';
         if ($this->PageSetup)
         {
             $this->PageSetup->Show();
@@ -470,7 +470,7 @@ class MergeInterface
     /***********************************************************/
     function PickColor($callback)
     {
-        include_once 'classes/util/ColorChooser.class';
+        include_once 'classes/util/ColorChooser.php';
         new ColorChooser($callback);
     }
 

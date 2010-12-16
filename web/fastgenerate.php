@@ -25,7 +25,7 @@ $mimetype = $Report['Report']['Properties']['Format'];
 # Defining the output file that will be generated:
 $Output   = temp . '/output.' . $mimetype;
 
-include_once AGATA_PATH . '/classes/core/AgataAPI.class';
+include_once AGATA_PATH . '/classes/core/AgataAPI.php';
 
 if ($Report['Report']['DataSet']['Query']['AgataWeb']['Select'])
 {

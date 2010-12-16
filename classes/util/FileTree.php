@@ -61,7 +61,7 @@ class FileTree extends GtkCTree
         $Arquivo = GtkCTree::node_get_row_data($selecao);
         if (is_dir($Arquivo))
         {
-            include_once 'Dialog.class';
+            include_once 'Dialog.php';
             new Dialog('Sem ação');
         }
         else

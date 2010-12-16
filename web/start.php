@@ -1,4 +1,5 @@
 <?php 
+
 if(isset($_GET) && is_array($_GET))
 {
     foreach ($_GET as $key=>$val)
@@ -25,8 +26,8 @@ $lang = trim($pieces2[1]);
 define ('XMLHEADER', "<?xml version=\"1.0\"?>\n");
 
 # Include AgataAPI class
-include_once $path . '/classes/core/AgataAPI.class';
-include_once $path . '/classes/core/AgataWEB.class';
+include_once $path . '/classes/core/AgataAPI.php';
+include_once $path . '/classes/core/AgataWEB.php';
 
 # Instantiate new AgataAPI
 $api = new AgataAPI;

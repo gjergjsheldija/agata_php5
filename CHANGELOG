@@ -242,7 +242,7 @@ Version 2 (100 Kb) 2002-01-24
 
 # use Pear::DB as db layer (pablo)
 # French Translation (christian)
-# Deutch Translation and Trans.class (thomas)
+# Deutch Translation and Trans.php (thomas)
 # Italian Translation (bruno)
 # Swedish Translation (johannes)
 # PEAR fixes (bruno)

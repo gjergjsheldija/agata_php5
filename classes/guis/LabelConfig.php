@@ -20,7 +20,7 @@ class LabelConfig
         $hbox = new GtkHBox;
         $this->pwindow->add($hbox);
         
-        include_once 'classes/guis/MeasureBox.class';
+        include_once 'classes/guis/MeasureBox.php';
         Wait::On();
 
         $Labels = Label::ListLabels();
