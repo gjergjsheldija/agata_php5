@@ -1,4 +1,4 @@
-<?
+<?php
 # function a_return_value
 # $string_column é a coluna selecionada 
 # $array_row é a tupla corrente do relatório

@@ -1,4 +1,4 @@
-<?
+<?php
 # function a_to_words
 # Converts a number into words.
 # By Pablo Dall'Oglio 15/12/2000

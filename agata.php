@@ -16,7 +16,7 @@
 
 Starting Agata Report...
 
-<?
+<?php
 
 /**
 * Init agata report.

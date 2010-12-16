@@ -1,4 +1,4 @@
-<?
+<?php
 # function a_tira_acento
 # Remove acentuação das palavras
 # By Maurício de Castro

@@ -1,4 +1,4 @@
-<?
+<?php
 # function test
 # $string_column is the selected column 
 # $array_row is the current tuple of the report

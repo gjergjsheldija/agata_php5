@@ -1,4 +1,4 @@
-<?
+<?php
 class AgataHtml extends AgataReport
 {
     var $Query;

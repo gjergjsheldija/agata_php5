@@ -1,4 +1,4 @@
-<?
+<?php
 # function a_accumulate_value
 # $string_column is the selected column 
 # $array_row is the current tuple of the report

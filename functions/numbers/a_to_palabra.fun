@@ -1,4 +1,4 @@
-<?
+<?php
 # function a_to_palabra
 # Exibe um número por extenso.
 # By Pablo Dall'Oglio 16/11/2004

@@ -1,4 +1,4 @@
-<?
+<?php
 /***********************************************************/
 /* Match listing class used in importCSV and importDBF
 /* by Pablo Dall'Oglio 2001-2006

@@ -1,4 +1,4 @@
-<?
+<?php
 class Dia extends AgataCore
 {
     function Dia($agataDB, $agataConfig, $FileName, $aTables, $agataTbLinks, $project, $posAction)

@@ -1,4 +1,4 @@
-<?
+<?php
            # Include AgataAPI class
             include_once '/agata/classes/core/AgataAPI.class';
 

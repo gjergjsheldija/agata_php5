@@ -1,4 +1,4 @@
-<?
+<?php
 class AgataPdf extends AgataReport
 {
     var $Query;

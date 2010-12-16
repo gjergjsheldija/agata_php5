@@ -1,4 +1,4 @@
-<?
+<?php
 # SPECIAL CHARS
 $sup1  = chr(185);
 $sup2  = chr(178);

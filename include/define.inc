@@ -1,4 +1,4 @@
-<?
+<?php
 define ('images', 'interface' . bar);
 define ('IMAGEBUTTON', 4);
 define ('ICONBUTTON',  5);

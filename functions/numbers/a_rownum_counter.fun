@@ -1,4 +1,4 @@
-<?
+<?php
 # function rownum_counter
 # $string_column is the actual column
 # $array_row é the current tuple of the report
