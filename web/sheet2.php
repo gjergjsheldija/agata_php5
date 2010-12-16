@@ -8,8 +8,8 @@
     <area shape="rect" coords="01,188,80,248"  HREF="<?php echo $url4;?>">
     
     <area SHAPE="DEFAULT" NOHREF></map>
-    <img src='imagens/bar2.png' usemap="#menu" ismap border=0><br><br>
-    <center><a href='index.php'><img src='imagens/browse.png' border=0><br><?php  echo _a('Reports');?></a>
+    <img src='images/bar2.png' usemap="#menu" ismap border=0><br><br>
+    <center><a href='index.php'><img src='images/browse.png' border=0><br><?php  echo _a('Reports');?></a>
     </center>
 </td>
 <td width=716 align=left valign=top>
@@ -46,7 +46,7 @@
                 echo "<tr class=line$line>";
                 echo '<td colspan=4>';
                 echo str_repeat('<blockquote>', $i);
-                echo '<img src=imagens/ico_level.png>&nbsp;&nbsp;';
+                echo '<img src=images/ico_level.png>&nbsp;&nbsp;';
                 if ($break == 0)
                 {
                     echo _a('Level')  . " $break : " . _a('Grand Total') . '<br>';
@@ -70,7 +70,7 @@
     </table>
     </td>
     <td bgcolor="#8280fe" valign=top width=32 >
-        <img src='imagens/image.png'>
+        <img src='images/image.png'>
     </td>
     </tr>
     </table>

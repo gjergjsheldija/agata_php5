@@ -54,18 +54,18 @@ class AgataWEB
             }    
         }
     
-        $icofolder        = 'imagens/folder.png';
-        $Images['sql']    = 'imagens/ico_sql.png';
-        $Images['agt']    = 'imagens/ico_agt.png';
-        $Images['html']   = 'imagens/ico_html.png';
-        $Images['sxw']    = 'imagens/ico_sxw.png';
-        $Images['txt']    = 'imagens/ico_txt.png';
-        $Images['pdf']    = 'imagens/ico_pdf.png';
-        $Images['ps']     = 'imagens/ico_ps.png';
-        $Images['csv']    = 'imagens/ico_csv.png';
-        $Images['xml']    = 'imagens/ico_xml.png';
-        $Images['dia']    = 'imagens/ico_dia.png';
-        $Images['generic']= 'imagens/generic.png';
+        $icofolder        = 'images/folder.png';
+        $Images['sql']    = 'images/ico_sql.png';
+        $Images['agt']    = 'images/ico_agt.png';
+        $Images['html']   = 'images/ico_html.png';
+        $Images['sxw']    = 'images/ico_sxw.png';
+        $Images['txt']    = 'images/ico_txt.png';
+        $Images['pdf']    = 'images/ico_pdf.png';
+        $Images['ps']     = 'images/ico_ps.png';
+        $Images['csv']    = 'images/ico_csv.png';
+        $Images['xml']    = 'images/ico_xml.png';
+        $Images['dia']    = 'images/ico_dia.png';
+        $Images['generic']= 'images/generic.png';
     
         # Opens the Sql's Dir
         
@@ -197,7 +197,7 @@ class AgataWEB
                         echo '<td width=5% align=right>';
                         if ($Report['Report']['Properties']['Layout'] and $Report['Report']['Properties']['Format'])
                         {
-                            echo "<a href='fastgenerate.php?file=$path'><img border=0 src=imagens/generate.png></a>";
+                            echo "<a href='fastgenerate.php?file=$path'><img border=0 src=images/generate.png></a>";
                         }
                         echo '</td>';
                         

@@ -29,7 +29,7 @@ if ($Layouts)
 	$i = 0;
 	echo '<tr class=line1> <td width=6%>  </td>';
 	echo '<td width=10% align=center>';
-	echo '<img src=\'imagens/ico_layout.png\' border=0></td>';
+	echo '<img src=\'images/ico_layout.png\' border=0></td>';
 	echo '<td colspan=2 width=84%>' .  _a('Layout Name') . ' : ';
 	echo '<select name="layout">';
 
@@ -54,7 +54,7 @@ if ($Layouts)
 <tr class=line1>
 <td width=6%></td>
 <td width=10% align=center>
-<a href=javascript:back()><img src='imagens/ico_back.png' border=0></a>
+<a href=javascript:back()><img src='images/ico_back.png' border=0></a>
 </td>
 <td colspan=2>
 </td>
@@ -73,7 +73,7 @@ foreach ($formats as $key => $format)
     $checked = ($Report['Report']['Properties']['Format'] == $key) ? 'checked' : '';
     echo "<tr class=line1> <td width=4% align=right> <input type=radio name=mimetype value='$key' $checked> </td>\n";
     echo "         <td width=10% align=center> <a href=\"#radio\" onclick=\"javascript:document.layout.mimetype[$i].checked=true\">\n";
-    echo "         <img src='imagens/ico_{$key}.png' border=0></a> </td>\n";
+    echo "         <img src='images/ico_{$key}.png' border=0></a> </td>\n";
     echo "         <td colspan=2 width=86% align=left> <a href=\"#radio\" onclick=\"javascript:document.layout.mimetype[$i].checked=true\">$format</a></td>\n";
     echo "</tr>";
     $i ++;
@@ -82,14 +82,14 @@ echo "<tr class=tabletitle> <td colspan=3 width=4% align=left> Open Office Parse
 echo "</tr>\n";
 echo "<tr class=line1> <td width=4% align=right> <input type=radio name=mimetype value='oop'> </td>\n";
 echo "         <td width=10% align=center> <a href=\"#radio\" onclick=\"javascript:document.layout.mimetype[$i].checked=true\">\n";
-echo "         <img src='imagens/ico_sxw.png' border=0></a> </td>\n";
+echo "         <img src='images/ico_sxw.png' border=0></a> </td>\n";
 echo "         <td colspan=2 width=86% align=left> <a href=\"#radio\" onclick=\"javascript:document.layout.mimetype[$i].checked=true\">$format</a></td>\n";
 echo "</tr>\n";
 ?>
 </table>
 
 <p align=right>
-    <a class=link href="javascript:document.layout.submit()"><img src='imagens/download.png' border=0></a>
+    <a class=link href="javascript:document.layout.submit()"><img src='images/download.png' border=0></a>
     &nbsp;&nbsp;<br>
     <a class=link href="javascript:document.layout.submit()"><?php  echo _a('Download'); ?></a>
 </p>

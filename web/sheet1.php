@@ -41,8 +41,8 @@ $url4 = "javascript:js('tab-page-4')";
     <area shape="rect" coords="01,188,80,248"  HREF="<?php echo $url4;?>">
     
     <area SHAPE="DEFAULT" NOHREF></map>
-    <img src='imagens/bar1.png' usemap="#menu" ismap border=0><br><br>
-    <center><a href='index.php'><img src='imagens/browse.png' border=0><br><?php echo _a('Reports');?></a>
+    <img src='images/bar1.png' usemap="#menu" ismap border=0><br><br>
+    <center><a href='index.php'><img src='images/browse.png' border=0><br><?php echo _a('Reports');?></a>
     </center>
 </td>
 <td width=716 align=left valign=top>
@@ -71,7 +71,7 @@ $url4 = "javascript:js('tab-page-4')";
     <tr class=line1>
         <td width=6%>  </td>
         <td width=10% align=center>
-        <img src='imagens/ico_db.png' border=0></td>
+        <img src='images/ico_db.png' border=0></td>
         <td colspan=2 width=84%> <?php echo _a('Project Name') . ':'; ?>
         <select name="connection">
         <?php
@@ -92,9 +92,9 @@ $url4 = "javascript:js('tab-page-4')";
     </td>
     </tr>
     <?php
-    $images['From']     = 'imagens/ico_table.png';
-    $images['Group by'] = 'imagens/ico_group.png';
-    $images['Order by'] = 'imagens/ico_sort.png';
+    $images['From']     = 'images/ico_table.png';
+    $images['Group by'] = 'images/ico_group.png';
+    $images['Order by'] = 'images/ico_sort.png';
     
     $ClauseLabel['From']      = _a('Tables');
     $ClauseLabel['Group by']  = _a('Groups');
@@ -150,7 +150,7 @@ $url4 = "javascript:js('tab-page-4')";
                     $label = str_replace("\"", '', $pieces[1]);
                 }*/
                 $piece = ereg_replace("'", "`", $piece);
-                echo "<input type='checkbox' $checked name='SelectFields[$i]' value='$piece'><img src='imagens/ico_field.png'> $label";
+                echo "<input type='checkbox' $checked name='SelectFields[$i]' value='$piece'><img src='images/ico_field.png'> $label";
                 echo '</td></tr>';
                 echo "\n";
                 $i ++;
@@ -171,7 +171,7 @@ $url4 = "javascript:js('tab-page-4')";
                 foreach ($pieces as $piece)
                 {
                     echo '<tr><td>';
-                    echo "<img src='imagens/ico_constraint.png'> $piece<br>\n";
+                    echo "<img src='images/ico_constraint.png'> $piece<br>\n";
                     echo "</td></tr>\n";
                 }
                 echo '</table>';
@@ -244,7 +244,7 @@ $url4 = "javascript:js('tab-page-4')";
             
             ?>
             <tr class=line1> <td width=6%>  </td>
-                             <td width=10% align=center><img src='imagens/ico_param.png' border=0>
+                             <td width=10% align=center><img src='images/ico_param.png' border=0>
                              </td>
                              <td width=44%>
                              <?php echo $parameter; ?>
@@ -255,7 +255,7 @@ $url4 = "javascript:js('tab-page-4')";
                              {
                                  ?>
                                 <input type="text" value='<?php echo $value; ?>' name=Parameters[<?php echo $parameter; ?>] id="f_date_c" readonly="1"/>
-                                <img src="imagens/popdate.png" id="f_trigger_c" style="cursor: pointer; border: 1px solid red;" title="Date selector"
+                                <img src="images/popdate.png" id="f_trigger_c" style="cursor: pointer; border: 1px solid red;" title="Date selector"
                                         onmouseover="this.style.background='red';" onmouseout="this.style.background=''" />
                                         
                                 <script type="text/javascript">
@@ -295,7 +295,7 @@ $url4 = "javascript:js('tab-page-4')";
     <input type=hidden name=lang value=<?php echo $lang; ?>>
     
     <tr class=line1> <td colspan=4 align=right height=30>
-        <a class=link href="javascript:MySubmit(document.sheet1)"><img src='imagens/proceed.png' border=0></a>
+        <a class=link href="javascript:MySubmit(document.sheet1)"><img src='images/proceed.png' border=0></a>
         &nbsp;&nbsp;&nbsp;<br>
         <a class=link href="javascript:MySubmit(document.sheet1)"><?php echo _a('Proceed'); ?></a>&nbsp;&nbsp;
         </p><br>
@@ -306,7 +306,7 @@ $url4 = "javascript:js('tab-page-4')";
     </table>
     </td>
     <td bgcolor="#8280fe" valign=top width=32 >
-        <img src='imagens/image.png'>
+        <img src='images/image.png'>
     </td>
     </tr>
     </table>

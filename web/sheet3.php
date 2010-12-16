@@ -43,8 +43,8 @@
     <area shape="rect" coords="01,188,80,248"  HREF="<?php echo "javascript:js('$url4')";?>">
     
     <area SHAPE="DEFAULT" NOHREF></map>
-    <img src='imagens/bar3.png' usemap="#menu" ismap border=0><br><br>
-    <center><a href='index.php'><img src='imagens/browse.png' border=0><br><?php  echo _a('Reports');?></a>
+    <img src='images/bar3.png' usemap="#menu" ismap border=0><br><br>
+    <center><a href='index.php'><img src='images/browse.png' border=0><br><?php  echo _a('Reports');?></a>
     </center>
 </td>
 <td width=716 align=left valign=top>
@@ -68,7 +68,7 @@
     <tr class=line1>
         
         <td colspan=2 align=center>
-        <img src='imagens/ico_db.png' border=0></td>
+        <img src='images/ico_db.png' border=0></td>
         <td colspan=2 width=84%> <?php  echo _a('Project Name') . ':'; ?>
         <select name="connection">
         <?php 
@@ -96,8 +96,8 @@
     <tr align=left>
     <td colspan=1 width=94 valign=top class=line1>
         <?php 
-          echo "<a href=\"javascript:submit('lines')\"> <img src='imagens/lines.png' border=0></a><br>";
-          echo "<a href=\"javascript:submit('bars')\"> <img src='imagens/bars.png' border=0></a><br>";
+          echo "<a href=\"javascript:submit('lines')\"> <img src='images/lines.png' border=0></a><br>";
+          echo "<a href=\"javascript:submit('bars')\"> <img src='images/bars.png' border=0></a><br>";
         ?>
     </td>
     <td colspan=3 valign=top>
@@ -178,7 +178,7 @@
                 $parameter = "\$$parameter";
                 ?>
                 <tr class=line1> <td width=6%>  </td>
-                                 <td width=10% align=center><img src='imagens/ico_param.png' border=0>
+                                 <td width=10% align=center><img src='images/ico_param.png' border=0>
                                  </td>
                                  <td width=44%>
                                  <?php  echo $parameter; ?>
@@ -200,7 +200,7 @@
     </form>
     </td>
     <td bgcolor="#8280fe" valign=top width=32 >
-        <img src='imagens/image.png'>
+        <img src='images/image.png'>
     </td>
 </tr>
 </table>

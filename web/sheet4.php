@@ -43,8 +43,8 @@
     <area shape="rect" coords="01,188,80,248"  HREF="<?php echo "javascript:js('$url4')";?>">
     
     <area SHAPE="DEFAULT" NOHREF></map>
-    <img src='imagens/bar4.png' usemap="#menu" ismap border=0><br><br>
-    <center><a href='index.php'><img src='imagens/browse.png' border=0><br><?php  echo _a('Reports');?></a>
+    <img src='images/bar4.png' usemap="#menu" ismap border=0><br><br>
+    <center><a href='index.php'><img src='images/browse.png' border=0><br><?php  echo _a('Reports');?></a>
     </center>
 </td>
 <td width=716 align=left valign=top>
@@ -69,7 +69,7 @@
     <tr class=line1>
         <td width=6%>  </td>
         <td width=10% align=center>
-        <img src='imagens/ico_db.png' border=0></td>
+        <img src='images/ico_db.png' border=0></td>
         <td colspan=2 width=84%> <?php  echo _a('Project Name') . ':'; ?>
         <select name="connection">
         <?php 
@@ -142,7 +142,7 @@
         $lang = ($lang == 'pt' ? 'pt' : 'en');
         echo '<table height=100% border=1><tr><td>';
         echo "<div id=\"tab-pane-41\" class=\"dynamic-tab-pane-control tab-pane\" style=\"display: block;\">";
-        echo "<img src='imagens/merge1_{$lang}.png' usemap='#merge_menu' ismap border=0>";
+        echo "<img src='images/merge1_{$lang}.png' usemap='#merge_menu' ismap border=0>";
 
         $submit = _a('Export to PDF File');
         
@@ -152,18 +152,18 @@
             echo "    <div id=\"tab-page-41{$n}\" class=\"tab-page\" style=\"display: $activate_sub;\">";
             echo "        <textarea name=textmerge[$n] cols=100 rows=16>" . $content[$n] . '</textarea>';
             echo '        <br>';
-            echo "         <img src='imagens/submerge{$n}_{$lang}.png' usemap='#merge_submenu' ismap border=0>";
+            echo "         <img src='images/submerge{$n}_{$lang}.png' usemap='#merge_submenu' ismap border=0>";
             echo '    </div>';
         }
-        echo "<p align=center><a class=link href=\"javascript:submit4('merge')\"> <img src='imagens/pdf.png' border=0><br>$submit</a></p><br>";
+        echo "<p align=center><a class=link href=\"javascript:submit4('merge')\"> <img src='images/pdf.png' border=0><br>$submit</a></p><br>";
         echo '</div>';
 
         echo "<div id=\"tab-pane-42\" class=\"dynamic-tab-pane-control tab-pane\" style=\"display: none;\">";
-        echo "    <img src='imagens/merge2_{$lang}.png' usemap='#merge_menu' ismap border=0>";
+        echo "    <img src='images/merge2_{$lang}.png' usemap='#merge_menu' ismap border=0>";
         echo "    <div id=\"tab-page-41{$n}\" class=\"tab-page\" style=\"display: block;\">";
         echo '      <textarea name=label cols=100 rows=10>' . $Report['Report']['Label']['Body'] . '</textarea>';
         echo '    </div>';
-        echo "<p align=center><a href=\"javascript:submit4('label')\"> <img src='imagens/pdf.png' border=0><br>$submit</a></p><br>";
+        echo "<p align=center><a href=\"javascript:submit4('label')\"> <img src='images/pdf.png' border=0><br>$submit</a></p><br>";
         echo '</div>';
         echo '</table>';
     ?>
@@ -188,7 +188,7 @@
                 $parameter = "\$$parameter";
                 ?>
                 <tr class=line1> <td width=6%>  </td>
-                                 <td width=10% align=center><img src='imagens/ico_param.png' border=0>
+                                 <td width=10% align=center><img src='images/ico_param.png' border=0>
                                  </td>
                                  <td width=44%>
                                  <?php  echo $parameter; ?>
@@ -211,7 +211,7 @@
     </table>
     </td>
     <td bgcolor="#8280fe" valign=top width=32 >
-        <img src='imagens/image.png'>
+        <img src='images/image.png'>
     </td>
     </tr>
     </table>
