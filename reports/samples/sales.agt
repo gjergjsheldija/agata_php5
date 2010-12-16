@@ -7,7 +7,7 @@
         <Keywords>sales</Keywords>
         <Date>2005-07-09</Date>
         <Layout>default-HTML</Layout>
-        <Format>html</Format>
+        <Format>sxw</Format>
     </Properties>
 
     <Header>
@@ -19,9 +19,7 @@ qtde min: $amount</Body>
     </Header>
 
     <Footer>
-        <Body>$page/$totalPages
-qtde min: $amount</Body>
-
+        <Body>$page/$totalPages qtde min: $amount</Body>
         <Align>center</Align>
     </Footer>
 
@@ -50,6 +48,7 @@ qtde min: $amount</Body>
 
             <AgataWeb>
                 <Select>city.description as "City Description",customer.name as "Customer Name",product.description as "Product Description",sales.amount as "Amount",sales.date as "Date",sales.price as "Price"</Select>
+                <OrderBy>city.description</OrderBy>
                 <Where></Where>
             </AgataWeb>
 
@@ -138,7 +137,6 @@ qtde min: $amount</Body>
 
                     </Query>
 
-                    <Body></Body>
                 </DataSet1>
 
             </Detail1>

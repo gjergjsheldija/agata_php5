@@ -44,5 +44,4 @@ if ($type != 'html')
     header("Content-Disposition: filename=\"$download\"");
 }
 readfile($file);
-//echo 'df';
 ?>

@@ -18,9 +18,9 @@ class AgataAPI
             define("bar", '\\');
             setlocale(LC_ALL, 'POSIX');
             define ("cut", ';');
-            if (is_dir('C:\\temp'))
+            if (is_dir('C:\\tmp'))
             {
-                define("temp", 'C:\\temp');
+                define("temp", 'C:\\tmp');
             }
             else if (is_dir('C:\\windows\\temp'))
             {
@@ -117,7 +117,7 @@ class AgataAPI
         else
         {
             # Reading the Report
-            $Report = @CoreReport::OpenReport($this->reportPath);
+            $Report = CoreReport::OpenReport($this->reportPath);
             if (!$Report['Report'])
             {
                 $this->error = 'Cannot read report file.';
@@ -137,7 +137,7 @@ class AgataAPI
     function getParameters()
     {
         # You can set the Database connection this way, too:
-        $Project = @Project::ReadProject($this->project);
+        $Project = Project::ReadProject($this->project);
         if (!$Project)
         {
             $this->error = 'Cannot read project file.';
@@ -268,14 +268,14 @@ class AgataAPI
 
     function removeOutputFile()
     {
-        @unlink(RemoveExtension($this->getOutputPath()) . '.pdf');
-        @unlink(RemoveExtension($this->getOutputPath()) . '.sxw');
+        unlink(RemoveExtension($this->getOutputPath()) . '.pdf');
+        unlink(RemoveExtension($this->getOutputPath()) . '.sxw');
     }
     
     function generateReport()
     {
         # You can set the Database connection this way, too:
-        $Project = @Project::ReadProject($this->project);
+        $Project = Project::ReadProject($this->project);
         if (!$Project)
         {
             $this->error = 'Cannot read project file.';
@@ -334,7 +334,7 @@ class AgataAPI
         $this->format = 'pdf';
         
         # You can set the Database connection this way, too:
-        $Project = @Project::ReadProject($this->project);
+        $Project = Project::ReadProject($this->project);
         if (!$Project)
         {
             $this->error = 'Cannot read project file.';
@@ -389,7 +389,7 @@ class AgataAPI
         else
         {
             # You can set the Database connection this way, too:
-            $Project = @Project::ReadProject($this->project);
+            $Project = Project::ReadProject($this->project);
             if (!$Project)
             {
                 $this->error = 'Cannot read project file.';
@@ -480,7 +480,7 @@ class AgataAPI
         $this->format = 'pdf';
         
         # You can set the Database connection this way, too:
-        $Project = @Project::ReadProject($this->project);
+        $Project = Project::ReadProject($this->project);
         if (!$Project)
         {
             $this->error = 'Cannot read project file.';

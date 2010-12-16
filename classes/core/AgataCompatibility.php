@@ -7,26 +7,26 @@ class AgataCompatibility
         # From 7.2 to 7.5
         if (!$array['Version'])
         {
-            $new_array['Version']                       = '7.4';
-            $new_array['Properties']['Description']     = $array['description'];
-            $new_array['Header']['Body']                = $array['header']['body'];
-            $new_array['Header']['Align']               = $array['header']['align'];
-            $new_array['Footer']['Body']                = $array['footer']['body'];
-            $new_array['Footer']['Align']               = $array['footer']['align'];
-            $new_array['PageSetup']['Format']           = $array['preferences']['pagesetup']['format'];
-            $new_array['PageSetup']['Orientation']      = $array['preferences']['pagesetup']['orientation'];
-            $new_array['PageSetup']['LeftMargin']       = $array['preferences']['pagesetup']['marginleft'];
-            $new_array['PageSetup']['RightMargin']      = $array['preferences']['pagesetup']['marginright'];
-            $new_array['PageSetup']['TopMargin']        = $array['preferences']['pagesetup']['margintop'];
-            $new_array['PageSetup']['BottomMargin']     = $array['preferences']['pagesetup']['marginbottom'];
-            $new_array['PageSetup']['LineSpace']        = $array['preferences']['pagesetup']['linespace'];
-            $new_array['Parameters']                    = $array['parameters'];
-            $new_array['DataSet']['DataSource']['Name'] = $array['datasource']['name'];
-            $new_array['DataSet']['Query']['Select']    = $array['query']['select'];
-            $new_array['DataSet']['Query']['From']      = $array['query']['from'];
-            $new_array['DataSet']['Query']['Where']     = $array['query']['where'];
-            $new_array['DataSet']['Query']['GroupBy']   = $array['query']['groupby'];
-            $new_array['DataSet']['Query']['OrderBy']   = $array['query']['orderby'];
+            $new_array['Version']                       			 = '7.4';
+            $new_array['Properties']['Description']     			 = $array['description'];
+            $new_array['Header']['Body']                			 = $array['header']['body'];
+            $new_array['Header']['Align']               			 = $array['header']['align'];
+            $new_array['Footer']['Body']                			 = $array['footer']['body'];
+            $new_array['Footer']['Align']               			 = $array['footer']['align'];
+            $new_array['PageSetup']['Format']           			 = $array['preferences']['pagesetup']['format'];
+            $new_array['PageSetup']['Orientation']      			 = $array['preferences']['pagesetup']['orientation'];
+            $new_array['PageSetup']['LeftMargin']       			 = $array['preferences']['pagesetup']['marginleft'];
+            $new_array['PageSetup']['RightMargin']      			 = $array['preferences']['pagesetup']['marginright'];
+            $new_array['PageSetup']['TopMargin']        			 = $array['preferences']['pagesetup']['margintop'];
+            $new_array['PageSetup']['BottomMargin']     			 = $array['preferences']['pagesetup']['marginbottom'];
+            $new_array['PageSetup']['LineSpace']        			 = $array['preferences']['pagesetup']['linespace'];
+            $new_array['Parameters']                   				 = $array['parameters'];
+            $new_array['DataSet']['DataSource']['Name'] 			 = $array['datasource']['name'];
+            $new_array['DataSet']['Query']['Select']    			 = $array['query']['select'];
+            $new_array['DataSet']['Query']['From']      			 = $array['query']['from'];
+            $new_array['DataSet']['Query']['Where']     			 = $array['query']['where'];
+            $new_array['DataSet']['Query']['GroupBy']   			 = $array['query']['groupby'];
+            $new_array['DataSet']['Query']['OrderBy']   			 = $array['query']['orderby'];
             $new_array['DataSet']['Query']['Config']['Distinct']     = $array['preferences']['distinct'];
             $new_array['DataSet']['Groups']['Config']['ShowGroup']   = $array['preferences']['showgroup'];
             $new_array['DataSet']['Groups']['Config']['ShowDetail']  = $array['preferences']['showdetail'];

@@ -31,7 +31,7 @@ $ordering     = MyExplode($Report['Report']['DataSet']['Query']['AgataWeb']['Ord
 
 echo '<table width=100% border=1 cellspacing=0 cellpadding=0>';
 echo '<tr><td colspan=3 class=tablepath>';
-echo 'Restrições Adicionais:';
+echo 'Additional restrictions:';
 echo '</td></tr>';
 echo "\n";
 $i = 0;
