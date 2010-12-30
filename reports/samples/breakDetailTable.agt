@@ -2,8 +2,8 @@
 <Report>
     <Version>7.5</Version>
     <Properties>
-        <Layout>default-HTML</Layout>
-        <Format>csv</Format>
+        <Layout>default-SXW</Layout>
+        <Format>html</Format>
     </Properties>
 
     <Header>

@@ -1,0 +1,115 @@
+WARNING: Function 'split' is deprecated, please use 'explode' or 'preg_split' instead in file c:\xampp\htdocs\agata_php5\classes\excel\Parser.php line 541
+WARNING: Function 'split' is deprecated, please use 'explode' or 'preg_split' instead in file c:\xampp\htdocs\agata_php5\classes\excel\Parser.php line 544
+WARNING: Function 'eregi' is deprecated, please use 'preg_match' instead in file c:\xampp\htdocs\agata_php5\classes\excel\Parser.php line 726
+WARNING: Function 'ereg' is deprecated, please use 'preg_match' instead in file c:\xampp\htdocs\agata_php5\classes\excel\Parser.php line 727
+WARNING: Function 'eregi' is deprecated, please use 'preg_match' instead in file c:\xampp\htdocs\agata_php5\classes\excel\Parser.php line 733
+WARNING: Function 'ereg' is deprecated, please use 'preg_match' instead in file c:\xampp\htdocs\agata_php5\classes\excel\Parser.php line 734
+WARNING: Function 'eregi' is deprecated, please use 'preg_match' instead in file c:\xampp\htdocs\agata_php5\classes\excel\Parser.php line 739
+WARNING: Function 'ereg' is deprecated, please use 'preg_match' instead in file c:\xampp\htdocs\agata_php5\classes\excel\Parser.php line 740
+WARNING: Function 'eregi' is deprecated, please use 'preg_match' instead in file c:\xampp\htdocs\agata_php5\classes\excel\Parser.php line 749
+WARNING: Function 'eregi' is deprecated, please use 'preg_match' instead in file c:\xampp\htdocs\agata_php5\classes\excel\Parser.php line 860
+WARNING: Function 'eregi' is deprecated, please use 'preg_match' instead in file c:\xampp\htdocs\agata_php5\classes\excel\Parser.php line 867
+WARNING: Function 'eregi' is deprecated, please use 'preg_match' instead in file c:\xampp\htdocs\agata_php5\classes\excel\Parser.php line 868
+WARNING: Function 'eregi' is deprecated, please use 'preg_match' instead in file c:\xampp\htdocs\agata_php5\classes\excel\Parser.php line 881
+WARNING: Function 'split' is deprecated, please use 'explode' or 'preg_split' instead in file c:\xampp\htdocs\agata_php5\classes\excel\Worksheet.php line 912
+WARNING: Function 'ereg' is deprecated, please use 'preg_match' instead in file c:\xampp\htdocs\agata_php5\classes\excel\Worksheet.php line 1267
+WARNING: Function 'ereg' is deprecated, please use 'preg_match' instead in file c:\xampp\htdocs\agata_php5\classes\excel\Worksheet.php line 1270
+WARNING: Function 'split' is deprecated, please use 'explode' or 'preg_split' instead in file c:\xampp\htdocs\agata_php5\classes\excel\Worksheet.php line 1533
+WARNING: Function 'split' is deprecated, please use 'explode' or 'preg_split' instead in file c:\xampp\htdocs\agata_php5\classes\excel\Worksheet.php line 1539
+WARNING: Function 'split' is deprecated, please use 'explode' or 'preg_split' instead in file c:\xampp\htdocs\agata_php5\classes\excel\Worksheet.php line 1558
+WARNING: Function 'eregi' is deprecated, please use 'preg_match' instead in file c:\xampp\htdocs\agata_php5\classes\fpdf151\font\makefont\makefont.php line 165
+WARNING: Function 'set_magic_quotes_runtime' is deprecated, its use is no longer recommended in file c:\xampp\htdocs\agata_php5\classes\fpdf151\font\makefont\makefont.php line 292
+WARNING: Function 'set_magic_quotes_runtime' is deprecated, its use is no longer recommended in file c:\xampp\htdocs\agata_php5\classes\fpdf151\fpdf.php line 917
+WARNING: Function 'set_magic_quotes_runtime' is deprecated, its use is no longer recommended in file c:\xampp\htdocs\agata_php5\classes\fpdf151\fpdf.php line 924
+WARNING: Function 'set_magic_quotes_runtime' is deprecated, its use is no longer recommended in file c:\xampp\htdocs\agata_php5\classes\fpdf151\fpdf.php line 1126
+WARNING: Function 'set_magic_quotes_runtime' is deprecated, its use is no longer recommended in file c:\xampp\htdocs\agata_php5\classes\fpdf151\fpdf.php line 1149
+WARNING: Function 'split' is deprecated, please use 'explode' or 'preg_split' instead in file c:\xampp\htdocs\agata_php5\classes\jpgraph\jpgraph.php line 3127
+WARNING: Function 'split' is deprecated, please use 'explode' or 'preg_split' instead in file c:\xampp\htdocs\agata_php5\classes\jpgraph\jpgraph.php line 3148
+WARNING: Function 'split' is deprecated, please use 'explode' or 'preg_split' instead in file c:\xampp\htdocs\agata_php5\classes\jpgraph\jpgraph.php line 3160
+WARNING: Function 'ereg' is deprecated, please use 'preg_match' instead in file c:\xampp\htdocs\agata_php5\classes\jpgraph\jpgraph.php line 3278
+WARNING: Function 'split' is deprecated, please use 'explode' or 'preg_split' instead in file c:\xampp\htdocs\agata_php5\classes\jpgraph\jpgraph.php line 3279
+WARNING: Function 'split' is deprecated, please use 'explode' or 'preg_split' instead in file c:\xampp\htdocs\agata_php5\classes\jpgraph\jpgraph_gantt.php line 417
+WARNING: Function 'split' is deprecated, please use 'explode' or 'preg_split' instead in file c:\xampp\htdocs\agata_php5\classes\jpgraph\jpgraph_gantt.php line 456
+WARNING: Function 'ereg' is deprecated, please use 'preg_match' instead in file c:\xampp\htdocs\agata_php5\classes\pclzip\pclzip.lib.php line 2878
+WARNING: Function 'ereg' is deprecated, please use 'preg_match' instead in file c:\xampp\htdocs\agata_php5\classes\pclzip\pclzip.lib.php line 4274
+WARNING: Function 'ereg' is deprecated, please use 'preg_match' instead in file c:\xampp\htdocs\agata_php5\classes\util\nusoap.php line 368
+WARNING: Function 'ereg' is deprecated, please use 'preg_match' instead in file c:\xampp\htdocs\agata_php5\classes\util\nusoap.php line 538
+WARNING: Function 'ereg' is deprecated, please use 'preg_match' instead in file c:\xampp\htdocs\agata_php5\classes\util\nusoap.php line 670
+WARNING: Function 'ereg' is deprecated, please use 'preg_match' instead in file c:\xampp\htdocs\agata_php5\classes\util\nusoap.php line 695
+WARNING: Function 'ereg' is deprecated, please use 'preg_match' instead in file c:\xampp\htdocs\agata_php5\classes\util\nusoap.php line 974
+WARNING: Function 'ereg' is deprecated, please use 'preg_match' instead in file c:\xampp\htdocs\agata_php5\classes\util\nusoap.php line 1072
+WARNING: Function 'ereg' is deprecated, please use 'preg_match' instead in file c:\xampp\htdocs\agata_php5\classes\util\nusoap.php line 1083
+WARNING: Function 'ereg' is deprecated, please use 'preg_match' instead in file c:\xampp\htdocs\agata_php5\classes\util\nusoap.php line 1676
+WARNING: Function 'set_magic_quotes_runtime' is deprecated, its use is no longer recommended in file c:\xampp\htdocs\agata_php5\classes\util\nusoap.php line 1953
+WARNING: Function 'ereg' is deprecated, please use 'preg_match' instead in file c:\xampp\htdocs\agata_php5\classes\util\nusoap.php line 2134
+WARNING: Function 'ereg' is deprecated, please use 'preg_match' instead in file c:\xampp\htdocs\agata_php5\classes\util\nusoap.php line 2274
+WARNING: Function 'ereg' is deprecated, please use 'preg_match' instead in file c:\xampp\htdocs\agata_php5\classes\util\nusoap.php line 2527
+WARNING: Function 'eregi' is deprecated, please use 'preg_match' instead in file c:\xampp\htdocs\agata_php5\classes\util\nusoap.php line 2587
+WARNING: Function 'eregi' is deprecated, please use 'preg_match' instead in file c:\xampp\htdocs\agata_php5\classes\util\nusoap.php line 2615
+WARNING: Function 'eregi' is deprecated, please use 'preg_match' instead in file c:\xampp\htdocs\agata_php5\classes\util\nusoap.php line 2645
+WARNING: Function 'ereg' is deprecated, please use 'preg_match' instead in file c:\xampp\htdocs\agata_php5\classes\util\nusoap.php line 2962
+WARNING: Function 'ereg' is deprecated, please use 'preg_match' instead in file c:\xampp\htdocs\agata_php5\classes\util\nusoap.php line 3444
+WARNING: Function 'ereg' is deprecated, please use 'preg_match' instead in file c:\xampp\htdocs\agata_php5\classes\util\nusoap.php line 3460
+WARNING: Function 'ereg' is deprecated, please use 'preg_match' instead in file c:\xampp\htdocs\agata_php5\classes\util\nusoap.php line 3472
+WARNING: Function 'ereg' is deprecated, please use 'preg_match' instead in file c:\xampp\htdocs\agata_php5\classes\util\nusoap.php line 3649
+WARNING: Function 'ereg' is deprecated, please use 'preg_match' instead in file c:\xampp\htdocs\agata_php5\classes\util\nusoap.php line 4790
+WARNING: Function 'ereg' is deprecated, please use 'preg_match' instead in file c:\xampp\htdocs\agata_php5\classes\util\nusoap.php line 4823
+WARNING: Function 'ereg' is deprecated, please use 'preg_match' instead in file c:\xampp\htdocs\agata_php5\classes\util\nusoap.php line 5453
+WARNING: Function 'ereg' is deprecated, please use 'preg_match' instead in file c:\xampp\htdocs\agata_php5\classes\util\nusoap.php line 5475
+WARNING: Function 'ereg' is deprecated, please use 'preg_match' instead in file c:\xampp\htdocs\agata_php5\classes\util\nusoap.php line 5478
+WARNING: Function 'eregi' is deprecated, please use 'preg_match' instead in file c:\xampp\htdocs\agata_php5\classes\util\nusoap.php line 5539
+
+WARNING: Function 'ereg' is deprecated, please use 'preg_match' instead in file c:\xampp\htdocs\agata_php5\server\agata-server.php line 402
+WARNING: Function 'ereg' is deprecated, please use 'preg_match' instead in file c:\xampp\htdocs\agata_php5\server\agata-server.php line 572
+WARNING: Function 'ereg' is deprecated, please use 'preg_match' instead in file c:\xampp\htdocs\agata_php5\server\agata-server.php line 704
+WARNING: Function 'ereg' is deprecated, please use 'preg_match' instead in file c:\xampp\htdocs\agata_php5\server\agata-server.php line 729
+WARNING: Function 'ereg' is deprecated, please use 'preg_match' instead in file c:\xampp\htdocs\agata_php5\server\agata-server.php line 1008
+WARNING: Function 'ereg' is deprecated, please use 'preg_match' instead in file c:\xampp\htdocs\agata_php5\server\agata-server.php line 1106
+WARNING: Function 'ereg' is deprecated, please use 'preg_match' instead in file c:\xampp\htdocs\agata_php5\server\agata-server.php line 1117
+WARNING: Function 'ereg' is deprecated, please use 'preg_match' instead in file c:\xampp\htdocs\agata_php5\server\agata-server.php line 1710
+WARNING: Function 'set_magic_quotes_runtime' is deprecated, its use is no longer recommended in file c:\xampp\htdocs\agata_php5\server\agata-server.php line 1987
+WARNING: Function 'ereg' is deprecated, please use 'preg_match' instead in file c:\xampp\htdocs\agata_php5\server\agata-server.php line 2168
+WARNING: Function 'ereg' is deprecated, please use 'preg_match' instead in file c:\xampp\htdocs\agata_php5\server\agata-server.php line 2308
+WARNING: Function 'ereg' is deprecated, please use 'preg_match' instead in file c:\xampp\htdocs\agata_php5\server\agata-server.php line 2561
+WARNING: Function 'eregi' is deprecated, please use 'preg_match' instead in file c:\xampp\htdocs\agata_php5\server\agata-server.php line 2621
+WARNING: Function 'eregi' is deprecated, please use 'preg_match' instead in file c:\xampp\htdocs\agata_php5\server\agata-server.php line 2649
+WARNING: Function 'eregi' is deprecated, please use 'preg_match' instead in file c:\xampp\htdocs\agata_php5\server\agata-server.php line 2679
+WARNING: Function 'ereg' is deprecated, please use 'preg_match' instead in file c:\xampp\htdocs\agata_php5\server\agata-server.php line 2997
+WARNING: Function 'ereg' is deprecated, please use 'preg_match' instead in file c:\xampp\htdocs\agata_php5\server\agata-server.php line 3479
+WARNING: Function 'ereg' is deprecated, please use 'preg_match' instead in file c:\xampp\htdocs\agata_php5\server\agata-server.php line 3495
+WARNING: Function 'ereg' is deprecated, please use 'preg_match' instead in file c:\xampp\htdocs\agata_php5\server\agata-server.php line 3507
+WARNING: Function 'ereg' is deprecated, please use 'preg_match' instead in file c:\xampp\htdocs\agata_php5\server\agata-server.php line 3684
+WARNING: Function 'ereg' is deprecated, please use 'preg_match' instead in file c:\xampp\htdocs\agata_php5\server\agata-server.php line 4825
+WARNING: Function 'ereg' is deprecated, please use 'preg_match' instead in file c:\xampp\htdocs\agata_php5\server\agata-server.php line 4858
+WARNING: Function 'ereg' is deprecated, please use 'preg_match' instead in file c:\xampp\htdocs\agata_php5\server\agata-server.php line 5488
+WARNING: Function 'ereg' is deprecated, please use 'preg_match' instead in file c:\xampp\htdocs\agata_php5\server\agata-server.php line 5510
+WARNING: Function 'ereg' is deprecated, please use 'preg_match' instead in file c:\xampp\htdocs\agata_php5\server\agata-server.php line 5513
+WARNING: Function 'eregi' is deprecated, please use 'preg_match' instead in file c:\xampp\htdocs\agata_php5\server\agata-server.php line 5574
+WARNING: Function 'ereg' is deprecated, please use 'preg_match' instead in file c:\xampp\htdocs\agata_php5\web\agata-server.php line 367
+WARNING: Function 'ereg' is deprecated, please use 'preg_match' instead in file c:\xampp\htdocs\agata_php5\web\agata-server.php line 537
+WARNING: Function 'ereg' is deprecated, please use 'preg_match' instead in file c:\xampp\htdocs\agata_php5\web\agata-server.php line 669
+WARNING: Function 'ereg' is deprecated, please use 'preg_match' instead in file c:\xampp\htdocs\agata_php5\web\agata-server.php line 694
+WARNING: Function 'ereg' is deprecated, please use 'preg_match' instead in file c:\xampp\htdocs\agata_php5\web\agata-server.php line 973
+WARNING: Function 'ereg' is deprecated, please use 'preg_match' instead in file c:\xampp\htdocs\agata_php5\web\agata-server.php line 1071
+WARNING: Function 'ereg' is deprecated, please use 'preg_match' instead in file c:\xampp\htdocs\agata_php5\web\agata-server.php line 1082
+WARNING: Function 'ereg' is deprecated, please use 'preg_match' instead in file c:\xampp\htdocs\agata_php5\web\agata-server.php line 1675
+WARNING: Function 'set_magic_quotes_runtime' is deprecated, its use is no longer recommended in file c:\xampp\htdocs\agata_php5\web\agata-server.php line 1952
+WARNING: Function 'ereg' is deprecated, please use 'preg_match' instead in file c:\xampp\htdocs\agata_php5\web\agata-server.php line 2133
+WARNING: Function 'ereg' is deprecated, please use 'preg_match' instead in file c:\xampp\htdocs\agata_php5\web\agata-server.php line 2273
+WARNING: Function 'ereg' is deprecated, please use 'preg_match' instead in file c:\xampp\htdocs\agata_php5\web\agata-server.php line 2526
+WARNING: Function 'eregi' is deprecated, please use 'preg_match' instead in file c:\xampp\htdocs\agata_php5\web\agata-server.php line 2586
+WARNING: Function 'eregi' is deprecated, please use 'preg_match' instead in file c:\xampp\htdocs\agata_php5\web\agata-server.php line 2614
+WARNING: Function 'eregi' is deprecated, please use 'preg_match' instead in file c:\xampp\htdocs\agata_php5\web\agata-server.php line 2644
+WARNING: Function 'ereg' is deprecated, please use 'preg_match' instead in file c:\xampp\htdocs\agata_php5\web\agata-server.php line 2961
+WARNING: Function 'ereg' is deprecated, please use 'preg_match' instead in file c:\xampp\htdocs\agata_php5\web\agata-server.php line 3443
+WARNING: Function 'ereg' is deprecated, please use 'preg_match' instead in file c:\xampp\htdocs\agata_php5\web\agata-server.php line 3459
+WARNING: Function 'ereg' is deprecated, please use 'preg_match' instead in file c:\xampp\htdocs\agata_php5\web\agata-server.php line 3471
+WARNING: Function 'ereg' is deprecated, please use 'preg_match' instead in file c:\xampp\htdocs\agata_php5\web\agata-server.php line 3648
+WARNING: Function 'ereg' is deprecated, please use 'preg_match' instead in file c:\xampp\htdocs\agata_php5\web\agata-server.php line 4789
+WARNING: Function 'ereg' is deprecated, please use 'preg_match' instead in file c:\xampp\htdocs\agata_php5\web\agata-server.php line 4822
+WARNING: Function 'ereg' is deprecated, please use 'preg_match' instead in file c:\xampp\htdocs\agata_php5\web\agata-server.php line 5452
+WARNING: Function 'ereg' is deprecated, please use 'preg_match' instead in file c:\xampp\htdocs\agata_php5\web\agata-server.php line 5474
+WARNING: Function 'ereg' is deprecated, please use 'preg_match' instead in file c:\xampp\htdocs\agata_php5\web\agata-server.php line 5477
+WARNING: Function 'eregi' is deprecated, please use 'preg_match' instead in file c:\xampp\htdocs\agata_php5\web\agata-server.php line 5538
+
+WARNING: Function 'split' is deprecated, please use 'explode' or 'preg_split' instead in file c:\xampp\htdocs\agata_php5\web\agata-server.php line 5861

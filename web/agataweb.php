@@ -7,8 +7,7 @@
 
 <head>
 <script language='javascript'>
-    function js(page)
-    {
+    function js(page) {
         div = document.getElementById("tab-page-1");
         div.style.display = "none";
         div = document.getElementById("tab-page-2");
