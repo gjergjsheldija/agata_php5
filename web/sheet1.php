@@ -1,5 +1,14 @@
-<link href="site.css" rel="stylesheet" type="text/css">
+<?php
+    # Including the necessary classes and definitions.
+    include 'start.php';
+    Trans::SetLanguage($lang);
+    
+    $Report = CoreReport::OpenReport($file);
+    $Blocks = CoreReport::ExtractBlock($Report['Report']['DataSet']);
+    $datasource = $Report['Report']['DataSet']['DataSource']['Name'];
 
+   ?>
+<link href="site.css" rel="stylesheet" type="text/css">
 <!-- calendar stylesheet -->
 <link rel="stylesheet" type="text/css" media="all" href="calendar/calendar-win2k-cold-1.css" title="win2k-cold-1" />
 <!-- main calendar program -->
@@ -11,8 +20,7 @@
 <script type="text/javascript" src="calendar/calendar-setup.js"></script>
 
 <script language='javascript'>
-    function MySubmit(form)
-    {
+    function MySubmit(form)  {
         var winLeft = (screen.width - 600) / 2;
 	    var winTop = (screen.height - 600) / 2;
 	    var winTop = 50;
@@ -23,74 +31,28 @@
         form.submit();
     }
 </script>
+<form name=sheet1 method=post action=restrictions.php onsubmit="return MySubmit(this);">
 
-<?php
-$url1 = "javascript:js('tab-page-1')";
-$url2 = "javascript:js('tab-page-2')";
-$url3 = "javascript:js('tab-page-3')";
-$url4 = "javascript:js('tab-page-4')";
-?>
+<h1>Agata CoreReport :: <?php echo _a('Report Generation'); ?></h1>
+<ul id="nav">
+	<li>
+		<a href="sheet1.php?file=<?php echo $_REQUEST['file'];?>">Report</a>
+	</li>
+	<li>
+		<a href="sheet2.php?file=<?php echo $_REQUEST['file'];?>">Grouping</a>
+	</li>
+	<li>
+		<a href="sheet3.php?file=<?php echo $_REQUEST['file'];?>">Graphing</a>
+	</li>
+	<li>
+		<a href="sheet4.php?file=<?php echo $_REQUEST['file'];?>">Merging</a>
+	</li>	
+</ul>
 
-<table width=800 cellspacing=0 cellpadding=0>
-<tr>
-<td width=84 valign=top>
-    <map name="menu">
-    <area shape="rect" coords="01,01,80,58"    HREF="<?php echo $url1;?>">
-    <area shape="rect" coords="01,64,80,124"   HREF="<?php echo $url2;?>">
-    <area shape="rect" coords="01,126,80,186"  HREF="<?php echo $url3;?>">
-    <area shape="rect" coords="01,188,80,248"  HREF="<?php echo $url4;?>">
-    
-    <area SHAPE="DEFAULT" NOHREF></map>
-    <img src='images/bar1.png' usemap="#menu" ismap border=0><br><br>
-    <center><a href='index.php'><img src='images/browse.png' border=0><br><?php echo _a('Reports');?></a>
-    </center>
-</td>
-<td width=716 align=left valign=top>
-    <table width=100% cellspacing=0 border=1>
-    <tr>
-    <td valign=top>
-    <table width=100% cellspacing=0 border=0>
-    <tr class=tabletitle height=30>
-    <td colspan=4>
-        <b>&nbsp;Agata CoreReport:: <?php echo _a('Report Generation'); ?></b>
-    </td>
-    </tr>
-    <?php
-        $Report = CoreReport::OpenReport($file);
-        $Blocks = CoreReport::ExtractBlock($Report['Report']['DataSet']);
-        $datasource = $Report['Report']['DataSet']['DataSource']['Name'];
-    ?>
-    <form name=sheet1 method=post action=restrictions.php onsubmit="return MySubmit(this);">
-    <tr class=tablepath>
-    <td colspan=4>
-        &nbsp;<?php echo _a('Project Name'); ?>
-    
-    </td>
-    </tr>
+<h2><?php echo _a('Project Name'); ?></h2>
+<input type="hidden" name="connection" value="<?php echo $datasource; ?>" />
 
-    <tr class=line1>
-        <td width=6%>  </td>
-        <td width=10% align=center>
-        <img src='images/ico_db.png' border=0></td>
-        <td colspan=2 width=84%> <?php echo _a('Project Name') . ':'; ?>
-        <select name="connection">
-        <?php
-        $projects = array_keys(Project::ReadProjects());
-        foreach ($projects as $project)
-        {
-            $x = ($project == $datasource ? 'selected' : '');
-            echo "<option value=\"$project\" $x>$project</option>\n";
-        }
-        ?>
-        </select>
-        </td>
-    </tr>
-
-    <tr class=tablepath>
-    <td colspan=4>
-        &nbsp;<?php echo _a('File') . ' : ' . $file; ?>
-    </td>
-    </tr>
+<fieldset class="settings">
     <?php
     $images['From']     = 'images/ico_table.png';
     $images['Group by'] = 'images/ico_group.png';
@@ -100,139 +62,51 @@ $url4 = "javascript:js('tab-page-4')";
     $ClauseLabel['Group by']  = _a('Groups');
     $ClauseLabel['Order by']  = _a('Ordering');
     
-    foreach ($Blocks as $Clause => $Content)
-    {
-        echo '<tr>';
-        echo '<td class=line1 colspan=1 valign=top>';
-        echo '<td class=line1 colspan=1 valign=top>';
-        echo '</td>';
-        echo '<td class=line1 colspan=2 valign=top>';
-
-        if ($Clause == 'Select')
-        {
+    foreach ($Blocks as $Clause => $Content) {
+        if ($Clause == 'Select') {
             $select = MyExplode(trim($Content[1]));
             $i = 0;
-            echo '<br>';
-            echo '<table width=100% border=1 cellpadding=0 cellspacing=0>';
-            echo '<tr><td>';
-            echo '<table width=100% border=0 cellpadding=0 cellspacing=0>';
             $group_table=-1;
-            foreach ($select as $piece)
-            {
-                if (!$Report['Report']['DataSet']['Query']['AgataWeb']['Select'])
-                {
+            foreach ($select as $piece) {
+                if (!$Report['Report']['DataSet']['Query']['AgataWeb']['Select']) {
                     $checked = 'checked';
-                }
-                else
-                {
+                } else {
                     $checked = (strpos($Report['Report']['DataSet']['Query']['AgataWeb']['Select'], $piece) !== false) ? 'checked' : '';
                 }
                 
                 $pieces = explode('.', $piece);
                 $table = $pieces[0];
-                if (($table != $group_table) and (count($pieces) == 2))
-    	        {
-                    echo '<tr><td colspan=3 class=tablepath>' . _a('Columns') .  ' : ' ._a('Table') . ' ' . $table . ' </td></tr>';
+                if (($table != $group_table) and (count($pieces) == 2)) {
+                    echo '<legend>' . _a('Columns') .  ' : ' ._a('Table') . ' ' . $table  . '</legend>';
                 }
                 $group_table = $table;
                 
-                echo '<tr><td>';
                 $label = $piece;
-                if (eregi(' as ', $piece))
-                {
-                    //$pieces = explode(' as ', $piece);
+                if (eregi(' as ', $piece)) {
                     $pieces = preg_split('/ as /i', $piece);
                     $label = str_replace("\"", '', $pieces[1]);
                 }
-                /*elseif (ereg(' AS ', $piece))
-                {
-                    $pieces = explode(' AS ', $piece);
-                    $label = str_replace("\"", '', $pieces[1]);
-                }*/
+
                 $piece = ereg_replace("'", "`", $piece);
-                echo "<input type='checkbox' $checked name='SelectFields[$i]' value='$piece'><img src='images/ico_field.png'> $label";
-                echo '</td></tr>';
-                echo "\n";
+                echo "<input type='checkbox' $checked name='SelectFields[$i]' value='$piece'><img src='images/ico_field.png'> $label <br>";
                 $i ++;
             }
-            echo "</table>\n";
-            echo '</td></tr>';
-            echo "</table>\n";
-        }
-        else if ($Clause == 'Where')
-        {
-            //$pieces = explode(' and ', trim($Content[1]));
-            $pieces = preg_split('/ and /i', trim($Content[1]));
-            if ($pieces)
-            {
-                echo '<br>';
-                echo '<table width=100% border=1>';
-                echo '<tr><td colspan=3 class=tablepath>' . _a('Constraints') . '</td></tr>';
-                foreach ($pieces as $piece)
-                {
-                    echo '<tr><td>';
-                    echo "<img src='images/ico_constraint.png'> $piece<br>\n";
-                    echo "</td></tr>\n";
-                }
-                echo '</table>';
-            }
-        }
-        else
-        {
-            if ($Clause === 'From')
-            {
-                $pieces = get_tables_from(trim($Content[1]));
-            }
-            else
-            {
-                $pieces = MyExplode(trim($Content[1]));
-            }
-            if ($pieces)
-            {
-                echo '<br>';
-                echo '<table width=100% border=1>';
-                echo '<tr><td colspan=3 class=tablepath>' . $ClauseLabel[$Clause] . '</td></tr>';
-                foreach ($pieces as $piece)
-                {
-                    if ($images[$Clause])
-                    {
-                        $image = $images[$Clause];
-                        echo '<tr><td>';
-                        echo "<img src='$image'> $piece<br>\n";
-                        echo '</td></tr>';
-                    }
-                    else
-                    {
-                        echo '<tr><td>';
-                        echo "$piece<br>\n";
-                        echo '</td></tr>';
-                    }
-                }
-                echo "</table>\n";
-            }
-        }
-        echo '</td>';
-        echo '</tr>'; 
-        echo "\n";
+        } 
     }
+?>
+</fieldset>
+<?php 
+    if ($Report['Report']['Parameters']) {
 
-    //$parameters = GetParameters($Report['Report']['DataSet']['Query']['Where']);
-    if ($Report['Report']['Parameters'])
-    {
-        //$parameters = array_keys($Report['Report']['Parameters']);
         $parameters = $Report['Report']['Parameters'];
     }
-    if ($parameters)
-    {
+    if ($parameters) {
         ?>
-        <tr class=tablepath>
-        <td colspan=4>
-            &nbsp;<?php echo _a('Parameters'); ?>
-        </td>
-        </tr>
+<fieldset class="settings">
+        <legend><?php echo _a('Parameters'); ?></legend>
+
         <?php
-        foreach ($parameters as $parameter => $properties)
-        {
+        foreach ($parameters as $parameter => $properties) {
             //$value = $Report['Report']['Parameters'][$parameter]['value'];
             $value = $properties['value'];
             $mask  = $properties['mask'];
@@ -243,20 +117,13 @@ $url4 = "javascript:js('tab-page-4')";
             $parameter = "\$$parameter";
             
             ?>
-            <tr class=line1> <td width=6%>  </td>
-                             <td width=10% align=center><img src='images/ico_param.png' border=0>
-                             </td>
-                             <td width=44%>
+            <img src='images/ico_param.png' border=0>
                              <?php echo $parameter; ?>
-                             </td>
-                             <td width=44% align=left>
-                             <?php
-                             if (strstr($mask, 'dd') and strstr($mask, 'mm') and strstr($mask, 'yyyy'))
-                             {
+                             <?php 
+                             if (strstr($mask, 'dd') and strstr($mask, 'mm') and strstr($mask, 'yyyy')) {
                                  ?>
                                 <input type="text" value='<?php echo $value; ?>' name=Parameters[<?php echo $parameter; ?>] id="f_date_c" readonly="1"/>
-                                <img src="images/popdate.png" id="f_trigger_c" style="cursor: pointer; border: 1px solid red;" title="Date selector"
-                                        onmouseover="this.style.background='red';" onmouseout="this.style.background=''" />
+                                <img src="images/popdate.png" id="f_trigger_c" style="cursor: pointer; border: 1px solid red;" title="Date selector" onmouseover="this.style.background='red';" onmouseout="this.style.background=''" />
                                         
                                 <script type="text/javascript">
                                     Calendar.setup({
@@ -269,47 +136,26 @@ $url4 = "javascript:js('tab-page-4')";
                                     });
                                 </script>
                                  <?php
-                             }
-                             else
-                             {
+                             } else {
                                  ?>
                                  <input type=entry value='<?php echo $value; ?>' name=Parameters[<?php echo $parameter; ?>] maxwidth=100>
                                  <?php
                              }
                              ?>
-                             </td>
-            </td>
-            </tr>
             <?php
         }
         ?>
-        </td>
-        </tr>
         <?php
     }
 
-
     ?>
+</fieldset>
     <input type=hidden name=file value=<?php echo $file; ?>>
     <input type=hidden name=type value='report'>
     <input type=hidden name=lang value=<?php echo $lang; ?>>
     
-    <tr class=line1> <td colspan=4 align=right height=30>
-        <a class=link href="javascript:MySubmit(document.sheet1)"><img src='images/proceed.png' border=0></a>
-        &nbsp;&nbsp;&nbsp;<br>
-        <a class=link href="javascript:MySubmit(document.sheet1)"><?php echo _a('Proceed'); ?></a>&nbsp;&nbsp;
-        </p><br>
-    </td></tr>
+
+    <a class=link href="javascript:MySubmit(document.sheet1)"><img src='images/proceed.png' border=0></a><br>
+    <a class=link href="javascript:MySubmit(document.sheet1)"><?php echo _a('Proceed'); ?></a><br>
+
     </form>
-    </td>
-    </tr>
-    </table>
-    </td>
-    <td bgcolor="#8280fe" valign=top width=32 >
-        <img src='images/image.png'>
-    </td>
-    </tr>
-    </table>
-</td>
-</tr>
-</table>

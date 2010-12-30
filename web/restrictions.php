@@ -1,6 +1,7 @@
 <?php
 # Including the necessary classes and definitions.
 include 'start.php';
+print_r($_REQUEST);
 ?>
 
 <link href="site.css" rel="stylesheet" type="text/css">
@@ -11,10 +12,8 @@ include 'start.php';
 <input type=hidden name=lang value=<?php echo $lang; ?>>
 <input type=hidden name=connection value=<?php echo $connection; ?>>
 <?php
-if ($Parameters)
-{
-    foreach ($Parameters as $key =>$content)
-    {
+if ($Parameters) {
+    foreach ($Parameters as $key =>$content) {
         $newParam[$key] = ereg_replace("'", "`", $content);
     }
 }
@@ -82,7 +81,7 @@ echo '<table width=100% border=1 cellpadding=0 cellspacing=0>';
 echo '<tr><td colspan=2 class=tablepath>' . _a('Ordering') . '</td></tr>';
 for ($n=1; $n<=4; $n++)
 {
-    echo "<tr class=line1><td><img src='images/ico_field.png'> Ordenação $n :</td>";
+    echo "<tr class=line1><td><img src='images/ico_field.png'> Ordenaï¿½ï¿½o $n :</td>";
 	echo "<td align=center><select name=ordering[$n]>";
 	$i = 0;
 	echo "<option value=''></option>";
@@ -108,7 +107,6 @@ echo "</table>\n";
 ?>
 <p align=right>
     <a class=link href="javascript:document.restrictions.submit()"><img src='images/proceed.png' border=0></a>
-    &nbsp;&nbsp;&nbsp;<br>
     <a class=link href="javascript:document.restrictions.submit()"><?php echo _a('Proceed'); ?></a>
 </p>
 </form>

@@ -32,5 +32,3 @@ include_once $path . '/classes/core/AgataWEB.php';
 # Instantiate new AgataAPI
 $api = new AgataAPI;
 $api->setLanguage($lang);
-#$agataConfig = AgataConfig::FixConfig(AgataConfig::ReadConfig());
-?>

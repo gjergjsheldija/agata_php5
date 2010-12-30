@@ -6,46 +6,26 @@
 ?>
 
 <head>
-<script language='javascript'>
-    function js(page) {
-        div = document.getElementById("tab-page-1");
-        div.style.display = "none";
-        div = document.getElementById("tab-page-2");
-        div.style.display = "none";
-        div = document.getElementById("tab-page-3");
-        div.style.display = "none";
-        div = document.getElementById("tab-page-4");
-        div.style.display = "none";
-        
-        div = document.getElementById(page);
-        div.style.display = "block";
-    }
-</script>
-
-<link href="tab2_files/tab.css" rel="StyleSheet" type="text/css">
+	<link href="site.css" rel="stylesheet" type="text/css">
 </head>
+<body>
+<form>
+<h1>Agata CoreReport :: Query Explorer</h1>
+<ul id="nav">
+	<li>
+		<a href="sheet1.php?file=<?php echo $_REQUEST['file'];?>">Report</a>
+	</li>
+	<li>
+		<a href="sheet2.php?file=<?php echo $_REQUEST['file'];?>">Grouping</a>
+	</li>
+	<li>
+		<a href="sheet3.php?file=<?php echo $_REQUEST['file'];?>">Graphing</a>
+	</li>
+	<li>
+		<a href="sheet4.php?file=<?php echo $_REQUEST['file'];?>">Merging</a>
+	</li>	
+</ul>
 
-<div id="tab-pane-1" class="dynamic-tab-pane-control tab-pane">
-
-    <div id="tab-page-1" class="tab-page" style="display: block;">
-        <?php  include_once 'sheet1.php'; ?>
-
-    </div>
-
-    <div id="tab-page-2" class="tab-page" style="display: none;">
-        <?php  include_once 'sheet2.php'; ?>
-
-    </div>
-
-    <div id="tab-page-3" class="tab-page" style="display: none;">
-        <?php  include_once 'sheet3.php'; ?>
-
-    </div>
-
-    <div id="tab-page-4" class="tab-page" style="display: none;">
-        <?php  include_once 'sheet4.php'; ?>
-
-    </div>
-</div>
-
+</form>
+</body>
 </html>
