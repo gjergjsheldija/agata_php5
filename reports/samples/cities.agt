@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <Report>
-    <Version>7.4</Version>
+    <Version>7.5</Version>
     <Properties>
         <Description>Cities List</Description>
         <Layout>default-HTML</Layout>
@@ -108,7 +108,7 @@
     <Merge>
         <Details>
             <Detail1>
-                <DataSet>
+                <DataSet1>
                     <Query>
                         <Config>
                             <OffSet>0</OffSet>
@@ -117,7 +117,8 @@
 
                     </Query>
 
-                </DataSet>
+                    <Body></Body>
+                </DataSet1>
 
             </Detail1>
 
@@ -140,5 +141,18 @@
         </Config>
 
     </Label>
+
+    <Report>
+        <Merge>
+            <Details>
+                <Detail1>
+                    <NumberSubSql>0</NumberSubSql>
+                </Detail1>
+
+            </Details>
+
+        </Merge>
+
+    </Report>
 
 </Report>

@@ -111,7 +111,9 @@ class AgataConfig
     /**
      * Fix Config File
      */
-    function FixConfig($agataConfig)
+  // not used anymore
+    
+/*    function FixConfig($agataConfig)
     {
         $adir = $agataConfig['general']['AgataDir'] = getcwd();
 
@@ -135,6 +137,6 @@ class AgataConfig
         {
             return false;
         }
-    }
+    }*/
 }
 ?>
