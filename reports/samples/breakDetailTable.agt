@@ -2,21 +2,15 @@
 <Report>
     <Version>7.5</Version>
     <Properties>
-        <Description></Description>
-        <Title></Title>
-        <Author></Author>
-        <Keywords></Keywords>
-        <Date></Date>
-        <FrameSize></FrameSize>
+        <Layout>default-HTML</Layout>
+        <Format>csv</Format>
     </Properties>
 
     <Header>
-        <Body></Body>
         <Align>center</Align>
     </Header>
 
     <Footer>
-        <Body></Body>
         <Align>center</Align>
     </Footer>
 
@@ -40,21 +34,22 @@
             <Select>customer.code as "Customer Code", customer.name as "Customer Name", customer.phone as "Customer Phone", customer.address as "Customer Address", customer.age as "Customer Age", city.description as "City Description", state.description as "State Description"</Select>
             <From>customer,city,state</From>
             <Where>customer.ref_city = city.code and city.ref_state = state.code</Where>
-            <GroupBy></GroupBy>
-            <OrderBy></OrderBy>
             <Config>
-                <Distinct></Distinct>
                 <OffSet>0</OffSet>
                 <Limit>0</Limit>
             </Config>
+
+            <AgataWeb>
+                <Select>customer.code as "Customer Code",customer.name as "Customer Name",customer.phone as "Customer Phone",customer.address as "Customer Address",customer.age as "Customer Age",city.description as "City Description",state.description as "State Description"</Select>
+                <OrderBy>customer.age</OrderBy>
+                <Where></Where>
+            </AgataWeb>
 
         </Query>
 
         <Groups>
             <Config>
-                <ShowGroup></ShowGroup>
                 <ShowDetail>1</ShowDetail>
-                <ShowLabel></ShowLabel>
                 <ShowNumber>1</ShowNumber>
                 <ShowIndent>1</ShowIndent>
             </Config>
@@ -66,104 +61,65 @@
                 <Chars>30</Chars>
                 <Points>60</Points>
                 <Align>left</Align>
-                <Mask></Mask>
-                <Function></Function>
-                <Cross></Cross>
-                <Conditional></Conditional>
             </Column1>
 
             <Column2>
                 <Chars>30</Chars>
                 <Points>60</Points>
                 <Align>left</Align>
-                <Mask></Mask>
-                <Function></Function>
-                <Cross></Cross>
-                <Conditional></Conditional>
             </Column2>
 
             <Column3>
                 <Chars>30</Chars>
                 <Points>60</Points>
                 <Align>left</Align>
-                <Mask></Mask>
-                <Function></Function>
-                <Cross></Cross>
-                <Conditional></Conditional>
             </Column3>
 
             <Column4>
                 <Chars>30</Chars>
                 <Points>60</Points>
                 <Align>left</Align>
-                <Mask></Mask>
-                <Function></Function>
-                <Cross></Cross>
-                <Conditional></Conditional>
             </Column4>
 
             <Column5>
                 <Chars>30</Chars>
                 <Points>60</Points>
                 <Align>left</Align>
-                <Mask></Mask>
-                <Function></Function>
-                <Cross></Cross>
-                <Conditional></Conditional>
             </Column5>
 
             <Column6>
                 <Chars>30</Chars>
                 <Points>60</Points>
                 <Align>left</Align>
-                <Mask></Mask>
-                <Function></Function>
-                <Cross></Cross>
-                <Conditional></Conditional>
             </Column6>
 
             <Column7>
                 <Chars>30</Chars>
                 <Points>60</Points>
                 <Align>left</Align>
-                <Mask></Mask>
-                <Function></Function>
-                <Cross></Cross>
-                <Conditional></Conditional>
             </Column7>
 
         </Fields>
 
     </DataSet>
 
-    <PageSetup></PageSetup>
     <Graph>
-        <Title></Title>
-        <TitleX></TitleX>
-        <TitleY></TitleY>
         <Width>480</Width>
         <Height>268</Height>
-        <Description></Description>
         <ShowData>1</ShowData>
         <ShowValues>1</ShowValues>
         <Orientation>columns</Orientation>
     </Graph>
 
     <Merge>
-        <ReportHeader></ReportHeader>
         <Details>
             <Detail1>
-                <GroupHeader></GroupHeader>
                 <DataSet1>
-                    <Body></Body>
                     <Query>
                         <Select>product.description as "Product Description", product.unit as "Product Unit", sales.amount as "Amount", sales.price as "Price", sales.price*sales.amount as "Total", sales.date as "Date", product.code as "Product Code"</Select>
                         <From>sales,product</From>
                         <Where>sales.ref_product = product.code and sales.ref_customer  = $var1 and sales.date  &gt;=  $dtBegin and sales.date   &lt;=  $dtEnd</Where>
-                        <GroupBy></GroupBy>
-                        <OrderBy></OrderBy>
                         <Config>
-                            <Distinct></Distinct>
                             <OffSet>0</OffSet>
                             <Limit>0</Limit>
                         </Config>
@@ -175,30 +131,19 @@
                             <Chars>30</Chars>
                             <Points>60</Points>
                             <Align>left</Align>
-                            <Mask></Mask>
                             <Function>/strings/a_upper.fun</Function>
-                            <Cross></Cross>
-                            <Conditional></Conditional>
                         </Column1>
 
                         <Column2>
                             <Chars>30</Chars>
                             <Points>60</Points>
                             <Align>left</Align>
-                            <Mask></Mask>
-                            <Function></Function>
-                            <Cross></Cross>
-                            <Conditional></Conditional>
                         </Column2>
 
                         <Column3>
                             <Chars>30</Chars>
                             <Points>60</Points>
                             <Align>left</Align>
-                            <Mask></Mask>
-                            <Function></Function>
-                            <Cross></Cross>
-                            <Conditional></Conditional>
                         </Column3>
 
                         <Column4>
@@ -206,9 +151,6 @@
                             <Points>60</Points>
                             <Align>left</Align>
                             <Mask>#R$-9.999,99s</Mask>
-                            <Function></Function>
-                            <Cross></Cross>
-                            <Conditional></Conditional>
                         </Column4>
 
                         <Column5>
@@ -216,29 +158,18 @@
                             <Points>60</Points>
                             <Align>left</Align>
                             <Mask>#R$-9.999,99s</Mask>
-                            <Function></Function>
-                            <Cross></Cross>
-                            <Conditional></Conditional>
                         </Column5>
 
                         <Column6>
                             <Chars>30</Chars>
                             <Points>60</Points>
                             <Align>left</Align>
-                            <Mask></Mask>
-                            <Function></Function>
-                            <Cross></Cross>
-                            <Conditional></Conditional>
                         </Column6>
 
                         <Column7>
                             <Chars>30</Chars>
                             <Points>60</Points>
                             <Align>left</Align>
-                            <Mask></Mask>
-                            <Function></Function>
-                            <Cross></Cross>
-                            <Conditional></Conditional>
                         </Column7>
 
                     </Fields>
@@ -246,18 +177,13 @@
                 </DataSet1>
 
                 <NumberSubSql>0</NumberSubSql>
-                <GroupFooter></GroupFooter>
             </Detail1>
 
         </Details>
 
-        <ReportFooter></ReportFooter>
-        <FinalSummary></FinalSummary>
-        <PageSetup></PageSetup>
     </Merge>
 
     <Label>
-        <Body></Body>
         <Config>
             <HorizontalSpacing>15</HorizontalSpacing>
             <VerticalSpacing>0</VerticalSpacing>
@@ -277,7 +203,6 @@
         <Source>/agata/resources/breakDetailTable.sxw</Source>
         <Config>
             <FixedDetails>1</FixedDetails>
-            <ExpandDetails></ExpandDetails>
             <printEmptyDetail>1</printEmptyDetail>
             <SumByTotal>1</SumByTotal>
             <RepeatHeader>1</RepeatHeader>

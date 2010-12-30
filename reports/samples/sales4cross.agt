@@ -1,49 +1,43 @@
 <?xml version="1.0"?>
 <Report>
-    <Version>7.4</Version>
+    <Version>7.5</Version>
     <Properties>
-        <Description></Description>
-        <Title></Title>
-        <Author></Author>
-        <Keywords></Keywords>
-        <Date></Date>
-        <FrameSize></FrameSize>
+        <Layout>default-HTML</Layout>
+        <Format>html</Format>
     </Properties>
 
     <Header>
-        <Body></Body>
         <Align>center</Align>
     </Header>
 
     <Footer>
-        <Body></Body>
         <Align>center</Align>
     </Footer>
 
     <DataSet>
         <DataSource>
-            <Name>Samples</Name>
+            <Name>sqlite</Name>
         </DataSource>
 
         <Query>
             <Select>product.description as "Product Description", sales.amount as "Amount", sales.date as "Date", sales.price as "Price"</Select>
             <From>sales,product</From>
             <Where>sales.ref_product = product.code</Where>
-            <GroupBy></GroupBy>
-            <OrderBy></OrderBy>
             <Config>
-                <Distinct></Distinct>
                 <OffSet>0</OffSet>
                 <Limit>0</Limit>
             </Config>
+
+            <AgataWeb>
+                <Select>product.description as "Product Description",sales.amount as "Amount",sales.date as "Date",sales.price as "Price"</Select>
+                <Where></Where>
+            </AgataWeb>
 
         </Query>
 
         <Groups>
             <Config>
-                <ShowGroup></ShowGroup>
                 <ShowDetail>1</ShowDetail>
-                <ShowLabel></ShowLabel>
                 <ShowNumber>1</ShowNumber>
                 <ShowIndent>1</ShowIndent>
             </Config>
@@ -55,94 +49,59 @@
                 <Chars>30</Chars>
                 <Points>60</Points>
                 <Align>left</Align>
-                <Mask></Mask>
-                <Function></Function>
-                <Cross></Cross>
-                <Conditional></Conditional>
             </Column1>
 
             <Column2>
                 <Chars>30</Chars>
                 <Points>60</Points>
                 <Align>left</Align>
-                <Mask></Mask>
-                <Function></Function>
-                <Cross></Cross>
-                <Conditional></Conditional>
             </Column2>
 
             <Column3>
                 <Chars>30</Chars>
                 <Points>60</Points>
                 <Align>left</Align>
-                <Mask></Mask>
-                <Function></Function>
-                <Cross></Cross>
-                <Conditional></Conditional>
             </Column3>
 
             <Column4>
                 <Chars>30</Chars>
                 <Points>60</Points>
                 <Align>left</Align>
-                <Mask></Mask>
-                <Function></Function>
-                <Cross></Cross>
-                <Conditional></Conditional>
             </Column4>
 
         </Fields>
 
     </DataSet>
 
-    <PageSetup></PageSetup>
     <Graph>
-        <Title></Title>
-        <TitleX></TitleX>
-        <TitleY></TitleY>
         <Width>480</Width>
         <Height>268</Height>
-        <Description></Description>
         <ShowData>1</ShowData>
         <ShowValues>1</ShowValues>
         <Orientation>lines</Orientation>
     </Graph>
 
     <Merge>
-        <ReportHeader></ReportHeader>
         <Details>
             <Detail1>
-                <GroupHeader></GroupHeader>
-                <Body></Body>
-                <DataSet>
+                <DataSet1>
                     <Query>
-                        <Select></Select>
-                        <From></From>
-                        <Where></Where>
-                        <GroupBy></GroupBy>
-                        <OrderBy></OrderBy>
                         <Config>
-                            <Distinct></Distinct>
                             <OffSet>0</OffSet>
                             <Limit>0</Limit>
                         </Config>
 
                     </Query>
 
-                    <Fields></Fields>
-                </DataSet>
+                </DataSet1>
 
-                <GroupFooter></GroupFooter>
             </Detail1>
 
         </Details>
 
-        <ReportFooter></ReportFooter>
-        <PageSetup></PageSetup>
     </Merge>
 
     <Label>
-        <Body></Body>
         <Config>
             <HorizontalSpacing>15</HorizontalSpacing>
             <VerticalSpacing>0</VerticalSpacing>
@@ -166,5 +125,18 @@
         </Data>
 
     </CrossTab>
+
+    <Report>
+        <Merge>
+            <Details>
+                <Detail1>
+                    <NumberSubSql>0</NumberSubSql>
+                </Detail1>
+
+            </Details>
+
+        </Merge>
+
+    </Report>
 
 </Report>

@@ -66,5 +66,3 @@ else
 }
 
 AgataWEB::DirList($BrowseDir, $filter, $action, $agataConfig);
-
-?>

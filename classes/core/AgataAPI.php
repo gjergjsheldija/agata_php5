@@ -9,7 +9,7 @@ class AgataAPI
 {
     function AgataAPI()
     {
-        # Define the Agata's Path
+        // Define the Agata's Path
         define('AGATA_PATH', substr(__FILE__,0,-25));
         define('OS', strtoupper(substr(PHP_OS, 0, 3)));
         
@@ -73,7 +73,7 @@ class AgataAPI
         }
     }
 
-    # Defining the output file that will be generated
+    // Defining the output file that will be generated
     function setOutputPath($output)
     {
         $output = suggestion_archive_name($output);
@@ -82,32 +82,32 @@ class AgataAPI
         $this->outputPath= $output;
     }
 
-    # Defining the name of the file which will appear as a suggestion
-    # for saving as on the user's browser
+    // Defining the name of the file which will appear as a suggestion
+    // for saving as on the user's browser
     function setDownloadFileName($fileName)
     {
         $this->downloadFileName = $fileName;
     }
     
-    # Getting the output file that will be generated
+    // Getting the output file that will be generated
     function getOutputPath()
     {
         return $this->outputPath;
     }
 
-    # Defining the Report file to interpret
+    // Defining the Report file to interpret
     function setReportPath($report)
     {
         $this->reportPath = $report;
     }
     
-    # Alternative way to setReportPath
+    // Alternative way to setReportPath
     function setReport($Report)
     {
         $this->Report = $Report;
     }
 
-    # Read the Report
+    // Read the Report
     function getReport()
     {
         if ($this->Report)
@@ -116,7 +116,7 @@ class AgataAPI
         }
         else
         {
-            # Reading the Report
+            // Reading the Report
             $Report = CoreReport::OpenReport($this->reportPath);
             if (!$Report['Report'])
             {
@@ -127,16 +127,16 @@ class AgataAPI
         }
     }
     
-    # Return the last error
+    // Return the last error
     function getError()
     {
         return $this->error;
     }
     
-    # Return the report parameters
+    // Return the report parameters
     function getParameters()
     {
-        # You can set the Database connection this way, too:
+        // You can set the Database connection this way, too:
         $Project = Project::ReadProject($this->project);
         if (!$Project)
         {
@@ -144,7 +144,7 @@ class AgataAPI
             return;
         }
         
-        # Reading the Report
+        // Reading the Report
         $Report = $this->getReport();
         if (!$Report)
         {
@@ -161,13 +161,13 @@ class AgataAPI
         return null;
     }
     
-    # Choosing the output {html, txt, pdf, csv, sxw}
+    // Choosing the output {html, txt, pdf, csv, sxw}
     function setFormat($format)
     {
         $this->format = $format;
     }
 
-    # Set the report parameters
+    // Set the report parameters
     function setParameter($parameter, $value)
     {
         $this->parameters[$parameter] = $value;
@@ -180,23 +180,23 @@ class AgataAPI
             $language = 'en';
         }
         
-        # Set the Interface Language
+        // Set the Interface Language
         Trans::SetLanguage($language);
     }
 
-    # Set the layout
+    // Set the layout
     function setLayout($layout)
     {
         $this->layout = $layout;
     }
 
-    # Set the project name
+    // Set the project name
     function setProject($project)
     {
         $this->project = $project;
     }
 
-    # Set report data. This not need Query and Report set, only data
+    // Set report data. This not need Query and Report set, only data
     function setDataArray($dataArray)
     {
         if (is_null($dataArray))
@@ -206,7 +206,7 @@ class AgataAPI
         $this->dataArray = $dataArray;
     }
 
-    # Set report sub data. This not need Query and Report set, only data
+    // Set report sub data. This not need Query and Report set, only data
     function setSubDataArray($subDataArray)
     {
         if (is_null($subDataArray))
@@ -216,7 +216,7 @@ class AgataAPI
          $this->subDataArray = $subDataArray;
     }
 
-    # Set image replace
+    // Set image replace
     function setImageReplace($imageName, $imagePath)
     {
         $this->imageReplace[$imageName] = $imagePath;
@@ -274,7 +274,7 @@ class AgataAPI
     
     function generateReport()
     {
-        # You can set the Database connection this way, too:
+        // You can set the Database connection this way, too:
         $Project = Project::ReadProject($this->project);
         if (!$Project)
         {
@@ -282,7 +282,7 @@ class AgataAPI
             return;
         }
         
-        # Reading the Report
+        // Reading the Report
         $Report = $this->getReport();
         if (!$Report)
         {
@@ -305,7 +305,7 @@ class AgataAPI
         
         $DataSet = $Report['Report']['DataSet'];
         
-        # Process the Query.
+        // Process the Query.
         $Query = AgataCore::CreateQuery($Project, $DataSet, $this->parameters);
 
         if (is_agata_error($Query))
@@ -333,7 +333,7 @@ class AgataAPI
     {
         $this->format = 'pdf';
         
-        # You can set the Database connection this way, too:
+        // You can set the Database connection this way, too:
         $Project = Project::ReadProject($this->project);
         if (!$Project)
         {
@@ -341,7 +341,7 @@ class AgataAPI
             return;
         }
         
-        # Reading the Report
+        // Reading the Report
         $Report = $this->getReport();
         if (!$Report)
         {
@@ -350,7 +350,7 @@ class AgataAPI
         
         $DataSet = $Report['Report']['DataSet'];
         
-        # Process the Query.
+        // Process the Query.
         $Query = AgataCore::CreateQuery($Project, $DataSet, $this->parameters);
         if (is_agata_error($Query))
         {
@@ -383,12 +383,12 @@ class AgataAPI
 
         if ($this->dataArray)
         {
-            #Process the data.
+            //Process the data.
             $Query = AgataCore::CreateQueryArray($this->dataArray);
         }
         else
         {
-            # You can set the Database connection this way, too:
+            // You can set the Database connection this way, too:
             $Project = Project::ReadProject($this->project);
             if (!$Project)
             {
@@ -396,7 +396,7 @@ class AgataAPI
                 return;
             }
             
-            # Reading the Report
+            // Reading the Report
             $Report = $this->getReport();
             if (!$Report)
             {
@@ -404,7 +404,7 @@ class AgataAPI
             }
             
             $DataSet = $Report['Report']['DataSet'];
-            # Process the Query.
+            // Process the Query.
             $Query = AgataCore::CreateQuery($Project, $DataSet, $this->parameters);
         }
 
@@ -479,7 +479,7 @@ class AgataAPI
     {
         $this->format = 'pdf';
         
-        # You can set the Database connection this way, too:
+        // You can set the Database connection this way, too:
         $Project = Project::ReadProject($this->project);
         if (!$Project)
         {
@@ -487,7 +487,7 @@ class AgataAPI
             return;
         }
         
-        # Reading the Report
+        // Reading the Report
         $Report = $this->getReport();
         if (!$Report)
         {
@@ -496,7 +496,7 @@ class AgataAPI
         
         $DataSet = $Report['Report']['DataSet'];
         
-        # Process the Query.
+        // Process the Query.
         $Query = AgataCore::CreateQuery($Project, $DataSet, $this->parameters);
         if (is_agata_error($Query))
         {
