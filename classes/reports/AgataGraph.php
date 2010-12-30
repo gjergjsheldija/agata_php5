@@ -119,7 +119,6 @@ class AgataGraph
             return false;
         }
         
-        Wait::On();
         
         //$BorderColor = $this->agataConfig['graph']['BorderColor'];
         //$FontColor   = $this->agataConfig['graph']['FontColor'];
@@ -246,7 +245,6 @@ class AgataGraph
             $obj->{$att}();
         }
         
-        Wait::Off();
         return true;
     }
     
@@ -273,7 +271,6 @@ class AgataGraph
             return false;
         }
         
-        Wait::On();
 
         $BorderColor = '#000000';
         $FontColor   = '#000000';
@@ -392,7 +389,6 @@ class AgataGraph
             $obj->{$att}();
         }
         
-        Wait::Off();
         return;
     }
     

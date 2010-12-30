@@ -2,7 +2,7 @@
 /***********************************************************/
 /* Label Adress tool                                       */
 /* Autor: Pablo Dall'Oglio                                 */
-/* Última ateração em 15 Agosto 2003 por Pablo             */
+/* ï¿½ltima ateraï¿½ï¿½o em 15 Agosto 2003 por Pablo             */
 /***********************************************************/
 class AgataLabel extends AgataMerge
 {
@@ -51,7 +51,6 @@ class AgataLabel extends AgataMerge
         
         include 'include/report_vars.inc';
         
-        Wait::On();
         $FileName = $this->FileName;
         $this->PDF = new FPDF($this->Orientation, 'pt', $this->PageFormat);
         $this->PDF->SetAutoPageBreak(false);
@@ -86,7 +85,7 @@ class AgataLabel extends AgataMerge
             }
             
             $LabelNumber ++;
-            // Início de Página
+            // Inï¿½cio de Pï¿½gina
             if($LabelNumber == ($RowCount+1))
             {
                 $Column ++;
@@ -156,7 +155,7 @@ class AgataLabel extends AgataMerge
         $this->UnsetReportLocale();
         return true;
         
-        ################## até aqui.
+        ################## atï¿½ aqui.
     }
 }
 ?>

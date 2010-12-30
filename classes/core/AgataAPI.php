@@ -18,25 +18,14 @@ class AgataAPI
             define("bar", '\\');
             setlocale(LC_ALL, 'POSIX');
             define ("cut", ';');
-            if (is_dir('C:\\tmp'))
-            {
-                define("temp", 'C:\\tmp');
-            }
-            else if (is_dir('C:\\windows\\temp'))
-            {
-                define("temp", 'C:\\windows\\temp');
-            }
-            else
-            {
-                define("temp", 'c:\\winnt\\temp');
-            }
+            define('temp', sys_get_temp_dir());
         }
         else
         {
             define("bar", '/');
             setlocale(LC_ALL, 'english');
             define ("cut", ':');
-            define("temp", '/tmp');
+            define('temp', sys_get_temp_dir());
         }
         
         define('isGui', false);
@@ -63,9 +52,7 @@ class AgataAPI
             include_once AGATA_PATH . "/classes/core/Layout.php";
             include_once AGATA_PATH . "/classes/core/AgataCore.php";
             include_once AGATA_PATH . "/classes/core/AgataConfig.php";
-            include_once AGATA_PATH . "/classes/util/Wait.php";
             include_once AGATA_PATH . "/classes/util/Dialog.php";
-            include_once AGATA_PATH . "/classes/util/MemoArea.php";
             include_once AGATA_PATH . "/classes/util/Trans.php";
             include_once AGATA_PATH . "/classes/util/XmlArray.php";
             include_once AGATA_PATH . "/classes/util/AgataOO.php";
@@ -276,12 +263,13 @@ class AgataAPI
     {
         // You can set the Database connection this way, too:
         $Project = Project::ReadProject($this->project);
+       
         if (!$Project)
         {
             $this->error = 'Cannot read project file.';
             return;
         }
-        
+         
         // Reading the Report
         $Report = $this->getReport();
         if (!$Report)
@@ -302,14 +290,14 @@ class AgataAPI
             $Report['Report']['Header']['Body'] = $header;
             $Report['Report']['Footer']['Body'] = $footer;
         }
-        
+
         $DataSet = $Report['Report']['DataSet'];
         
         // Process the Query.
         $Query = AgataCore::CreateQuery($Project, $DataSet, $this->parameters);
 
         if (is_agata_error($Query))
-        {
+        {         
             $this->error = $Query->GetError();
             return;
         }
@@ -321,7 +309,7 @@ class AgataAPI
             $params[3] = $Query;
             $params[4] = $Report;
             $params[6] = $this->layout;
-            
+
             $myreport = AgataCore::CreateReport($this->format, $params);
             $myreport->Process();
         }

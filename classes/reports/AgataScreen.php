@@ -9,7 +9,7 @@ class AgataScreen extends AgataReport
     function Process()
     {
         global $Pixmaps;
-        Wait::On();
+        
 
         if ($this->Breaks)
         {

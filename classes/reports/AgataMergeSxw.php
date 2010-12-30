@@ -229,7 +229,7 @@ class AgataMergeSxw extends AgataMerge
         	include_once('classes/barcode128/barcode128.inc');
         	include_once('classes/barcode128/pdfbarcode128.inc');
 
-        	Wait::On();
+        	
         	$FileName = $this->FileName;
 
         
@@ -256,7 +256,7 @@ class AgataMergeSxw extends AgataMerge
         	$this->page = 0;
 
         	while ($this->QueryLine = $this->CurrentQuery->FetchNext()) {
-            	// Início de Página
+            	// Inï¿½cio de Pï¿½gina
             	$this->page ++;
             	$this->sxw->AddPage();
 			$this->sxw->SetFont(array('family'=>'Times New Roman', 'size'=>10));
@@ -383,7 +383,7 @@ class AgataMergeSxw extends AgataMerge
 
         }
         
-        # Substituição de Parâmetros
+        # Substituiï¿½ï¿½o de Parï¿½metros
         krsort($vars);
         $where = $this->XmlArray['report']['merge']['query']['where'];
         foreach ($vars as $var => $content)
@@ -425,10 +425,10 @@ class AgataMergeSxw extends AgataMerge
                         $this->SubTotals[$SubMyVar]['max']   = ($SubConteudo > $this->SubTotals[$SubMyVar]['max']) ? $SubConteudo : $this->SubTotals[$SubMyVar]['max'];
                     }
                     
-                    //após sumarizações, pq botar R$ na frente estraga a soma.
+                    //apï¿½s sumarizaï¿½ï¿½es, pq botar R$ na frente estraga a soma.
                     $SubConteudo = FormatMask($this->SubAdjustments[$Subcol]['Mask'], $SubConteudo);
                     
-                    // novo nome de variável para dar os replace
+                    // novo nome de variï¿½vel para dar os replace
                     // problema : replace do subfield10, subfield1...
                     $myNewVar = 'subcolum' . $Subcol;  // primeiro sem o $ na frente, para declarar
                     $$myNewVar = $SubConteudo;

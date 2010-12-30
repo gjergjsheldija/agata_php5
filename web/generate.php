@@ -1,4 +1,5 @@
 <?php
+error_reporting(E_ALL);
 #+-----------------------------------------------------------------+
 #| AGATA Report  (http://www.agata.org.br)                         |
 #| Copyleft (l) 2004  Solis - Lajeado - RS - Brasil                |
@@ -24,9 +25,9 @@ if (($type == 'lines') or ($type == 'bars'))
     $mimetype = $saida;
 
 # Defining the output file that will be generated:
-$Output   = temp . '/output.' . $mimetype;
+$Output   = temp . '/output-' . rand(5, 15) . '.' . $mimetype;
 
-//# You can set the Databse connection this way, too:
+//You can set the Databse connection this way, too:
 //$Project = Project::ReadProject($connection);
 
 # Reading the Report
@@ -34,11 +35,9 @@ $originalReport = $Report = CoreReport::OpenReport($ReportName);
 
 $saveReport = false;
 
-if ($Report)
-{
-    # What fields to show
-    if ($SelectFields)
-    {
+if ($Report) {
+    // What fields to show
+    if ($SelectFields) {
         $SelectFields = unserialize(ereg_replace("`", "'", $SelectFields));
         $Adjustments = CoreReport::ExtractAdjustments($Report['Report']['DataSet']);
         $newindex = 1;
@@ -121,7 +120,7 @@ if ($Report)
     $Report['Report']['Label']['Body']                              = $label;
 
     include_once AGATA_PATH . '/classes/core/AgataAPI.php';
-    
+
     # Instantiate AgataAPI
     $api = new AgataAPI;
     $api->setLanguage('en'); //'en', 'pt', 'es', 'de', 'fr', 'it', 'se'
@@ -130,7 +129,7 @@ if ($Report)
     $api->setFormat($mimetype); // 'pdf', 'txt', 'xml', 'html', 'csv', 'sxw'
     $api->setOutputPath($Output);
     $api->setLayout($layout);
-    
+
     # Parameters
     //var_dump($Parameters);
     if ($Parameters)
@@ -147,7 +146,7 @@ if ($Report)
             $originalReport['Report']['Parameters'][$Parameter]['value'] = $value;
         }
     }
-    
+   
     if ($type == 'report')
     {
         if ($mimetype == 'oop')
@@ -159,7 +158,7 @@ if ($Report)
             $mimetype = 'sxw';
         }
         else
-        {
+        {        
             $ok = $api->generateReport();
         }
         

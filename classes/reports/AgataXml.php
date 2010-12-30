@@ -59,7 +59,7 @@ class AgataXml extends AgataReport
                 new Dialog(_a('File Error'));
             return false;
         }
-        Wait::On();
+        
 
         $this->SetReportLocale();
 

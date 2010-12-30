@@ -45,104 +45,6 @@ class Dialog
     */
     function ShowMessage($labels, $erro, $kill, $submessage)
     {
-        if (isGui)
-        {
-            echo date('d/m/Y h:m').' - '.$labels."\n";
-            $this->window = new GtkWindow;
-            $this->window->set_position(GTK_WIN_POS_CENTER);
-            //$this->window->set_modal(true);
-            $this->window->set_border_width(10);
-            $this->window->realize();
-            $this->window->connect_object('key_press_event', array(&$this,'KeyTest'), null);
-            $this->window->set_policy(false, false, false);
-            if ($erro)
-            {
-                $this->window->set_title(_a('Error'));
-            }
-            else
-            {
-                $this->window->set_title(_a('Information'));
-            }
-
-            $this->img = Gdk::pixmap_create_from_xpm($this->window->window, null, images . 'ico_message.xpm');
-            //$this->img = Gdk::pixmap_create_from_xpm($this->window->window, null, images . 'ico_warning.xpm');
-            $pixwid = new GtkPixmap($this->img[0], $this->img[1]);
-
-            if ($erro)
-                $col1 = new GdkColor(56000, 0, 0);
-            else
-                $col1 = new GdkColor(0, 0, 56000);
-
-            $col2 = new GdkColor(0, 56000, 32000);
-            $style = new GtkStyle;
-            $style->fg[GTK_STATE_NORMAL] = $col1;
-            $style->base[GTK_STATE_NORMAL] = $col2;
-            $style->font = gdk::font_load ("-*-helvetica-bold-r-*-*-*-140-*-*-*-*-*-*");
-
-            $vbox = new GtkVBox(false, 10);
-            $this->window->add($vbox);
-
-            $hbox = new GtkHBox(false, 10);
-            $hbox->pack_start($pixwid);
-
-            $textbox = new GtkVBox;
-            $hbox->pack_start($textbox);
-
-            if (is_array($labels))
-            {
-                foreach($labels as $lb)
-                {
-                    $tmp = new GtkHBox;
-                    $line = new GtkHBox;
-                    $texto = new GtkLabel(' ' . $lb . ' ');
-                    //$texto->set_justify(GTK_JUSTIFY_LEFT);
-                    $texto->set_style($style);
-                    $line->pack_start($texto, false, false);
-                    $line->pack_start($tmp, true, true);
-                    $textbox->pack_start($line, false, false);
-                }
-            }
-            else
-            {
-                $tmp = new GtkHBox;
-                $line = new GtkHBox;
-                $texto = new GtkLabel(' ' . $labels . ' ');
-                $texto->set_justify(GTK_JUSTIFY_LEFT);
-                $texto->set_style($style);
-                $line->pack_start($texto, false, false);
-                $line->pack_start($tmp, true, true);
-                $textbox->pack_start($line, false, false);
-            }
-
-            if ($submessage)
-            {
-                $texto = new GtkLabel(' ' . $submessage . ' ');
-                $textbox->pack_start($texto, false, false);
-            }
-
-            $sep = new GtkHSeparator;
-
-            $vbox->pack_start($hbox);
-            $vbox->pack_start($sep);
-            $hbox = new GtkHBox;
-
-            $close = Gdk::pixmap_create_from_xpm($this->window->window, null,  images . 'ico_close.xpm');
-            $this->button = $button = new VoidButton(_a('Close'), $close, IMAGEBUTTON);
-
-
-            //$this->button = $button = new GtkButton('   ' . _a('Close') . '   ');
-
-            if ($kill)
-            { $button->connect_object('clicked', array(&$this, 'Quit')); }
-            else
-            { $button->connect_object('clicked', array(&$this, 'Close')); }
-
-            $hbox->pack_start($button, true, false);
-            $vbox->pack_start($hbox, true, true);
-            $this->window->show_all();
-        }
-        else
-        {
             if (is_array($labels))
             {
                 echo '<b>' . _a('Message') . ': </b>' . implode(' ', $labels) . '<br>';
@@ -151,34 +53,8 @@ class Dialog
             {
                 echo '<b>' . _a('Message') . ': </b>' . $labels . '<br>';
             }
-        }
     }
 
-    /**
-    * Closes the window, closes the dialog window
-    */
-    function Close()
-    {
-        $this->window->hide();
-    }
 
-    /**
-    * Kills the entire application, if $kill is passed in new Dialog
-    */
-    function Quit()
-    {
-        Gtk::main_quit();
-    }
-
-    /**
-    * Key Test Method, to verify keys actions
-    */
-    function KeyTest($p1)
-    {
-        if (($p1->keyval == K_ENTER) or ($p1->keyval == K_ESC) or ($p1->keyval == K_SPACE))
-        {
-            $this->button->clicked();
-        }
-    }
 }
 ?>

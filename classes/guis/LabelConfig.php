@@ -21,7 +21,7 @@ class LabelConfig
         $this->pwindow->add($hbox);
         
         include_once 'classes/guis/MeasureBox.php';
-        Wait::On();
+        
 
         $Labels = Label::ListLabels();
         if ($Labels)

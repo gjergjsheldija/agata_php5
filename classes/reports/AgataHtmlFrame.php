@@ -72,7 +72,6 @@ class AgataHtmlFrame extends AgataReport
             fputs($fd_menuhtml, "<html>\n");
             fputs($fd_menuhtml, "<table width=400>\n");
         }
-        Wait::On();
         
         $this->SetReportLocale();
 
@@ -435,7 +434,6 @@ class AgataHtmlFrame extends AgataReport
 
         $this->UnSetReportLocale();
 
-        Wait::Off();
         
         return true;
     }

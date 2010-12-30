@@ -137,7 +137,7 @@ class AgataPdf extends AgataReport
             $this->central_col = 297;
         }
         
-        Wait::On();
+        
         $Left = 6;
 
         $OffSet = 1;

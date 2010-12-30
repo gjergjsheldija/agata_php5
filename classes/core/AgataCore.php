@@ -167,7 +167,7 @@ class AgataCore
                 {
                     foreach ($obj->data as $line)
                     {
-                        //Colunas começam em 1 obrigatoriamente. Com isso é montado a variável
+                        //Colunas comeï¿½am em 1 obrigatoriamente. Com isso ï¿½ montado a variï¿½vel
                         $y = 1;
                         foreach ($line as $col)
                         {
@@ -219,7 +219,6 @@ class AgataCore
             $conn = new AgataConnection;
             if ($conn->Open($agataDB))
             {
-                //Wait::On();
                 $query = $conn->CreateQuery($sql);
                 $query->SetOffSet($DataSet['Query']['Config']['OffSet']);
                 $query->SetLimit($DataSet['Query']['Config']['Limit']);

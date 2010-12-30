@@ -4,7 +4,7 @@
 /* Linguagem PHP-GTK                                       */
 /* Autor: Pablo Dall'Oglio                                 */
 /*        Jamiel Spezia
-/* Última ateração em 08 de Maio de 2006 por Jamiel        */
+/* ï¿½ltima ateraï¿½ï¿½o em 08 de Maio de 2006 por Jamiel        */
 /***********************************************************/
 
 
@@ -39,7 +39,6 @@ class AgataMergePdf extends AgataMerge
         include_once('classes/barcode128/barcode128.inc');
         include_once('classes/barcode128/pdfbarcode128.inc');
 
-        Wait::On();
         $FileName = $this->FileName;
 
         $this->PDF = new FPDF($this->Orientation, 'pt', $this->PageFormat);
@@ -62,7 +61,7 @@ class AgataMergePdf extends AgataMerge
         //Percore os registros principais
         while ($this->QueryLine = $this->CurrentQuery->FetchNext())
         {
-            // Início de Página
+            // Inï¿½cio de Pï¿½gina
             $this->page ++;
             if ( !$this->oneRecordPerPage )
             {
@@ -242,7 +241,7 @@ class AgataMergePdf extends AgataMerge
     function getSubQuery($numberSubReport, $numberLine=0)
     {
         //VERIFICAR COMO FAZER
-        //Cria vetor com conteudo para substituição dos parametros (Select principal)
+        //Cria vetor com conteudo para substituiï¿½ï¿½o dos parametros (Select principal)
         for ($y=1; $y<=count($this->QueryLine); $y++)
         {
             $QueryCell = trim($this->QueryLine[$y]);
@@ -265,7 +264,7 @@ class AgataMergePdf extends AgataMerge
             }
         }
 
-        # Substituição de Parâmetros
+        # Substituiï¿½ï¿½o de Parï¿½metros
         krsort($vars);
         $where = $this->XmlArray['Report']['Merge']['Details']['Detail1']['DataSet' . ($numberSubReport+1)]['Query']['Where'];
         foreach ($vars as $var => $content)
@@ -342,10 +341,10 @@ class AgataMergePdf extends AgataMerge
                         $this->TotalFinalSummary[$FinalSummaryMyVar]['max'] = ($SubConteudo > $this->TotalFinalSummary[$FinalSummaryMyVar]['max']) ? $SubConteudo : $this->TotalFinalSummary[$FinalSummaryMyVar]['max'];
                     }
 
-                    //após sumarizações, pq botar R$ na frente estraga a soma.
+                    //apï¿½s sumarizaï¿½ï¿½es, pq botar R$ na frente estraga a soma.
                     $SubConteudo = FormatMask($this->SubAdjustments[$numberSubReport][$Subcol]['Mask'], $SubConteudo);
 
-                    // novo nome de variável para dar os replace
+                    // novo nome de variï¿½vel para dar os replace
                     // problema : replace do subfield10, subfield1...
                     $myNewVar = 'subcolum' . $Subcol;  // primeiro sem o $ na frente, para declarar
                     $$myNewVar = $SubConteudo;

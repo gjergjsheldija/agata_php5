@@ -4,6 +4,7 @@
     <datasource>
         <name>Samples</name>
     </datasource>
+
     <Properties>
         <Layout>default-HTML</Layout>
         <Format>html</Format>

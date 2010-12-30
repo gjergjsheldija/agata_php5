@@ -1,7 +1,6 @@
 <?php
 # Including the necessary classes and definitions.
 include 'start.php';
-print_r($_REQUEST);
 ?>
 
 <link href="site.css" rel="stylesheet" type="text/css">

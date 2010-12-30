@@ -106,37 +106,5 @@ class AgataConfig
         fclose($fd);
         return true;
     }
-
-
-    /**
-     * Fix Config File
-     */
-  // not used anymore
-    
-/*    function FixConfig($agataConfig)
-    {
-        $adir = $agataConfig['general']['AgataDir'] = getcwd();
-
-        if (!$agataConfig['general']['OutputDir'])
-            $agataConfig['general']['OutputDir'] = $adir . bar . "output";
-
-        if (!$agataConfig['general']['RptDir'])
-            $agataConfig['general']['RptDir'] = $adir . bar . "reports";
-
-        if (!$agataConfig['general']['SqlDir'])
-            $agataConfig['general']['SqlDir'] = $adir . bar . "sql";
-
-        if (!$agataConfig['general']['TmpDir'])
-            $agataConfig['general']['TmpDir'] = temp;
-
-        if (AgataConfig::WriteConfig($agataConfig))
-        {
-            return $agataConfig;
-        }
-        else
-        {
-            return false;
-        }
-    }*/
 }
 ?>

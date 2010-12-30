@@ -30,10 +30,9 @@ class AgataHtml extends AgataReport
                 new Dialog(_a('File Error'));
             return false;
         }
-        Wait::On();
         
         $this->SetReportLocale();
-
+            echo ":kaka";
         if ($this->Breaks)
         {
             $CountBreaks=count($this->Breaks);
@@ -461,7 +460,6 @@ class AgataHtml extends AgataReport
 
         $this->UnSetReportLocale();
 
-        Wait::Off();
         
         return true;
     }

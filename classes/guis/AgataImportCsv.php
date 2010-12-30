@@ -125,7 +125,7 @@ class AgataImportCsv
             return false;
         }
         echo "3\n";
-        Wait::On();
+        
         $conn = new AgataConnection;
         echo "4\n";
         if ($conn->Open($this->agataDB))

@@ -80,7 +80,7 @@ class AgataOOParser extends AgataMerge
         $output = implode('', $this->buffer['start']);
         
         $break  = false;
-        Wait::On();
+        
         //Percore os registros da consulta pricipal
         while ($line = $this->CurrentQuery->FetchNext())
         {
@@ -90,7 +90,7 @@ class AgataOOParser extends AgataMerge
                 $vars['$var' . $y] = FormatMask($this->Adjustments[$y]['Mask'], $QueryCell);
             }
             
-            # Substituição de Parâmetros
+            # Substituiï¿½ï¿½o de Parï¿½metros
             krsort($vars);
             $where = $this->XmlArray['Report']['Merge']['Details']['Detail1']['DataSet1']['Query']['Where'];
             foreach ($vars as $var => $content)
@@ -211,7 +211,7 @@ class AgataOOParser extends AgataMerge
                 $text_line = str_replace($matches[0], $this->barCode($matches[0]), $text_line);
             }
             
-            # Quebra a página, colocando o estilo de PageBreak
+            # Quebra a pï¿½gina, colocando o estilo de PageBreak
             # Na primeira linha de cada 'header'
             if (($line == 1) and ($section == 'header') and ($plus == true))
             {
@@ -232,7 +232,7 @@ class AgataOOParser extends AgataMerge
             
             if ($section == 'details')
             {
-                # Fim do cabeçalho, começa a contar as linhas dos detalhes
+                # Fim do cabeï¿½alho, comeï¿½a a contar as linhas dos detalhes
                 if (substr($text_line, 0, 26) == '</table:table-header-rows>')
                 {
                     $process = true;
@@ -292,14 +292,14 @@ class AgataOOParser extends AgataMerge
                             $sub_row ++;
                         }
                         
-                        # Substituir as variáveis
+                        # Substituir as variï¿½veis
                         if ($sub_data[$sub_row])
                         {
                             $text_line = $this->replaceDetails($text_line, $sub_data[$sub_row]);
                         }
                         else
                         {
-                            # Limpar ultimas linhas, quando já passou do eof
+                            # Limpar ultimas linhas, quando jï¿½ passou do eof
                             for ($i = 20; $i >= 1; $i --)
                             {
                                 $text_line = str_replace('$subfield' . $i, '', $text_line);
@@ -323,7 +323,7 @@ class AgataOOParser extends AgataMerge
                             }
                             else
                             {
-                                # Limpar ultimas linhas, quando já passou do eof
+                                # Limpar ultimas linhas, quando jï¿½ passou do eof
                                 for ($i = 20; $i >= 1; $i --)
                                 {
                                     $text_line = str_replace('$subfield' . $i, '', $text_line);
