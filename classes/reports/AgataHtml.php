@@ -32,7 +32,6 @@ class AgataHtml extends AgataReport
         }
         
         $this->SetReportLocale();
-            echo ":kaka";
         if ($this->Breaks)
         {
             $CountBreaks=count($this->Breaks);
