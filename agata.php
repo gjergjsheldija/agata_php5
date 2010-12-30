@@ -41,7 +41,7 @@ if (OS == 'WIN')
     }
     dl('php_gtk.dll');
     setlocale(LC_ALL, 'english');
-    Gtk::rc_parse('themes/AceIce/gtk/gtkrc');
+    Gtk::rc_parse('gtk/themes/AceIce/gtk/gtkrc');
 }
 else
 {
