@@ -1,5 +1,0 @@
-# Autowritten by gnome-settings-daemon. Do not edit
-
-include "/usr/share/themes/Bluecurve/gtk/gtkrc"
-
-include "/home/pablo/.gtkrc.mine"
