@@ -2,7 +2,7 @@
 <report>
     <description></description>
     <datasource>
-        <name>Samples</name>
+        <name>sqlite</name>
     </datasource>
 
     <header>
@@ -325,11 +325,11 @@ $var25
 </header>
 
         <groupheader>#setfab16#setcf010101
-#tab340 ORÇAMENTO N$supo $var1 #setfab10 #tab600 DATA EMISSÃO:  $var2 #setfab12
+#tab340 ORï¿½AMENTO N$supo $var1 #setfab10 #tab600 DATA EMISSï¿½O:  $var2 #setfab12
 $line2
 #rectr*014*004*800*026*1*#000000*#000000
 #rectr*010*000*800*026*1*#C0C0C0*#000000
-         #tab006 ITEM  #tab040 CÓDIGO      #tab122 DESCRIÇÃO  #tab380 MARCA        #tab486 UNID.      #tab526 QUANT.     #tab584 PR. UNIT.  #tab652 IPI.       #tab680 TOT. C/IPI ENTREGA
+         #tab006 ITEM  #tab040 Cï¿½DIGO      #tab122 DESCRIï¿½ï¿½O  #tab380 MARCA        #tab486 UNID.      #tab526 QUANT.     #tab584 PR. UNIT.  #tab652 IPI.       #tab680 TOT. C/IPI ENTREGA
 $line2
 #setfan12
 
@@ -343,11 +343,11 @@ $line2
 
 </groupfooter>
         <footer>#setcf010101
-#setfab12CONDIÇÕES GERAIS DE VENDA
+#setfab12CONDIï¿½ï¿½ES GERAIS DE VENDA
 #setfan12PAGAMENTO: $var24
 FRETE:  $var27
 VALIDADE DA PROPOSTA:  $var28  DIAS
-FATURAMENTO MÍNIMO: R\$ $var7 ($var26)
+FATURAMENTO Mï¿½NIMO: R\$ $var7 ($var26)
 $var25
 </footer>
 

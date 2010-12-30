@@ -21,7 +21,7 @@
 
     <DataSet>
         <DataSource>
-            <Name>Samples</Name>
+            <Name>sqlite</Name>
         </DataSource>
 
         <Query>

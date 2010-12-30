@@ -1,6 +1,9 @@
 <?xml version="1.0"?>
 <Report>
     <Version>7.5</Version>
+    <datasource>
+        <name>Samples</name>
+    </datasource>
     <Properties>
         <Layout>default-HTML</Layout>
         <Format>html</Format>

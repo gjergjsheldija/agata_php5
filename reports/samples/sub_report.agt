@@ -3,20 +3,15 @@
     <Version>7.5</Version>
     <Properties>
         <Description>Labels with photo</Description>
-        <Title></Title>
-        <Author></Author>
-        <Keywords></Keywords>
-        <Date></Date>
-        <FrameSize></FrameSize>
+        <Layout>default-HTML</Layout>
+        <Format>html</Format>
     </Properties>
 
     <Header>
-        <Body></Body>
         <Align>center</Align>
     </Header>
 
     <Footer>
-        <Body></Body>
         <Align>center</Align>
     </Footer>
 
@@ -29,21 +24,22 @@
             <Select>customer.code as "Customer Code", customer.name as "Customer Name", customer.phone as "Customer Phone", customer.address as "Customer Address", customer.age as "Customer Age", customer.photo as "Customer Photo", customer.ref_city as "Customer City Code", city.description as "City Description", state.code as "State Code", state.description as "State Description"</Select>
             <From>customer,city,state</From>
             <Where>city.ref_state = state.code and customer.ref_city = city.code</Where>
-            <GroupBy></GroupBy>
             <OrderBy>customer.name asc</OrderBy>
             <Config>
-                <Distinct></Distinct>
                 <OffSet>0</OffSet>
                 <Limit>0</Limit>
             </Config>
+
+            <AgataWeb>
+                <Select>customer.code as "Customer Code",customer.name as "Customer Name",customer.phone as "Customer Phone",customer.address as "Customer Address",customer.age as "Customer Age",customer.photo as "Customer Photo",customer.ref_city as "Customer City Code",city.description as "City Description",state.code as "State Code",state.description as "State Description"</Select>
+                <Where></Where>
+            </AgataWeb>
 
         </Query>
 
         <Groups>
             <Config>
-                <ShowGroup></ShowGroup>
                 <ShowDetail>1</ShowDetail>
-                <ShowLabel></ShowLabel>
                 <ShowNumber>1</ShowNumber>
                 <ShowIndent>1</ShowIndent>
             </Config>
@@ -55,114 +51,70 @@
                 <Chars>30</Chars>
                 <Points>100</Points>
                 <Align>left</Align>
-                <Mask></Mask>
-                <Function></Function>
-                <Cross></Cross>
-                <Conditional></Conditional>
             </Column1>
 
             <Column2>
                 <Chars>30</Chars>
                 <Points>100</Points>
                 <Align>left</Align>
-                <Mask></Mask>
                 <Function>/strings/a_upper.fun</Function>
-                <Cross></Cross>
-                <Conditional></Conditional>
             </Column2>
 
             <Column3>
                 <Chars>30</Chars>
                 <Points>100</Points>
                 <Align>left</Align>
-                <Mask></Mask>
-                <Function></Function>
-                <Cross></Cross>
-                <Conditional></Conditional>
             </Column3>
 
             <Column4>
                 <Chars>30</Chars>
                 <Points>100</Points>
                 <Align>left</Align>
-                <Mask></Mask>
-                <Function></Function>
-                <Cross></Cross>
-                <Conditional></Conditional>
             </Column4>
 
             <Column5>
                 <Chars>30</Chars>
                 <Points>100</Points>
                 <Align>left</Align>
-                <Mask></Mask>
-                <Function></Function>
-                <Cross></Cross>
-                <Conditional></Conditional>
             </Column5>
 
             <Column6>
                 <Chars>30</Chars>
                 <Points>100</Points>
                 <Align>left</Align>
-                <Mask></Mask>
-                <Function></Function>
-                <Cross></Cross>
-                <Conditional></Conditional>
             </Column6>
 
             <Column7>
                 <Chars>30</Chars>
                 <Points>100</Points>
                 <Align>left</Align>
-                <Mask></Mask>
-                <Function></Function>
-                <Cross></Cross>
-                <Conditional></Conditional>
             </Column7>
 
             <Column8>
                 <Chars>30</Chars>
                 <Points>100</Points>
                 <Align>left</Align>
-                <Mask></Mask>
-                <Function></Function>
-                <Cross></Cross>
-                <Conditional></Conditional>
             </Column8>
 
             <Column9>
                 <Chars>30</Chars>
                 <Points>100</Points>
                 <Align>left</Align>
-                <Mask></Mask>
-                <Function></Function>
-                <Cross></Cross>
-                <Conditional></Conditional>
             </Column9>
 
             <Column10>
                 <Chars>30</Chars>
                 <Points>100</Points>
                 <Align>left</Align>
-                <Mask></Mask>
-                <Function></Function>
-                <Cross></Cross>
-                <Conditional></Conditional>
             </Column10>
 
         </Fields>
 
     </DataSet>
 
-    <PageSetup></PageSetup>
     <Graph>
-        <Title></Title>
-        <TitleX></TitleX>
-        <TitleY></TitleY>
         <Width>480</Width>
         <Height>268</Height>
-        <Description></Description>
         <ShowData>1</ShowData>
         <ShowValues>1</ShowValues>
         <Orientation>lines</Orientation>
@@ -210,10 +162,7 @@
                         <Select>product.code as "Product Code", product.description as "Product Description", sales.amount as "Amount", sales.date as "Date", sales.price as "Price"</Select>
                         <From>sales,product</From>
                         <Where>sales.ref_product = product.code and sales.ref_customer  = $var1</Where>
-                        <GroupBy></GroupBy>
-                        <OrderBy></OrderBy>
                         <Config>
-                            <Distinct></Distinct>
                             <OffSet>0</OffSet>
                             <Limit>0</Limit>
                         </Config>
@@ -225,40 +174,24 @@
                             <Chars>30</Chars>
                             <Points>100</Points>
                             <Align>left</Align>
-                            <Mask></Mask>
-                            <Function></Function>
-                            <Cross></Cross>
-                            <Conditional></Conditional>
                         </Column1>
 
                         <Column2>
                             <Chars>30</Chars>
                             <Points>100</Points>
                             <Align>left</Align>
-                            <Mask></Mask>
-                            <Function></Function>
-                            <Cross></Cross>
-                            <Conditional></Conditional>
                         </Column2>
 
                         <Column3>
                             <Chars>30</Chars>
                             <Points>100</Points>
                             <Align>left</Align>
-                            <Mask></Mask>
-                            <Function></Function>
-                            <Cross></Cross>
-                            <Conditional></Conditional>
                         </Column3>
 
                         <Column4>
                             <Chars>30</Chars>
                             <Points>100</Points>
                             <Align>left</Align>
-                            <Mask></Mask>
-                            <Function></Function>
-                            <Cross></Cross>
-                            <Conditional></Conditional>
                         </Column4>
 
                         <Column5>
@@ -266,9 +199,6 @@
                             <Points>100</Points>
                             <Align>left</Align>
                             <Mask># $-9,999.99s</Mask>
-                            <Function></Function>
-                            <Cross></Cross>
-                            <Conditional></Conditional>
                         </Column5>
 
                     </Fields>
@@ -281,7 +211,6 @@
                         <Select>sales.ref_product as "Product Code", customer.name as "Customer Name", customer.phone as "Customer Phone"</Select>
                         <From>sales,customer</From>
                         <Where>sales.ref_customer = customer.code and sales.ref_product  = $subfield1</Where>
-                        <GroupBy></GroupBy>
                         <OrderBy>customer.name asc</OrderBy>
                         <Config>
                             <Distinct>1</Distinct>
@@ -303,30 +232,18 @@
                             <Chars>30</Chars>
                             <Points>60</Points>
                             <Align>left</Align>
-                            <Mask></Mask>
-                            <Function></Function>
-                            <Cross></Cross>
-                            <Conditional></Conditional>
                         </Column1>
 
                         <Column2>
                             <Chars>100</Chars>
                             <Points>200</Points>
                             <Align>left</Align>
-                            <Mask></Mask>
-                            <Function></Function>
-                            <Cross></Cross>
-                            <Conditional></Conditional>
                         </Column2>
 
                         <Column3>
                             <Chars>30</Chars>
                             <Points>60</Points>
                             <Align>left</Align>
-                            <Mask></Mask>
-                            <Function></Function>
-                            <Cross></Cross>
-                            <Conditional></Conditional>
                         </Column3>
 
                     </Fields>
@@ -401,14 +318,8 @@
     </Label>
 
     <OpenOffice>
-        <Source></Source>
         <Config>
             <FixedDetails>1</FixedDetails>
-            <ExpandDetails></ExpandDetails>
-            <printEmptyDetail></printEmptyDetail>
-            <SumByTotal></SumByTotal>
-            <RepeatHeader></RepeatHeader>
-            <RepeatFooter></RepeatFooter>
         </Config>
 
     </OpenOffice>

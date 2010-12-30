@@ -34,7 +34,7 @@ if ($Report['Report']['DataSet']['Query']['AgataWeb']['Select'])
     $adjustments = $Report['Report']['DataSet']['Fields'];
     
     # Calcula novos ajustes em virtude que campos
-    # devem ter sido removidos na exibição.
+    # devem ter sido removidos na exibiï¿½ï¿½o.
     $i = 1;
     foreach ($repFields as $key => $field)
     {
@@ -79,17 +79,14 @@ $api->setLayout($Report['Report']['Properties']['Layout']);
 $Parameters = $api->getParameters();
 
 # Parameters
-if ($Parameters)
-{
-    foreach ($Parameters as $Parameter)
-    {
+if ($Parameters) {
+    foreach ($Parameters as $Parameter)     {
         $ParameterName = substr($Parameter,1);
         $api->setParameter($Parameter, $Report['Report']['Parameters'][$ParameterName]['value']);
     }
 }
 $ok = $api->generateReport();
-if (!$ok)
-{
+if (!$ok) {
     echo $api->getError();
     die;
 }
@@ -99,7 +96,6 @@ if (!$ok)
 //header("Content-Disposition: attachment; filename=\"output.pdf\"");
 $download = 'output.' . $mimetype;
 //readfile($Output);
-//echo 'sdf';
 header("Location: download.php?type=$mimetype&download=$download&file=$Output");
 //header("Location: $Output");
 ?>

@@ -166,7 +166,7 @@ class AgataWEB {
                             echo '</td>';
 	                        //fastgenerate
 	                        echo '<td>';
-	                        if ($Report['Report']['Properties']['Layout'] and $Report['Report']['Properties']['Format']) {
+	                        if ($Report['Report']['Properties']['Layout'] AND $Report['Report']['Properties']['Format']) {
 	                            echo "<a href='fastgenerate.php?file=$path'><img border=0 src=images/lightning.png></a>";
 	                        }
                         	echo '</td>';
