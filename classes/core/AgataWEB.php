@@ -172,7 +172,7 @@ class AgataWEB {
                         	echo '</td>';
                         	//end fastgenerate
                             echo '<td>';
-                            echo "<a href=agataweb.php?file=$path&lang=$lang&AgataDir=" . AgataDir . ">$arquivo</a>";
+                            echo "<a href=sheet1.php?file=$path&lang=$lang&AgataDir=" . AgataDir . ">$arquivo</a>";
                             echo '</td>';
                         }
                         

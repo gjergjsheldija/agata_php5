@@ -35,7 +35,7 @@
 
 <h1>Agata CoreReport :: <?php echo _a('Report Generation'); ?></h1>
 <ul id="nav">
-	<li>
+	<li class="active">
 		<a href="sheet1.php?file=<?php echo $_REQUEST['file'];?>">Report</a>
 	</li>
 	<li>
@@ -46,6 +46,9 @@
 	</li>
 	<li>
 		<a href="sheet4.php?file=<?php echo $_REQUEST['file'];?>">Merging</a>
+	</li>
+	<li style="float:right">
+		<a href="browse.php?goal=1">Reports</a>
 	</li>	
 </ul>
 
