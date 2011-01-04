@@ -48,6 +48,8 @@ $Elements  = MyExplode(trim($Report['Report']['DataSet']['Query']['Select']), _a
                     echo "<label>$Formula</label>";
                 }
             }
+        } else {
+			echo _('This report has no groups');        	
         }
 ?>
 </fieldset>
