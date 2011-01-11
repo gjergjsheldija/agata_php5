@@ -19,21 +19,15 @@ if (get_magic_quotes_gpc())
 }
 
 
-if (!$goal)
-{
+if (!$goal) {
     $goal=1;
 }
 
-if ($goal == 1)
-{
-    if (!$BrowseDir)
-    {
-        if ($agataConfig['general']['RptDir'])
-        {
+if ($goal == 1) { 
+    if (!$BrowseDir) {
+        if ($agataConfig['general']['RptDir']) {
            $BrowseDir = $agataConfig['general']['RptDir'];
-        }
-        else
-        {
+        } else {
            $BrowseDir = AGATA_PATH . '/reports';
         }
     }
@@ -43,17 +37,11 @@ if ($goal == 1)
 
     # Define the listed extensions
     $filter = array('agt');
-}
-else
-{
-    if (!$BrowseDir)
-    {
-        if ($agataConfig['general']['RptDir'])
-        {
+} else {
+    if (!$BrowseDir) {
+        if ($agataConfig['general']['RptDir']) {
            $BrowseDir = $agataConfig['general']['OutputDir'];
-        }
-        else
-        {
+        } else {
            $BrowseDir = AGATA_PATH . '/output';
         }
     }

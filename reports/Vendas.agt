@@ -28,8 +28,8 @@
             <OrderBy>1</OrderBy>
             <AgataWeb>
                 <Select>cliente.nome as "Client Name",produto.descricao as "Prod. Desc.",vendas.quantidade as "Qty.",vendas.data as "Date",vendas.preco as "Price"</Select>
-                <Where></Where>
                 <OrderBy>vendas.preco</OrderBy>
+                <Where></Where>
             </AgataWeb>
 
         </Query>
@@ -94,13 +94,6 @@
         <ShowValues>1</ShowValues>
         <Orientation>lines</Orientation>
     </Graph>
-
-    <Merge>
-        <Details>
-            <Detail1></Detail1>
-        </Details>
-
-    </Merge>
 
     <Label>
         <Config>

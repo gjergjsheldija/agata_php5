@@ -43,13 +43,10 @@ class AgataWEB {
             if (substr($BrowseDir,0,$dir_len) != $OutputDir) {
                 $BrowseDir = $OutputDir;
             }
-        }
-        else
-        {
+        } else {
             $RptDir = $agataConfig['general']['RptDir'];
             $dir_len = strlen($RptDir);
-            if (substr($BrowseDir,0,$dir_len) != $RptDir)
-            {
+            if (substr($BrowseDir,0,$dir_len) != $RptDir) {
                 $BrowseDir = $RptDir;
             }    
         }
@@ -142,6 +139,10 @@ class AgataWEB {
                     }
                     
                     if ($ok) {
+                    	
+                        if (substr($path,-3)=='agt') {
+                            $Report = CoreReport::OpenReport($path);
+                        }
                         $posicao = strpos($arquivo, '.');
                         $ext = substr($arquivo, $posicao+1);
                         $ico = $Images[$ext];
@@ -166,7 +167,7 @@ class AgataWEB {
                             echo '</td>';
 	                        //fastgenerate
 	                        echo '<td>';
-	                        if ($Report['Report']['Properties']['Layout'] AND $Report['Report']['Properties']['Format']) {
+	                        if ($Report['Report']['Properties']['Layout'] && $Report['Report']['Properties']['Format']) {
 	                            echo "<a href='fastgenerate.php?file=$path'><img border=0 src=images/lightning.png></a>";
 	                        }
                         	echo '</td>';
@@ -176,9 +177,7 @@ class AgataWEB {
                             echo '</td>';
                         }
                         
-                        if (substr($path,-3)=='agt') {
-                            $Report = CoreReport::OpenReport($path);
-                        }
+
                         
                         
                         
