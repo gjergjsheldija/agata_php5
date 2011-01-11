@@ -3,44 +3,44 @@
 --
 
 CREATE TABLE cliente (
-    codigo integer,
-    nome character varying(40),
-    telefone character varying(20),
-    endereco character varying(40),
-    idade integer,
-    foto character varying(40),
-    ref_cidade integer
+    codigo int,
+    nome varchar(40),
+    telefone varchar(20),
+    endereco varchar(40),
+    idade int,
+    foto varchar(40),
+    ref_cidade int
 );
 
 
 CREATE TABLE produto (
-    codigo integer,
-    descricao character varying(40),
-    unidade character(2),
-    estoque numeric(14,2),
-    preco_custo numeric(14,2),
-    preco_venda numeric(14,2)
+    codigo int,
+    descricao varchar(40),
+    unidade varchar(2),
+    estoque decimal(14,2),
+    preco_custo decimal(14,2),
+    preco_venda decimal(14,2)
 );
 
 
 CREATE TABLE vendas (
-    ref_cliente integer,
-    ref_produto integer,
-    quantidade numeric(14,2),
+    ref_cliente int,
+    ref_produto int,
+    quantidade decimal(14,2),
     data date,
-    preco numeric(14,2)
+    preco decimal(14,2)
 );
 
 
 CREATE TABLE estado (
-    codigo character(2),
-    descricao character varying(40)
+    codigo varchar(2),
+    descricao varchar(40)
 );
 
 CREATE TABLE cidade (
-    codigo integer,
-    descricao character varying(40),
-    ref_estado character(2)
+    codigo int,
+    descricao varchar(40),
+    ref_estado varchar(2)
 );
 
 INSERT INTO cliente VALUES (8, 'Tiago Giovanaz', '55 3443-3458', 'Av. dos Giovanaz', 23, 'images/photos/tiago.png', 5);
@@ -159,5 +159,4 @@ INSERT INTO cidade VALUES (13, 'Ipatinga', 'MG');
 INSERT INTO cidade VALUES (14, 'Montes Claros', 'MG');
 INSERT INTO cidade VALUES (15, 'Juiz de Fora', 'MG');
 INSERT INTO cidade VALUES (16, 'Poços de Caldas', 'MG');
-
 
