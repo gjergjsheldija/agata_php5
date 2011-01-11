@@ -13,8 +13,7 @@ class AgataConnection
     /***********************************************************/
     /* Opens a new connection
     /***********************************************************/
-    function Open($agataConfig)
-    {
+    function Open($agataConfig) {
         $this->agataConfig = $agataConfig;
 
         $user  = $agataConfig['user'];
@@ -36,6 +35,7 @@ class AgataConnection
             }
         }
         $dsn="$type://$user:$pass@$host/$name";
+
         switch ($type)
         {
             case 'ibase':
@@ -47,7 +47,6 @@ class AgataConnection
                 $this->db = new AgataPgsql;
                 break;
             case 'sqlite':
-
                 require_once AGATA_PATH . '/classes/layer/AgataSqlite.php';
                 $this->db = new AgataSqlite;
                 break;
@@ -80,12 +79,11 @@ class AgataConnection
                 $this->db = new AgataOdbc;
                 break;
         }
-        if (is_object($this->db))
-        {
+        if (is_object($this->db)) {
             $ret = $this->db->Connect($host, $name, $user, $pass);
-            if (is_agata_error($ret)) // error
-            {
-                $a = new MemoArea($ret->GetError());
+
+            if (is_agata_error($ret)) {
+                Dialog($ret->GetError());
                 $this->db = null;
                 return false;
             }

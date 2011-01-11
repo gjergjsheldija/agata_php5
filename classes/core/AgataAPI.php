@@ -12,20 +12,20 @@ class AgataAPI
         // Define the Agata's Path
         define('AGATA_PATH', substr(__FILE__,0,-25));
         define('OS', strtoupper(substr(PHP_OS, 0, 3)));
-        
+
         if (OS == 'WIN')
         {
             define("bar", '\\');
             setlocale(LC_ALL, 'POSIX');
             define ("cut", ';');
-            define('temp', sys_get_temp_dir());
+            define('temp', AGATA_PATH . "tmp");
         }
         else
         {
             define("bar", '/');
             setlocale(LC_ALL, 'english');
             define ("cut", ':');
-            define('temp', sys_get_temp_dir());
+            define('temp', AGATA_PATH . "tmp");
         }
         
         define('isGui', false);
@@ -263,15 +263,16 @@ class AgataAPI
     {
         // You can set the Database connection this way, too:
         $Project = Project::ReadProject($this->project);
-       
+
         if (!$Project)
         {
             $this->error = 'Cannot read project file.';
             return;
         }
-         
+
         // Reading the Report
         $Report = $this->getReport();
+
         if (!$Report)
         {
             return;
@@ -292,7 +293,7 @@ class AgataAPI
         }
 
         $DataSet = $Report['Report']['DataSet'];
-        
+
         // Process the Query.
         $Query = AgataCore::CreateQuery($Project, $DataSet, $this->parameters);
 
@@ -506,4 +507,3 @@ class AgataAPI
         return true;
     }
 }
-?>

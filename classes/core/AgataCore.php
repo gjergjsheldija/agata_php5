@@ -198,7 +198,7 @@ class AgataCore
     {
         $sql = CoreReport::SqlFromReport($DataSet);
         $Adjustments = CoreReport::ExtractAdjustments($DataSet);
-        
+
         if ($ParametersContent)
         {
             // sort to $teste2 comes before that $teste in replace

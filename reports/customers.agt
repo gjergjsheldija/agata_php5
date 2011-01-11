@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <Report>
-    <Version>7.4</Version>
+    <Version>7.5</Version>
     <Properties>
         <Description>Customers List, letter and labels.</Description>
         <Layout>default-HTML</Layout>
@@ -194,8 +194,13 @@
 #tab040#rotaDITEMS
 #setftn14#setcf000034</GroupHeader>
 
-                <Body>#tab060#setcf010101$subfield1  $subfield2 $subfield3 $subfield4 $subfield5</Body>
-                <DataSet>
+                <GroupFooter>#setcf6a1000
+
+#rect*060*000*480*020*1*#e5f3ff*#010101
+#tab120Sumarization #tab480$subfield5_sum
+</GroupFooter>
+
+                <DataSet1>
                     <Query>
                         <Select>product.code as "Product Code", product.description as "Product Description", sales.amount as "Amount", sales.date as "Date", sales.price as "Price"</Select>
                         <From>sales,product</From>
@@ -243,13 +248,8 @@
 
                     </Fields>
 
-                </DataSet>
-
-                <GroupFooter>#setcf6a1000
-
-#rect*060*000*480*020*1*#e5f3ff*#010101
-#tab120Sumarization #tab480$subfield5_sum
-</GroupFooter>
+                    <Body>#tab060#setcf010101$subfield1  $subfield2 $subfield3 $subfield4 $subfield5</Body>
+                </DataSet1>
 
             </Detail1>
 
@@ -298,9 +298,21 @@
 
     </Label>
 
-    <CrossTab></CrossTab>
     <OpenOffice>
         <Source>/agata/resources/teste.sxw</Source>
     </OpenOffice>
+
+    <Report>
+        <Merge>
+            <Details>
+                <Detail1>
+                    <NumberSubSql>0</NumberSubSql>
+                </Detail1>
+
+            </Details>
+
+        </Merge>
+
+    </Report>
 
 </Report>

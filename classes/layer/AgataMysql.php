@@ -41,7 +41,6 @@ class AgataMysql
         }
         
         $this->connection = $conn;
-        
         return true;
     }
 

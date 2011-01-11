@@ -8,7 +8,7 @@ $Breaks = CoreReport::ExtractBreaks($Report);
 $Elements  = MyExplode(trim($Report['Report']['DataSet']['Query']['Select']), _a('Column'), true);
 
    ?>
-   <link href="site.css" rel="stylesheet" type="text/css">
+<link href="site.css" rel="stylesheet" type="text/css">
 <form>
 
 <h1>Agata CoreReport :: <?php echo _a('Report Generation'); ?></h1>

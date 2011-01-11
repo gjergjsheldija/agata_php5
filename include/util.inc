@@ -1008,18 +1008,28 @@ function recursive_remove_directory($directory, $empty=FALSE)
 function suported_databases_type()
 {
 
-    $aDBs    = array('native-pgsql'  => 'pg_connect',    'native-mysql'  => 'mysql_connect',
-                        'native-oci8'   => 'OCILogon',      'native-sybase' => 'sybase_connect',
-                        'native-mssql'  => 'mssql_connect', 'native-fbsql'  => 'fbsql_connect',
-                        'native-ibase'  => 'ibase_connect', 'native-ifx'    => 'ifx_connect',
-                        'native-sqlite' => 'sqlite_open',   'native-mysqli' => 'mysqli_connect',
+    $aDBs    = array('native-pgsql'  => 'pg_connect',    
+    				'native-mysql'  => 'mysql_connect',
+                        'native-oci8'   => 'OCILogon',      
+                        'native-sybase' => 'sybase_connect',
+                        'native-mssql'  => 'mssql_connect', 
+                        'native-fbsql'  => 'fbsql_connect',
+                        'native-ibase'  => 'ibase_connect', 
+                        'native-ifx'    => 'ifx_connect',
+                        'native-sqlite' => 'sqlite_open',   
+                        'native-mysqli' => 'mysqli_connect',
                         'native-dbase' => 'dbase_open');
 
-    $aOdbc   = array('odbc-oci8'   => 'odbc_connect', 'odbc-sybase' => 'odbc_connect',
-                        'odbc-mssql'  => 'odbc_connect', 'odbc-fbsql'  => 'odbc_connect',
-                        'odbc-ibase'  => 'odbc_connect', 'odbc-ifx'    => 'odbc_connect',
-                        'odbc-access' => 'odbc_connect', 'odbc-db2'    => 'odbc_connect',
-                        'odbc-pgsql'  => 'odbc_connect', 'odbc-mysql'  => 'odbc_connect',
+    $aOdbc   = array('odbc-oci8'   => 'odbc_connect', 
+    					'odbc-sybase' => 'odbc_connect',
+                        'odbc-mssql'  => 'odbc_connect', 
+                        'odbc-fbsql'  => 'odbc_connect',
+                        'odbc-ibase'  => 'odbc_connect', 
+                        'odbc-ifx'    => 'odbc_connect',
+                        'odbc-access' => 'odbc_connect', 
+                        'odbc-db2'    => 'odbc_connect',
+                        'odbc-pgsql'  => 'odbc_connect', 
+                        'odbc-mysql'  => 'odbc_connect',
                         'odbc-pervasive'  => 'odbc_connect');
 
     foreach ($aDBs as $driver => $function)
