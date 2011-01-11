@@ -19,11 +19,7 @@ class Project
     /***********************************************************/
     function ReadProject($Project)
     {
-        $array         = Xml2Array(AGATA_PATH . "/projects/{$Project}.prj");
-        if ($array)
-        {
-            $array['pass'] = ($array['pass'] ? base64_decode($array['pass']) : $array['pass']);
-        }
+        $array = Xml2Array(AGATA_PATH . "/projects/{$Project}.prj");
 
         return $array;
     }
