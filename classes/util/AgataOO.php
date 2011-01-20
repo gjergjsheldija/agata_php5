@@ -7,7 +7,7 @@ class AgataOO
 {
     function GetConfig($source)
     {
-        require_once 'classes/pclzip/pclzip.lib.php';
+        require_once 'vednor/pclzip/pclzip.lib.php';
         include_once 'include/util.inc';
 
         if (!file_exists($source))
@@ -88,7 +88,7 @@ class AgataOO
 
     function drawReplace($line, $imagePath, $tmpPath)
     {
-        #extrai informações necessárias para identificação da imagem
+        #extrai informaï¿½ï¿½es necessï¿½rias para identificaï¿½ï¿½o da imagem
         ereg ("<draw:image .* xlink:href=\"#([^\"]*)\" .*", $line, $link);
 
         return copy($imagePath, $tmpPath . '/' . $link[1]);

@@ -35,9 +35,9 @@ class AgataMergePdf extends AgataMerge
         $this->LineHeight   = 14;
         
         define('FPDF_FONTPATH','classes' . bar . 'fpdf151' . bar . 'font' . bar);
-        include_once('classes/fpdf151/fpdf.php');
-        include_once('classes/barcode128/barcode128.inc');
-        include_once('classes/barcode128/pdfbarcode128.inc');
+        include_once('vendor/barcode128/fpdf.php');
+        include_once('vendor/barcode128/barcode128.inc');
+        include_once('vendor/barcode128/pdfbarcode128.inc');
 
         $FileName = $this->FileName;
 

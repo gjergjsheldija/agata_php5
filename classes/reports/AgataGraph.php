@@ -126,8 +126,8 @@ class AgataGraph
         $BorderColor = '#000000';
         $FontColor   = '#000000';
 
-        include_once ("classes/jpgraph/jpgraph.php");
-        include_once ("classes/jpgraph/jpgraph_line.php");
+        include_once ("vendor/jpgraph/jpgraph.php");
+        include_once ("vendor/jpgraph/jpgraph_line.php");
         
         // Create the graph. These two calls are always required
         $graph = new Graph($this->SizeX,$this->SizeY,"auto");
@@ -183,7 +183,7 @@ class AgataGraph
         if ($this->RadioSXW)
         {
             # Import PhpDocWriter classes
-            require_once('classes/phpdocwriter/lib/include.php');
+            require_once('vendor/phpdocwriter/lib/include.php');
             import('phpdocwriter.pdw_document');
             $sxw = new pdw_document;
             $sxw->SetLanguage('es','ES');
@@ -275,8 +275,8 @@ class AgataGraph
         $BorderColor = '#000000';
         $FontColor   = '#000000';
 
-        include_once ("classes/jpgraph/jpgraph.php");
-        include_once ("classes/jpgraph/jpgraph_bar.php");
+        include_once ("vendor/jpgraph/jpgraph.php");
+        include_once ("vendor/jpgraph/jpgraph_bar.php");
         
         // Create the graph. These two calls are always required
         $graph = new Graph($this->SizeX,$this->SizeY,"auto");
@@ -330,7 +330,7 @@ class AgataGraph
         if ($this->RadioSXW)
         {
             # Import PhpDocWriter classes
-            require_once('classes/phpdocwriter/lib/include.php');
+            require_once('vendor/phpdocwriter/lib/include.php');
             import('phpdocwriter.pdw_document');
             $sxw = new pdw_document;
             $sxw->SetLanguage('es','ES');

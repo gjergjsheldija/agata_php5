@@ -221,13 +221,13 @@ class AgataMergeSxw extends AgataMerge
         
         	$this->LineHeight   = 14;
 
-        	require_once('classes/phpdocwriter/lib/include.php');
+        	require_once('vendor/phpdocwriter/lib/include.php');
 	      import('phpdocwriter.pdw_document');
       	import('phpdocwriter.pdw_draw_line');
 		import('phpdocwriter.pdw_drawing');
 
-        	include_once('classes/barcode128/barcode128.inc');
-        	include_once('classes/barcode128/pdfbarcode128.inc');
+        	include_once('vendor/barcode128/barcode128.inc');
+        	include_once('vendor/barcode128/pdfbarcode128.inc');
 
         	
         	$FileName = $this->FileName;

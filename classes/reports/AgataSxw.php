@@ -126,7 +126,7 @@ class AgataSxw extends AgataReport
         $margins = "{$this->LeftMargin},{$this->RightMargin},{$this->TopMargin},{$this->BottomMargin}";
         
         # Import PhpDocWriter classes
-        require_once('classes/phpdocwriter/lib/include.php');
+        require_once('vendor/phpdocwriter/lib/include.php');
         import('phpdocwriter.pdw_document');
         import('phpdocwriter.pdw_header');
         import('phpdocwriter.pdw_footer');
