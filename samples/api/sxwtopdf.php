@@ -24,7 +24,7 @@ $api->setOutputPath('/tmp/sxwtopdf.sxw');
 $api->setParameter('$dtBegin', '2003-01-01');
 $api->setParameter('$dtEnd', '2006-04-11');
 
-$ok = $api->parseOpenOffice('/agata/resources/sxwtopdf.sxw');
+$ok = $api->parseOpenOffice('/agata/samples/resources/sxwtopdf.sxw');
 $api->openOffice2pdf($api->getOutputPath());
 if (!$ok)
 {

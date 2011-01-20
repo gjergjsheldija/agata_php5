@@ -25,7 +25,7 @@ class Label
         {
             return array(null);
         }
-        $array = Xml2Array(AGATA_PATH."/label/{$Label}.agl");
+        $array = Xml2Array(AGATA_PATH."assets/label/{$Label}.agl");
 
         return $array;
     }

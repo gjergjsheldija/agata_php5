@@ -124,7 +124,7 @@ class LabelConfig
         $array['label']['page_format']          = $schema[9];
         $array['label']['line_spacing']         = $schema[10];
         
-        $fd = fopen ("label/{$label}.agl", 'w');
+        $fd = fopen ("assets/label/{$label}.agl", 'w');
         if ($fd)
         {
             fwrite($fd, trim("<?xml version=\"1.0\"?>\n" . Array2Xml($array)));

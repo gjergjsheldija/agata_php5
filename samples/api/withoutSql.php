@@ -39,7 +39,7 @@
             $api->setDataArray($data);
             $api->setSubDataArray($subData);
 
-            $ok = $api->parseOpenOffice('/agata/resources/withoutSql.sxw');
+            $ok = $api->parseOpenOffice('/agata/samples/resources/withoutSql.sxw');
             if (!$ok)
             {
                  echo $api->getError();

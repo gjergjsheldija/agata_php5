@@ -100,7 +100,7 @@ class LayoutConfig
     function DeleteLayout()
     {
         $layout = $this->LayoutList->Current();
-        @unlink("layout/{$layout}.lay");
+        @unlink("assets/layout/{$layout}.lay");
     }
 
     /***********************************************************/
@@ -143,7 +143,7 @@ class LayoutConfig
         $array['layout']['config']['border']      = $schema[19];
         $array['layout']['config']['cell_spacing']= $schema[20];
         
-        $fd = fopen ("layout/{$layout}.lay", 'w');
+        $fd = fopen ("assets/layout/{$layout}.lay", 'w');
         if ($fd)
         {
             fwrite($fd, trim("<?xml version=\"1.0\"?>\n" . Array2Xml($array)));

@@ -25,7 +25,7 @@ $api->setParameter('$city', 1);
 #$api->setParameter('$personCode', 4);
 #$api->setParameter('$personName', "'mary'");
 
-$ok = $api->parseOpenOffice('/agata/resources/teste.sxw');
+$ok = $api->parseOpenOffice('/agata/samples/resources/teste.sxw');
 if (!$ok)
 {
     echo $api->getError();

@@ -25,7 +25,7 @@ class Layout
         {
             return array(null);
         }
-        $array['layout'] = Xml2Array(AGATA_PATH . "/layout/{$Layout}.lay");
+        $array['layout'] = Xml2Array(AGATA_PATH . "assets/layout/{$Layout}.lay");
         $Schema['DataFont']       = $array['layout']['data']['font'];
         $Schema['TotalFont']      = $array['layout']['total']['font'];
         $Schema['GroupFont']      = $array['layout']['group']['font'];

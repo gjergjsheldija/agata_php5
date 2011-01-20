@@ -24,7 +24,7 @@ $api->setOutputPath('/tmp/breakDetailTable.sxw');
 $api->setParameter('$dtBegin', '2003-01-01');
 $api->setParameter('$dtEnd', '2006-04-11');
 
-$ok = $api->parseOpenOffice('/agata/resources/breakDetailTable.sxw');
+$ok = $api->parseOpenOffice('/agata/samples/resources/breakDetailTable.sxw');
 if (!$ok)
 {
     echo $api->getError();

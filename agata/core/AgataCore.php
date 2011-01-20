@@ -317,7 +317,7 @@ class AgataCore
     /*******************************************************************************/
     function requireFunction($function)
     {
-        $function_dir    = AGATA_PATH . '/functions';
+        $function_dir    = AGATA_PATH . 'assets/functions';
         $function_path   = $function_dir . str_replace('/', bar, $function);
         $function_divide = explode('/', $function);
         $function_file   = $function_divide[count($function_divide) -1];

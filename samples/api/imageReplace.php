@@ -30,7 +30,7 @@ $api->setDataArray($data);
 $api->setImageReplace('figura1', '/agata/images/agata.jpg');
 $api->setImageReplace('figura2', '/agata/images/background.png');
 $api->setImageReplace('assinatura', '/agata/images/assinatura_fulano.png');
-$ok = $api->parseOpenOffice('/agata/resources/imageReplace.sxw');
+$ok = $api->parseOpenOffice('/agata/samples/resources/imageReplace.sxw');
 if (!$ok)
 {
     echo $api->getError();
