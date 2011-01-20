@@ -2,7 +2,7 @@
 /* class AgataOOParser
  * Jamiel Spezia 2005 - 2005
  */
-include_once 'classes/util/AgataOO.php';
+include_once 'agata/util/AgataOO.php';
 class AgataOOParser extends AgataMerge
 {
     var $buffer;

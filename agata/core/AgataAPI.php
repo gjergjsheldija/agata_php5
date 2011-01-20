@@ -42,21 +42,21 @@ class AgataAPI
                     AGATA_PATH . cut . AGATA_PATH . '/classes');
             
             include_once AGATA_PATH . "/include/util.inc";
-            include_once AGATA_PATH . "/classes/core/AgataCompatibility.php";
-            include_once AGATA_PATH . "/classes/core/AgataConnection.php";
-            include_once AGATA_PATH . "/classes/core/AgataQuery.php";
-            include_once AGATA_PATH . "/classes/core/AgataError.php";
-            include_once AGATA_PATH . "/classes/core/AgataDataSet.php";
-            include_once AGATA_PATH . "/classes/core/Project.php";
-            include_once AGATA_PATH . "/classes/core/CoreReport.php";
-            include_once AGATA_PATH . "/classes/core/Layout.php";
-            include_once AGATA_PATH . "/classes/core/AgataCore.php";
-            include_once AGATA_PATH . "/classes/core/AgataConfig.php";
-            include_once AGATA_PATH . "/classes/util/Dialog.php";
-            include_once AGATA_PATH . "/classes/util/Trans.php";
-            include_once AGATA_PATH . "/classes/util/XmlArray.php";
-            include_once AGATA_PATH . "/classes/util/AgataOO.php";
-            include_once AGATA_PATH . "/classes/reports/AgataReport.php";
+            include_once AGATA_PATH . "/agata/core/AgataCompatibility.php";
+            include_once AGATA_PATH . "/agata/core/AgataConnection.php";
+            include_once AGATA_PATH . "/agata/core/AgataQuery.php";
+            include_once AGATA_PATH . "/agata/core/AgataError.php";
+            include_once AGATA_PATH . "/agata/core/AgataDataSet.php";
+            include_once AGATA_PATH . "/agata/core/Project.php";
+            include_once AGATA_PATH . "/agata/core/CoreReport.php";
+            include_once AGATA_PATH . "/agata/core/Layout.php";
+            include_once AGATA_PATH . "/agata/core/AgataCore.php";
+            include_once AGATA_PATH . "/agata/core/AgataConfig.php";
+            include_once AGATA_PATH . "/agata/util/Dialog.php";
+            include_once AGATA_PATH . "/agata/util/Trans.php";
+            include_once AGATA_PATH . "/agata/util/XmlArray.php";
+            include_once AGATA_PATH . "/agata/util/AgataOO.php";
+            include_once AGATA_PATH . "/agata/reports/AgataReport.php";
         }
     }
 

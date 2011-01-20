@@ -12,7 +12,7 @@
 #+-----------------------------------------------------------------+
 
 # Include AgataAPI class
-include_once '/agata/classes/core/AgataAPI.php';
+include_once '/agata/agata/core/AgataAPI.php';
 
 # Instantiate AgataAPI
 $api = new AgataAPI;
@@ -20,10 +20,10 @@ $api->setLanguage('en'); //'en', 'pt', 'es', 'de', 'fr', 'it', 'se'
 $api->setOutputPath('/tmp/imageReplace.sxw');
 
 # Set main data
-$data = array( array('Jamiel Spezia', 'Engenharia da Computação'),
-                array('William Prigol Lopes', 'Análise de Sistemas'),
-                array('Rafael Luis Spengler', 'Análise de Sistemas'),
-                array('Daniel Afonso Heisler', 'Engenharia da Computação')
+$data = array( array('Jamiel Spezia', 'Engenharia da Computaï¿½ï¿½o'),
+                array('William Prigol Lopes', 'Anï¿½lise de Sistemas'),
+                array('Rafael Luis Spengler', 'Anï¿½lise de Sistemas'),
+                array('Daniel Afonso Heisler', 'Engenharia da Computaï¿½ï¿½o')
                 );
 
 $api->setDataArray($data);

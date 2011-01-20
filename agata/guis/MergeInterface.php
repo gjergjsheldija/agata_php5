@@ -445,7 +445,7 @@ class MergeInterface
     /***********************************************************/
     function PageSetup()
     {
-        include_once 'classes/guis/PageSetup.php';
+        include_once 'agata/guis/PageSetup.php';
         if ($this->PageSetup)
         {
             $this->PageSetup->Show();
@@ -470,7 +470,7 @@ class MergeInterface
     /***********************************************************/
     function PickColor($callback)
     {
-        include_once 'classes/util/ColorChooser.php';
+        include_once 'agata/util/ColorChooser.php';
         new ColorChooser($callback);
     }
 
@@ -554,7 +554,7 @@ class MergeInterface
         if ($FileName)
         {
             $fs->hide();
-            # /AGATA/IMAGES/CUSTOM/rodrigo_ass.jpg ao invés de C:\AGATA\IMAGES\CUSTOM\rodrigo_ass.jpg
+            # /AGATA/IMAGES/CUSTOM/rodrigo_ass.jpg ao invï¿½s de C:\AGATA\IMAGES\CUSTOM\rodrigo_ass.jpg
             $this->TypeChar("#image $FileName");
         }
     }
@@ -1190,7 +1190,7 @@ class MergeInterface
             $lBox = new GtkHBox();
             $label = new GtkLabel($this->numberSubReport);
 
-            //Cria botão para remover aba
+            //Cria botï¿½o para remover aba
             $this->SubSelectListDelButton[$this->numberSubReport] = new GtkButton('-');
             $this->SubSelectListDelButton[$this->numberSubReport]->connect_object('clicked', array(&$this, 'delDetail'), $this->numberSubReport);
             $this->SubSelectListDelButton[$this->numberSubReport]->show();
@@ -1206,7 +1206,7 @@ class MergeInterface
 
             $lBox->pack_start($label);
             $lBox->pack_start($this->SubSelectListDelButton[$this->numberSubReport]);
-            //Remove o botão da aba anterior
+            //Remove o botï¿½o da aba anterior
             if ($this->SubSelectListDelButton[$this->numberSubReport-1])
             {
                 $this->SubSelectListDelButton[$this->numberSubReport-1]->hide();
@@ -1231,7 +1231,7 @@ class MergeInterface
         unset($this->SubSelectList[$numberSubReport],
               $this->SubSql[$numberSubReport],
               $this->SubAdjustmentsConfig[$numberSubReport]);
-        //Exibe o botão na última aba
+        //Exibe o botï¿½o na ï¿½ltima aba
         if ($this->SubSelectListDelButton[$this->numberSubReport])
         {
             $this->SubSelectListDelButton[$this->numberSubReport]->show();

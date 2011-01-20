@@ -121,7 +121,7 @@ class DiaWindow extends AgataCore
             $aTables = $this->DiaTables->GetItems();
             
             //$posAction = array(&$this, 'RefreshRepository');
-            include_once 'classes/reports/AgataDia.php';
+            include_once 'agata/reports/AgataDia.php';
             $MyDia = new Dia($this->DbAttributes, $this->agataConfig, $FileName,
                              $aTables, $this->agataTbLinks, $this->project, null);
                              //$aTables, $this->agataTbLinks, $this->project, $posAction);

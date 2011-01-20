@@ -20,7 +20,7 @@ class LabelConfig
         $hbox = new GtkHBox;
         $this->pwindow->add($hbox);
         
-        include_once 'classes/guis/MeasureBox.php';
+        include_once 'agata/guis/MeasureBox.php';
         
 
         $Labels = Label::ListLabels();

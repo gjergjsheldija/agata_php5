@@ -39,43 +39,43 @@ class AgataConnection
         switch ($type)
         {
             case 'ibase':
-                require_once AGATA_PATH . '/classes/layer/AgataIbase.php';
+                require_once AGATA_PATH . '/agata/layer/AgataIbase.php';
                 $this->db = new AgataIbase;
                 break;
             case 'pgsql':
-                require_once AGATA_PATH . '/classes/layer/AgataPgsql.php';
+                require_once AGATA_PATH . '/agata/layer/AgataPgsql.php';
                 $this->db = new AgataPgsql;
                 break;
             case 'sqlite':
-                require_once AGATA_PATH . '/classes/layer/AgataSqlite.php';
+                require_once AGATA_PATH . '/agata/layer/AgataSqlite.php';
                 $this->db = new AgataSqlite;
                 break;
             case 'mysql':
-                require_once AGATA_PATH . '/classes/layer/AgataMysql.php';
+                require_once AGATA_PATH . '/agata/layer/AgataMysql.php';
                 $this->db = new AgataMysql;
                 break;
             case 'dbase':
-                require_once AGATA_PATH . '/classes/layer/AgataDbase.php';
+                require_once AGATA_PATH . '/agata/layer/AgataDbase.php';
                 $this->db = new AgataDbase;
                 break;
             case 'oci8':
-                require_once AGATA_PATH . '/classes/layer/AgataOracle.php';
+                require_once AGATA_PATH . '/agata/layer/AgataOracle.php';
                 $this->db = new AgataOracle;
                 break;
             case 'mssql':
-                require_once AGATA_PATH . '/classes/layer/AgataMssql.php';
+                require_once AGATA_PATH . '/agata/layer/AgataMssql.php';
                 $this->db = new AgataMssql;
                 break;
             case 'ifx':
-                require_once AGATA_PATH . '/classes/layer/AgataIfx.php';
+                require_once AGATA_PATH . '/agata/layer/AgataIfx.php';
                 $this->db = new AgataIfx;
                 break;
             case 'sybase':
-                require_once AGATA_PATH . '/classes/layer/AgataSybase.php';
+                require_once AGATA_PATH . '/agata/layer/AgataSybase.php';
                 $this->db = new AgataSybase;
                 break;
             case 'odbc':
-                require_once AGATA_PATH . '/classes/layer/AgataOdbc.php';
+                require_once AGATA_PATH . '/agata/layer/AgataOdbc.php';
                 $this->db = new AgataOdbc;
                 break;
         }

@@ -108,7 +108,7 @@ if ($Report) {
     $Report['Report']['Merge']['ReportFooter']                      = $textmerge[5];
     $Report['Report']['Label']['Body']                              = $label;
 
-    include_once AGATA_PATH . '/classes/core/AgataAPI.php';
+    include_once AGATA_PATH . '/agata/core/AgataAPI.php';
 
     // Instantiate AgataAPI
     $api = new AgataAPI;
