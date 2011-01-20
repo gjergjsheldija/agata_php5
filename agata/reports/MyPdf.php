@@ -30,7 +30,7 @@ class MyPdf extends FPDF
         $aligns['left']   = 'L';
         $aligns['right']  = 'R';
 
-        include 'include/report_vars.inc';
+        include 'agata/include/report_vars.inc';
         $ReportName = $this->ReportName;
         $page       = $this->PageNo();
         $pagecounting = $totalPages = '{nb}';
@@ -81,7 +81,7 @@ class MyPdf extends FPDF
         $aligns['left']   = 'L';
         $aligns['right']  = 'R';
 
-        include 'include/report_vars.inc';
+        include 'agata/include/report_vars.inc';
         $ReportName = $this->ReportName;
         $page       = $this->PageNo();
         $pagecounting = $totalPages = '{nb}';

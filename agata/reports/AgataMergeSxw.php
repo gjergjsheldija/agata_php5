@@ -299,7 +299,7 @@ class AgataMergeSxw extends AgataMerge
     	/* Print a Document Section
     	/***********************************************************/
     	function PrintSection($key) {
-        include 'include/report_vars.inc';
+        include 'agata/include/report_vars.inc';
 
         # Footer Sumarization
         if ($key == 'groupfooter')
@@ -368,7 +368,7 @@ class AgataMergeSxw extends AgataMerge
     function PrintDetails()
     {
         $this->LastHeight = 0;
-        include 'include/report_vars.inc';
+        include 'agata/include/report_vars.inc';
         $textMerge = $this->XmlArray['report']['merge']['detail'];
         
         if (!$textMerge) // there's no details

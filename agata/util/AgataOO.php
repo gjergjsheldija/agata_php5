@@ -8,7 +8,7 @@ class AgataOO
     function GetConfig($source)
     {
         require_once 'vednor/pclzip/pclzip.lib.php';
-        include_once 'include/util.inc';
+        include_once 'agata/include/util.inc';
 
         if (!file_exists($source))
         {

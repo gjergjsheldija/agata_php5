@@ -131,7 +131,7 @@ class AgataMergePdf extends AgataMerge
     /***********************************************************/
     function PrintSection($key, $textMerge)
     {
-        include 'include/report_vars.inc';
+        include 'agata/include/report_vars.inc';
 
         if ($key == 'finalsummary')
         {
@@ -286,7 +286,7 @@ class AgataMergePdf extends AgataMerge
     {
         $this->one = true;
         $this->LastHeight = 0;
-        include 'include/report_vars.inc';
+        include 'agata/include/report_vars.inc';
         $textMerge = $this->XmlArray['Report']['Merge']['Details']['Detail1']['DataSet' . ($numberSubReport+1)]['Body'];
         $textMerge = $this->fillParameters($textMerge);
 

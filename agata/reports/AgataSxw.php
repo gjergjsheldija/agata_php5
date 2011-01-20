@@ -40,7 +40,7 @@ class AgataSxw extends AgataReport
             $ReportName = $this->ReportName;
         }
 
-        include 'include/report_vars.inc';
+        include 'agata/include/report_vars.inc';
         $FileName = $this->FileName;
         
         $fd = @fopen($FileName, "w");

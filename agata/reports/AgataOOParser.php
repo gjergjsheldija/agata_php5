@@ -23,7 +23,7 @@ class AgataOOParser extends AgataMerge
         $this->repeatFooter     = $this->XmlArray['Report']['OpenOffice']['Config']['RepeatFooter'];
         
         require_once 'vednor/pclzip/pclzip.lib.php';
-        include_once 'include/util.inc';
+        include_once 'agata/include/util.inc';
         $this->buffer = array();
         $this->break_style = '<style:style style:name="AgataPageBreak" style:family="paragraph" style:parent-style-name="Standard">' .
                              '<style:properties fo:break-before="page"/>' .

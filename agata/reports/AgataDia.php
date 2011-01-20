@@ -45,7 +45,7 @@ class Dia extends AgataCore
             return false;
         }
         
-        $fx = fopen('include/dia.template','r');
+        $fx = fopen('agata/include/dia.template','r');
         while (!feof ($fx))
         {
             $buffer = fgets($fx, 500);

@@ -41,7 +41,7 @@ class AgataAPI
             ini_set('include_path', '.' . cut . '/usr/local/lib/php'. cut .
                     AGATA_PATH . cut . AGATA_PATH . '/classes');
             
-            include_once AGATA_PATH . "/include/util.inc";
+            include_once AGATA_PATH . "/agata/include/util.inc";
             include_once AGATA_PATH . "/agata/core/AgataCompatibility.php";
             include_once AGATA_PATH . "/agata/core/AgataConnection.php";
             include_once AGATA_PATH . "/agata/core/AgataQuery.php";

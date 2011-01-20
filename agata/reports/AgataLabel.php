@@ -49,7 +49,7 @@ class AgataLabel extends AgataMerge
         include_once('vendor/barcode128/barcode128.inc');
         include_once('vendor/barcode128/pdfbarcode128.inc');
         
-        include 'include/report_vars.inc';
+        include 'agata/include/report_vars.inc';
         
         $FileName = $this->FileName;
         $this->PDF = new FPDF($this->Orientation, 'pt', $this->PageFormat);

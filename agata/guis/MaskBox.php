@@ -92,7 +92,7 @@ class MaskBox
         {
             $this->notebook->set_show_tabs(false);
         }
-        $masks = file('include/masks');
+        $masks = file('agata/include/masks');
         foreach ($masks as $mask)
         {
             $this->clist_masks->append(array(ereg_replace("\n",'',$mask)));

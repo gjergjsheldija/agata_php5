@@ -573,7 +573,7 @@ class ConnectionWizard
 
     function setFields()
     {
-        include_once 'include/util.inc';
+        include_once 'agata/include/util.inc';
 
         $this->projectName->set_text('');
         $this->description->delete_text(0,-1);

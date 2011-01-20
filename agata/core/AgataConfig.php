@@ -89,7 +89,7 @@ class AgataConfig
     */
     function WriteSetup($Theme, $Language)
     {
-        $fd = @fopen(AGATA_PATH . '/include/setup.inc', "w");
+        $fd = @fopen(AGATA_PATH . '/agata/include/setup.inc', "w");
         if (!$fd)
         {
             new Dialog(_a('Permission Denied'), true, true, _a('File') . ': ' . AGATA_PATH . bar . 'include' . bar . 'setup.inc');
