@@ -1,31 +1,29 @@
 <?php
-class AgataGraph
-{
-    
-    function SetProperties($params)
-    {
-        $this->agataDB        = $params[0];
-        $this->agataConfig    = $params[1];
-        $this->FileName       = $params[2];
-        $this->CurrentQuery   = $params[3];
-        $this->XmlArray       = $params[4];
-        $this->posAction      = $params[5];
-        $PlottedColumns       = $params[6];
-        
-        $this->Title          = $this->XmlArray['Report']['Graph']['Title'];
-        $this->Titlex         = $this->XmlArray['Report']['Graph']['TitleX'];
-        $this->Titley         = $this->XmlArray['Report']['Graph']['TitleY'];
-        $this->Introduction   = $this->XmlArray['Report']['Graph']['Description'];
-        $this->SizeX          = $this->XmlArray['Report']['Graph']['Width'];
-        $this->SizeY          = $this->XmlArray['Report']['Graph']['Height'];
-        
-        $this->checkData      = $this->XmlArray['Report']['Graph']['ShowData'];
-        $this->showValues     = $this->XmlArray['Report']['Graph']['ShowValues'];
-        $this->isPerColumns   = ($this->XmlArray['Report']['Graph']['Orientation'] == 'columns');
-        $this->RadioSXW       = false;
 
-        foreach ($PlottedColumns as $PlottedColumn)
-        {
+class AgataGraph {
+
+    function SetProperties($params) {
+        $this->agataDB = $params[0];
+        $this->agataConfig = $params[1];
+        $this->FileName = $params[2];
+        $this->CurrentQuery = $params[3];
+        $this->XmlArray = $params[4];
+        $this->posAction = $params[5];
+        $PlottedColumns = $params[6];
+
+        $this->Title = $this->XmlArray['Report']['Graph']['Title'];
+        $this->Titlex = $this->XmlArray['Report']['Graph']['TitleX'];
+        $this->Titley = $this->XmlArray['Report']['Graph']['TitleY'];
+        $this->Introduction = $this->XmlArray['Report']['Graph']['Description'];
+        $this->SizeX = $this->XmlArray['Report']['Graph']['Width'];
+        $this->SizeY = $this->XmlArray['Report']['Graph']['Height'];
+
+        $this->checkData = $this->XmlArray['Report']['Graph']['ShowData'];
+        $this->showValues = $this->XmlArray['Report']['Graph']['ShowValues'];
+        $this->isPerColumns = ($this->XmlArray['Report']['Graph']['Orientation'] == 'columns');
+        $this->RadioSXW = false;
+
+        foreach ($PlottedColumns as $PlottedColumn) {
             $tmp1 = explode(':', trim($PlottedColumn));
             $tmp2 = explode(' ', trim($tmp1[0]));
             $column = $tmp2[1];
@@ -33,15 +31,13 @@ class AgataGraph
         }
 
         $this->Colors = array('blue', 'orange', 'red', 'blueviolet', 'brown', 'burlywood', 'darkblue',
-                              'darkmagenta', 'chocolate', 'darkolivegreen', 'darkslateblue', 'darkviolet',
-                              'lightcoral', 'mediumpurple', 'midnightblue', 'orangered', 'peru',
-                              'royalblue', 'seagreen', 'slateblue', 'springgreen', 'steelblue', 'aqua');
+            'darkmagenta', 'chocolate', 'darkolivegreen', 'darkslateblue', 'darkviolet',
+            'lightcoral', 'mediumpurple', 'midnightblue', 'orangered', 'peru',
+            'royalblue', 'seagreen', 'slateblue', 'springgreen', 'steelblue', 'aqua');
     }
-    
-    function GetData($legend = null)
-    {
-        if ($legend)
-        {
+
+    function GetData($legend = null) {
+        if ($legend) {
             $tmp1 = explode(':', trim($legend));
             $tmp2 = explode(' ', trim($tmp1[0]));
             $legendcolumn = $tmp2[1];
@@ -49,152 +45,133 @@ class AgataGraph
 
         $ColumnNames = $this->CurrentQuery->ColumnNames;
         $line = 0;
-        while ($QueryLine = $this->CurrentQuery->FetchNext())
-        {
-            for ($col=1; $col<=count($QueryLine); $col ++)
-            {
+        while ($QueryLine = $this->CurrentQuery->FetchNext()) {
+            for ($col = 1; $col <= count($QueryLine); $col++) {
                 $Conteudo = $QueryLine[$col];
                 $ReverseQuery[$col][$line] = $Conteudo;
                 $RegularQuery[$line][$col] = $Conteudo;
-                
             }
-            $line ++;
+            $line++;
         }
 
         $Query = $RegularQuery;
-        if ($this->isPerColumns)
-        {
+        if ($this->isPerColumns) {
             $Query = $ReverseQuery;
         }
 
         $count = count($Query);
-        for ($n=1; $n<=$count; $n++) // loop the columns
-        {
-            if ($this->isPerColumns)
-            {
-                $chave =  $ColumnNames[$n-1];
-                if ($this->PlottedColumns[$n])
-                {
+        for ($n = 1; $n <= $count; $n++) { // loop the columns
+            if ($this->isPerColumns) {
+                $chave = $ColumnNames[$n - 1];
+                if ($this->PlottedColumns[$n]) {
                     $NewQuery[$chave] = $Query[$n];
                 }
-            }
-            else  // loop the lines
-            {
-                $chave =  $Query[$n-1][$legendcolumn];
+            } else {
+                $chave = $Query[$n - 1][$legendcolumn];
                 $colnum = 1;
-                foreach ($Query[$n-1] as $column)  // subloop the columns
-                {
-                    if ($this->PlottedColumns[$colnum])
-                    {
+                foreach ($Query[$n - 1] as $column) {  // subloop the columns
+                    if ($this->PlottedColumns[$colnum]) {
                         $NewQuery[$chave][] = $column;
                     }
-                    $colnum ++;
+                    $colnum++;
                 }
             }
         }
         return array($NewQuery, $RegularQuery, $ColumnNames);
     }
-    
-    
-    /************************************
-    *  Creates Graph of Lines           *
-    *************************************/
-    function Lines($legend = null)
-    {
+
+    /*     * **********************************
+     *  Creates Graph of Lines           *
+     * *********************************** */
+
+    function Lines($legend = null) {
         $Path = GetPath($this->FileName);
         $File = GetFileName($this->FileName);
-        
-        $Queries     = $this->GetData($legend);
-        $matrix      = $Queries[0];
-        $matrixfull  = $Queries[1];
+
+        $Queries = $this->GetData($legend);
+        $matrix = $Queries[0];
+        $matrixfull = $Queries[1];
         $ColumnNames = $Queries[2];
 
-        if (!$matrix)
-        {
-            if (isGui)
-                new Dialog(_a('There is no numeric data on query'));
-            else
-                echo _a('There is no numeric data on query');
-            
+        if (!$matrix) {
+            echo _a('There is no numeric data on query');
             return false;
         }
-        
-        
+
+
         //$BorderColor = $this->agataConfig['graph']['BorderColor'];
         //$FontColor   = $this->agataConfig['graph']['FontColor'];
 
         $BorderColor = '#000000';
-        $FontColor   = '#000000';
+        $FontColor = '#000000';
 
         include_once ("vendor/jpgraph/jpgraph.php");
         include_once ("vendor/jpgraph/jpgraph_line.php");
-        
+
         // Create the graph. These two calls are always required
-        $graph = new Graph($this->SizeX,$this->SizeY,"auto");
+        $graph = new Graph($this->SizeX, $this->SizeY, "auto");
         $graph->SetScale("textlin");
         $i = 0;
         $count = count($this->Colors);
-        foreach($matrix as $key=>$Vetor)
-        {
+        foreach ($matrix as $key => $Vetor) {
             // Create the linear plot
-            $lineplot[$i]=new LinePlot($Vetor);
+            $lineplot[$i] = new LinePlot($Vetor);
             $lineplot[$i]->mark->SetType(MARK_CIRCLE);
             $lineplot[$i]->SetLegend($key);
             $lineplot[$i]->SetColor($this->Colors[$i]);
             $lineplot[$i]->SetWeight(2);
-            
+
             if ($this->showValues)
-            $lineplot[$i]->value->Show();
-            
+                $lineplot[$i]->value->Show();
+
             // Add the plot to the graph
             $graph->Add($lineplot[$i]);
-            
+
             $i++;
-            if ($i==$count)
-            $i = 0;
+            if ($i == $count)
+                $i = 0;
         }
         //$graph->SetLegends(array("Jan","Feb","Mar","Apr","May","Jun","Jul"));
-        
-        $graph->img->SetMargin(40,100,40,40);
+
+        $graph->img->SetMargin(40, 100, 40, 40);
         $graph->title->Set($this->Title);
         $graph->title->SetColor($FontColor);
-        
+
         $graph->xaxis->title->Set($this->Titlex);
         $graph->yaxis->title->Set($this->Titley);
         $graph->xaxis->title->SetColor($FontColor);
         $graph->yaxis->title->SetColor($FontColor);
-        
-        $graph->title->SetFont(FF_FONT1,FS_BOLD);
-        $graph->yaxis->title->SetFont(FF_FONT1,FS_BOLD);
-        $graph->xaxis->title->SetFont(FF_FONT1,FS_BOLD);
+
+        $graph->title->SetFont(FF_FONT1, FS_BOLD);
+        $graph->yaxis->title->SetFont(FF_FONT1, FS_BOLD);
+        $graph->xaxis->title->SetFont(FF_FONT1, FS_BOLD);
         //$graph->xaxis->SetTickLabels($array_tick_);
-        
+
         $graph->xaxis->SetColor($BorderColor);
         $graph->yaxis->SetColor($BorderColor);
         $graph->xaxis->SetWeight(2);
         $graph->yaxis->SetWeight(2);
         $graph->SetShadow();
-        
+
         $image = "{$Path}.{$File}.lines.png";
         $image_html = "{$File}.lines.png";
         // Display the graph
         $graph->Stroke($image);
-        
-        if ($this->RadioSXW)
-        {
+
+        if ($this->RadioSXW) {
             # Import PhpDocWriter classes
             require_once('vendor/phpdocwriter/lib/include.php');
             import('phpdocwriter.pdw_document');
             $sxw = new pdw_document;
-            $sxw->SetLanguage('es','ES');
-            $sxw->SetStdFont ("Tahoma",8);
+            $sxw->SetLanguage('es', 'ES');
+            $sxw->SetStdFont("Tahoma", 8);
 
-            $sxw->AddParaDef(array('name'=>'intro', 'align'=>'justify',
-                                   'margins'=>'2,2,1,',
-                                   'font'=>array('family'=>'Tahoma','style'=>'','size'=>12)));
+            $sxw->AddParaDef(array('name' => 'intro', 'align' => 'justify',
+                'margins' => '2,2,1,',
+                'font' => array('family' => 'Tahoma', 'style' => '', 'size' => 12)));
 
-            $sxw->AddParaDef(array('name'=>'titulo', 'align'=>'center',
-                                   'font'=>array('family'=>'Tahoma','style'=>'SB','size'=>22)));
+            $sxw->AddParaDef(array('name' => 'titulo', 'align' => 'center',
+                'font' => array('family' => 'Tahoma', 'style' => 'SB', 'size' => 22)));
 
             $sxw->SetParagraph('titulo');
             $sxw->Write($this->Title);
@@ -204,113 +181,99 @@ class AgataGraph
             $sxw->Write($this->Introduction);
             $sxw->Ln();
 
-            $width  = (int) ($this->SizeX / 30);
+            $width = (int) ($this->SizeX / 30);
             $height = (int) ($this->SizeY / 30);
-            $sxw->Image(array('path'=>$image,'w'=>$width,'h'=>$height));
+            $sxw->Image(array('path' => $image, 'w' => $width, 'h' => $height));
             $sxw->Ln();
-            if ($this->checkData)
-            {
+            if ($this->checkData) {
                 $sxw->Table($ColumnNames, $matrixfull);
                 $sxw->Ln();
             }
             $sxw->Output($this->FileName);
-        }
-        else
-        {
-            $fd = fopen ($this->FileName, "w");
+        } else {
+            $fd = fopen($this->FileName, "w");
             fwrite($fd, "<html>\n");
             fwrite($fd, "<p align=center><font size=+2><b><center>{$this->Title}</center></b></font></p><br> \n");
             fwrite($fd, "<center>{$this->Introduction}</center><br> <br>\n");
-            
+
             fwrite($fd, "<center><img src=\".{$image_html}\"></center><br>\n");
-            if ($this->checkData)
-            {
+            if ($this->checkData) {
                 $this->HTMLTable($fd, $ColumnNames, $matrixfull);
             }
-            
+
             fwrite($fd, "</html>\n");
             fclose($fd);
         }
 
-        if ($this->posAction)
-        {
+        if ($this->posAction) {
             Project::OpenReport($this->FileName, $this->agataConfig);
         }
-        
-        if ($this->posAction)
-        {
+
+        if ($this->posAction) {
             $obj = &$this->posAction[0];
             $att = &$this->posAction[1];
-            
+
             $obj->{$att}();
         }
-        
+
         return true;
     }
-    
-    /************************************
-    *  Creates Graph of Bars            *
-    *************************************/
-    function Bars($legend = null)
-    {
+
+    /*     * **********************************
+     *  Creates Graph of Bars            *
+     * *********************************** */
+
+    function Bars($legend = null) {
         $Path = GetPath($this->FileName);
         $File = GetFileName($this->FileName);
-        
-        $Queries     = $this->GetData($legend);
-        $matrix      = $Queries[0];
-        $matrixfull  = $Queries[1];
+
+        $Queries = $this->GetData($legend);
+        $matrix = $Queries[0];
+        $matrixfull = $Queries[1];
         $ColumnNames = $Queries[2];
 
-        if (!$matrix)
-        {
-            if (isGui)
-                new Dialog(_a('There is no numeric data on query'));
-            else
-                echo _a('There is no numeric data on query');
-            
+        if (!$matrix) {
+            echo _a('There is no numeric data on query');
             return false;
         }
-        
+
 
         $BorderColor = '#000000';
-        $FontColor   = '#000000';
+        $FontColor = '#000000';
 
         include_once ("vendor/jpgraph/jpgraph.php");
         include_once ("vendor/jpgraph/jpgraph_bar.php");
-        
+
         // Create the graph. These two calls are always required
-        $graph = new Graph($this->SizeX,$this->SizeY,"auto");
-        $graph->img->SetMargin(40,80,40,40);
+        $graph = new Graph($this->SizeX, $this->SizeY, "auto");
+        $graph->img->SetMargin(40, 80, 40, 40);
         $graph->SetScale("textlin");
         $graph->SetShadow();
-        
+
         $i = 0;
         $count = count($this->Colors);
-        foreach($matrix as $key=>$Vetor)
-        {
+        foreach ($matrix as $key => $Vetor) {
             // Create the bar plots
             $bplot[$i] = new BarPlot($Vetor);
             $bplot[$i]->SetFillColor($this->Colors[$i]);
-            
+
             $bplot[$i]->SetLegend($key);
             if ($this->showValues)
-            $bplot[$i]->value->Show();
-            
+                $bplot[$i]->value->Show();
+
             $i++;
-            if ($i==$count)
-            $i = 0;
+            if ($i == $count)
+                $i = 0;
         }
-        
+
         // Create the grouped bar plot
         $gbplot = new GroupBarPlot($bplot);
         //$gbplot = new AccBarPlot($bplot);
         //    $gbplot->SetShadow();
         //$gbplot->value->Show();
-        
-        
         // ...and add it to the graPH
         $graph->Add($gbplot);
-        
+
         $graph->title->Set($this->Title);
         $graph->xaxis->title->Set($this->TitleX);
         $graph->yaxis->title->Set($this->TitleY);
@@ -318,30 +281,29 @@ class AgataGraph
         $graph->yaxis->title->SetColor($FontColor);
         $graph->xaxis->SetColor($BorderColor);
         $graph->yaxis->SetColor($BorderColor);
-        
-        $graph->title->SetFont(FF_FONT1,FS_BOLD);
-        $graph->yaxis->title->SetFont(FF_FONT1,FS_BOLD);
-        $graph->xaxis->title->SetFont(FF_FONT1,FS_BOLD);
-        
+
+        $graph->title->SetFont(FF_FONT1, FS_BOLD);
+        $graph->yaxis->title->SetFont(FF_FONT1, FS_BOLD);
+        $graph->xaxis->title->SetFont(FF_FONT1, FS_BOLD);
+
         // Display the graph
         $image = "{$Path}.{$File}.bar.png";
         $image_html = "{$File}.bar.png";
         $graph->Stroke($image);
-        if ($this->RadioSXW)
-        {
+        if ($this->RadioSXW) {
             # Import PhpDocWriter classes
             require_once('vendor/phpdocwriter/lib/include.php');
             import('phpdocwriter.pdw_document');
             $sxw = new pdw_document;
-            $sxw->SetLanguage('es','ES');
-            $sxw->SetStdFont ("Tahoma",8);
+            $sxw->SetLanguage('es', 'ES');
+            $sxw->SetStdFont("Tahoma", 8);
 
-            $sxw->AddParaDef(array('name'=>'intro', 'align'=>'justify',
-                                   'margins'=>'2,2,1,',
-                                   'font'=>array('family'=>'Tahoma','style'=>'','size'=>12)));
+            $sxw->AddParaDef(array('name' => 'intro', 'align' => 'justify',
+                'margins' => '2,2,1,',
+                'font' => array('family' => 'Tahoma', 'style' => '', 'size' => 12)));
 
-            $sxw->AddParaDef(array('name'=>'titulo', 'align'=>'center',
-                                   'font'=>array('family'=>'Tahoma','style'=>'SB','size'=>22)));
+            $sxw->AddParaDef(array('name' => 'titulo', 'align' => 'center',
+                'font' => array('family' => 'Tahoma', 'style' => 'SB', 'size' => 22)));
 
             $sxw->SetParagraph('titulo');
             $sxw->Write($this->Title);
@@ -351,107 +313,99 @@ class AgataGraph
             $sxw->Write($this->Introduction);
             $sxw->Ln();
 
-            $width  = (int) ($this->SizeX / 30);
+            $width = (int) ($this->SizeX / 30);
             $height = (int) ($this->SizeY / 30);
-            $sxw->Image(array('path'=>$image,'w'=>$width,'h'=>$height));
+            $sxw->Image(array('path' => $image, 'w' => $width, 'h' => $height));
             $sxw->Ln();
-            if ($this->checkData)
-            {
+            if ($this->checkData) {
                 $sxw->Table($ColumnNames, $matrixfull);
                 $sxw->Ln();
             }
             $sxw->Output($this->FileName);
-        }
-        else
-        {
-            $fd = fopen ($this->FileName, "w");
+        } else {
+            $fd = fopen($this->FileName, "w");
             fwrite($fd, "<html>\n");
             fwrite($fd, "<p align=center><font size=+2><b><center>{$this->Title}</center></b></font></p><br>");
             fwrite($fd, "<p align=center><center>{$this->Introduction}</center><br>");
-            
+
             fwrite($fd, "<center><img src=\".{$image_html}\"></center><br>\n");
-            if ($this->checkData)
-            {
+            if ($this->checkData) {
                 $this->HTMLTable($fd, $ColumnNames, $matrixfull);
             }
 
             fwrite($fd, "</html>\n");
             fclose($fd);
         }
-        
-        Project::OpenReport($this->FileName,  $this->agataConfig);
-        
-        if ($this->posAction)
-        {
+
+        Project::OpenReport($this->FileName, $this->agataConfig);
+
+        if ($this->posAction) {
             $obj = &$this->posAction[0];
             $att = &$this->posAction[1];
-            
+
             $obj->{$att}();
         }
-        
+
         return;
     }
-    
-    
-    
-    /************************************
-    *  Creates a Table with data        *
-    *************************************/
-    function HTMLTable($fd, $ColumnNames, $matrix)
-    {
+
+    /*     * **********************************
+     *  Creates a Table with data        *
+     * *********************************** */
+
+    function HTMLTable($fd, $ColumnNames, $matrix) {
         $Schema = Layout::ReadLayout('default-PDF');
-        
-        $align       = 'center';
-        $width       = '80%';
+
+        $align = 'center';
+        $width = '80%';
         $cellspacing = $Schema['CellSpacing'];
-        $border      = $Schema['Border'];
-        $bgcolor     = '#FFFFFF';
+        $border = $Schema['Border'];
+        $bgcolor = '#FFFFFF';
         $cellpadding = 2;
-        
-        $datafont    = $Schema['DataFont'];
-        $datacolor   = $Schema['DataColor'];
+
+        $datafont = $Schema['DataFont'];
+        $datacolor = $Schema['DataColor'];
         $databgcolor = $Schema['DataBgColor'];
-        
+
         $datafontset = TreatFont($datafont, $datacolor);
         $datafont1 = $datafontset[0];
         $datafont2 = $datafontset[1];
-        
+
         $columnfont = $Schema['ColumnFont'];
         $columncolor = $Schema['ColumnColor'];
         $columnbgcolor = $Schema['ColumnBgColor'];
-        
+
         $columnfontset = TreatFont($columnfont, $columncolor);
         $columnfont1 = $columnfontset[0];
         $columnfont2 = $columnfontset[1];
-        
+
         fwrite($fd, "<CENTER>\n");
         fputs($fd, "<table cellspacing=$cellspacing cellpadding=$cellpadding " .
-                   "align=$align width=$width border=$border bgcolor=$bgcolor>\n");
-                   
+                "align=$align width=$width border=$border bgcolor=$bgcolor>\n");
+
         fputs($fd, "<tr bgcolor=$columnbgcolor>\n");
-        for ($n=0; $n<count($ColumnNames); $n ++)
-        {
+        for ($n = 0; $n < count($ColumnNames); $n++) {
             $Title = $ColumnNames[$n];
             fputs($fd, "<td bgcolor=$columnbgcolor align=right> $columnfont1 $Title $columnfont2</td>");
         }
         fputs($fd, "</tr>\n");
 
-        foreach ($matrix as $line)
-        {
+        foreach ($matrix as $line) {
             fputs($fd, "<tr bgcolor=$databgcolor>\n");
-            foreach ($line as $column)
-            {
+            foreach ($line as $column) {
                 $str = ($column) ? $column : '';
                 fwrite($fd, "  <td align=right bgcolor=$databgcolor> $datafont1 $str $datafont2</td>");
                 fwrite($fd, "  </td>\n");
             }
             fwrite($fd, "</tr>\n");
         }
-        
+
         fwrite($fd, "</TABLE>\n");
         fwrite($fd, "</CENTER>\n");
-        
+
         return true;
     }
+
 }
+
 ?>

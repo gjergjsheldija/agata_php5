@@ -1,5 +1,5 @@
 <?php
-# SPECIAL CHARS
+// SPECIAL CHARS
 $sup1  = chr(185);
 $sup2  = chr(178);
 $sup3  = chr(179);
@@ -17,7 +17,7 @@ $pi    = chr(182);
 $mame  = chr(177);
 $filename = $this->FileName;
 
-# DATE AND TIME
+// DATE AND TIME
 $year = date('Y');
 $month = date('m');
 $day = date('d');
